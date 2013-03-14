@@ -1,0 +1,20 @@
+#EE_CFLAGS = -DPS2DEBUG
+EE_CFLAGS = -DCD_BUILD
+
+EE_BIN = jum52.elf
+EE_OBJS = main.o hw.o hardware.o sjpcm_rpc.o mc.o findroms.o fio_patch.o ../5200gfx.o ../52emu.o ../6502.o ../font5200.o ../pokey.o ../crc32.o ../gamesave.o
+EE_LIBS = -lmc -lpad -lcdvd_old -lcdvd -lc
+
+EE_INCS = -IC:/dev/ps2/newlib/include -I$(PS2GCC)/ee/include -IC:/dev/ps2/libcdvd/ee
+
+EE_LDFLAGS = -LC:/dev/ps2/newlib/lib -LC:/dev/ps2/libcdvd/lib
+
+all: $(EE_BIN)
+
+clean:
+	rm -f *.elf
+	rm -f ../*.o
+	rm -f main.o hardware.o mc.o findroms.o
+
+include ../ps2lib-2.1/Makefile.pref
+include ../ps2lib-2.1/Makefile.eeglobal

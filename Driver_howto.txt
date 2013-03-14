@@ -1,0 +1,67 @@
+Jum52 Driver Howto
+~~~~~~~~~~~~~~~~~~
+
+RB 2000
+JH 2004
+
+Each driver must be implemented in it's own subdirectory of the
+"Jum52" source code directory.
+
+First of all, the host specific code must not call any routines or
+touch any other data apart from that provided in global.h. A brief
+rundown of a basic port would be:
+
+main()
+{
+ if (Jum52_Initialise() == 0)
+ {
+  InitPlatformStuff();
+  if (Jum52_LoadROM("test.rom") == 0)
+  {
+   SetupPlatformVideoOutput();
+   Jum52_Emulate();
+   TeardownPlatformVideoOutput();
+  }
+ }
+}
+
+To load another rom, you need to set the variable 'running' (global.h) 
+to equal 0, which causes the Jum52_Emulate() function in the code example above to return.
+
+Right, now for the routines in osdepend.h. These are the functions that you will have to implement for your driver.
+
+First off, HostPrepareForPaletteSet() and HostRefreshPalette() should
+be called before and after a block of palette entry settings (as seen
+in 52gfx.c). HostSetPaletteEntry sets the specified palette entry
+(assuming 8-bit) with 8-bits of red, green, and blue. For allegro you
+may need to scale this down. (HostPrepareForPaletteSet() is probably a
+NOP on sensible platforms, but whoever called the Mac sensible? :)
+(*JH - Use HostSetPaletteEntry() to set up your driver's palette).
+
+HostBlitVideo() copies the video pointed to by *vid (in global.h) to 
+screen. This is a buffer of dimensions VID_WIDTH * VID_HEIGHT. You
+only want to copy over VISIBLE_WIDTH * VISIBLE_HEIGHT.
+(*JH - Use HostBlitVideo() to copy data at *vid to the screen). 
+
+HostProcessSoundBuffer() copies the sound pointed to by *snd to an
+output buffer. If sound is disabled, the host ignores this command
+(running the pokey is buttons performance wise, so I don't think it's
+important to worry if sound is disabled).
+
+HostEnableInterrupts() and DisableInterrupts() are called by the Pokey
+code. I'm not convinced these are still needed, and in fact the Mac
+doesn't use them. They can be removed if you don't need them.
+(*JH - Ignore these).
+
+Finally, HostDoEvents() is called once per frame to give your driver 
+an opportunity to run any host-specific event processing (windows, 
+mouse, menus, et al) required by your OS. It is also expected to set 
+the CONTROLLER variables and the keypad array.
+
+The string errormsg[256] contains meaningful information should
+Jum52_* fail to execute. It can then be printed for the user.
+Do -NOT- put printfs in the core, as this is a bad move on platforms
+with no GUI. Implement HostLog(char *s) to handle debug and runtime message output handling.
+
+For reference, take a look at the Win32 driver, or one of the other 
+drivers.

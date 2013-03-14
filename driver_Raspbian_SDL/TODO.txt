@@ -1,0 +1,11 @@
+1. Implement controller 2			*** DONE ***
+2. Implement joystick and mouse			*** DONE ***
+3. Implement 2x output				*** DONE *** (slow)
+4. Implement slow mode				
+5. Implement 16k mapper select			*** DONE ***
+6. Save/Load gamestate				*** DONE ***
+7. Implement debugger				*** DONE ***
+8. Load palette	
+9. Fix debugger RTC and ATTRACT			OK
+
+

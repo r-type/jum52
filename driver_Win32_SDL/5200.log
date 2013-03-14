@@ -1,0 +1,17 @@
+Jum's 5200 Emulator V1.1
+argc: 1, argv[0]: (null)
+Initialising Jum52...
+Reading config file 'jum52.cfg'...
+Loading palette file 'real.act'...
+Video mode: NTSC
+vid address: 3768608
+Videomode: 15  snd_buf_size: 735
+rom: Ballblazer (1984) (Atari-Lucasfilm Games).bin
+rom: Berzerk.BIN
+rom: DIGDUG.BIN
+rom: Frogger.BIN
+rom: Hero.BIN
+rom: JUMPONG2.BIN
+Trying to load 'DIGDUG.BIN', crc32=0x6A687F9C
+Rom 'DIGDUG.BIN' loaded OK.
+Executing 2000000000 CPU ticks...

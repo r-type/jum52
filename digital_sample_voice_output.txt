@@ -1,0 +1,32 @@
+Emulating Atari 5200 "Voice" output (Digital Sample output)
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+By James Higgs (jum) 2004
+
+
+4-bit sample output is used by some games (eg: Bezerk).
+
+This is done by setting a pokey channel (voice) to "pure" mode (ie: it's output is not tied to a counter, but set directly), and then writing sample values into the volume bits.
+
+A new sample is written to the pokey every 2 scanlines, giving an output of:
+
+PAL:  (301/2)*50 = ~7500 Hz	(???)
+NTSC: (262/2)*60 = ~7860 Hz
+
+
+
+
+To emulate:
+
+Use an array of "sample event" structures:
+
+typdef struct {
+	short vcount;
+	unsigned char value;
+} SAMPLE_EVENT;
+
+Every time a sample is written to pokey, add a sample event to the "sample event list" (array), using the current vcount, and the sample value being written to pokey.
+
+At the end of the frame, render the sample events to an audio buffer.
+Mix with the normal pokey output buffer.
+ 
