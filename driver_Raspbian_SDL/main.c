@@ -8,9 +8,9 @@
 #include <dirent.h>
 #include "SDL.h"
 #include "SDL_main.h"
-//#include "SDL_syswm.h" 
-
+//#include "SDL_syswm.h"
 //#include "colours.h"
+
 // Jum52 stuff
 #include "../global.h"
 #include "../osdepend.h"
@@ -79,9 +79,9 @@ extern int running;
 Uint32 frameStart = 0;
 
 //char	temparray[16];
-int		g_nWhichBuffer = 0;
+int g_nWhichBuffer = 0;
 
-int	 jprintf_y = 8;
+int jprintf_y = 8;
 
 // ROM/Menu stuff
 struct ROMdata *romdata;
@@ -107,11 +107,11 @@ int DoOptionsMenu(void);
 /// Wait for a specified number of frames
 void Wait(int numframes)
 {
-	SDL_Delay(numframes * 20);		// estimate 50 frames a second 
+	SDL_Delay(numframes * 20);		// estimate 50 frames a second
 }
 
 // ******************************************************************************
-// Handle printf / debug output 
+// Handle printf / debug output
 // ******************************************************************************
 void jprintf( char *s )
 {
@@ -129,13 +129,13 @@ void setjprintfy(int y) {
 // ******************************************************************************
 
 // 8-bit only
-void SDL_SetPixel ( SDL_Surface* pSurface , int x , int y, uint8 value) 
+void SDL_SetPixel(SDL_Surface* pSurface, int x, int y, uint8 value)
 {
   //determine position
-  char* pPosition = ( char* ) pSurface->pixels;
+  char* pPosition = (char*)pSurface->pixels;
 
   //offset by y
-  pPosition += ( pSurface->pitch * y ) ;
+  pPosition += (pSurface->pitch * y);
 
   //offset by x
   pPosition += x;
@@ -144,45 +144,45 @@ void SDL_SetPixel ( SDL_Surface* pSurface , int x , int y, uint8 value)
   *pPosition = value;
 }
 
-SDL_Color SDL_GetPixel ( SDL_Surface* pSurface , int x , int y ) 
+SDL_Color SDL_GetPixel(SDL_Surface* pSurface, int x, int y)
 {
-  SDL_Color color ;
-  Uint32 col = 0 ;
+  SDL_Color color;
+  Uint32 col = 0;
 
   //determine position
-  char* pPosition = ( char* ) pSurface->pixels ;
+  char* pPosition = (char*)pSurface->pixels;
 
   //offset by y
-  pPosition += ( pSurface->pitch * y ) ;
+  pPosition += (pSurface->pitch * y);
 
   //offset by x
-  pPosition += ( pSurface->format->BytesPerPixel * x ) ;
+  pPosition += (pSurface->format->BytesPerPixel * x);
 
   //copy pixel data
-  memcpy ( &col , pPosition , pSurface->format->BytesPerPixel ) ;
+  memcpy(&col, pPosition, pSurface->format->BytesPerPixel);
 
   //convert color
-  SDL_GetRGB ( col , pSurface->format , &color.r , &color.g , &color.b ) ;
-  return ( color ) ;
+  SDL_GetRGB(col, pSurface->format, &color.r, &color.g, &color.b);
+  return (color) ;
 }
 
 // 8-bit only
-void hline( SDL_Surface* pSurface , int x1 , int x2, int y , Uint8 col) 
+void hline(SDL_Surface* pSurface ,int x1 ,int x2, int y, Uint8 col)
 {
   Uint8 bpp;
   short len;
   int i;
 
   //determine position
-  char* pPosition = ( char* ) pSurface->pixels ;
+  char* pPosition = (char *)pSurface->pixels;
 
   //offset by y
-  pPosition += ( pSurface->pitch * y ) ;
+  pPosition += (pSurface->pitch * y);
 
   //offset by x
   bpp = pSurface->format->BytesPerPixel;
 
-  if(x2 < x1) {
+  if (x2 < x1) {
 	pPosition += ( bpp * x2 ) ;
 	len = x1 - x2;
   }
@@ -191,25 +191,25 @@ void hline( SDL_Surface* pSurface , int x1 , int x2, int y , Uint8 col)
 	len = x2 - x1;
   }
   //copy pixel data
-  for(i=0; i<len; i++) {
+  for (i=0; i<len; i++) {
 	*pPosition++ = col;
   }
 }
 
 // 8-bit only
-void vline( SDL_Surface* pSurface , int x , int y1, int y2 , Uint8 col) 
+void vline(SDL_Surface* pSurface ,int x, int y1, int y2, Uint8 col)
 {
   Uint16 pitch;
   short len;
   int i;
 
   //determine position
-  char* pPosition = ( char* ) pSurface->pixels ;
+  char* pPosition = (char *)pSurface->pixels;
 
   pitch = pSurface->pitch;
 
   //offset by y
-  if(y2 < y1) {
+  if (y2 < y1) {
 	pPosition += (pitch * y2);
 	len = y1 - y2;
   }
@@ -222,7 +222,7 @@ void vline( SDL_Surface* pSurface , int x , int y1, int y2 , Uint8 col)
   pPosition += x;
 
   //copy pixel data
-  for(i=0; i<len; i++) {
+  for (i=0; i<len; i++) {
 	*pPosition = col;
 	pPosition += pitch;
   }
@@ -236,10 +236,10 @@ char getkey(void)
 
 	//look for an event
 	ret = -1;
-	while(ret == -1) {
-		while( SDL_PollEvent ( &event ) )
+	while (ret == -1) {
+		while (SDL_PollEvent(&event))
 		{
-			switch( event.type ) {
+			switch (event.type) {
 				case SDL_QUIT :
 					ret = 0;
 					break;
@@ -247,7 +247,7 @@ char getkey(void)
 				case SDL_KEYDOWN:
 					/* Handle key presses. */
 					ret = event.key.keysym.sym;
-					if(event.key.keysym.mod & KMOD_SHIFT)
+					if (event.key.keysym.mod & KMOD_SHIFT)
 						ret -= 32;
 					break;
 			}
@@ -274,7 +274,7 @@ void fillsoundbuffer(void *userdata, Uint8 *stream, int len){
 */
 /*
 	// update buffer with new data
-	if(options.audio) 
+	if(options.audio)
 		Pokey_process(audioBuffer, len);
 
 	// render "voice" buffer if necessary
@@ -295,7 +295,7 @@ void fillsoundbuffer(void *userdata, Uint8 *stream, int len){
 		//if (ringBufPlayPos == RINGBUFLENGTH)
 		//	ringBufPlayPos = 0;
 		}
-	
+
 
 }
 
@@ -382,25 +382,24 @@ int Init(void)
 
 	g_nWhichBuffer = 0;
 
-	if(options.videomode == NTSC ) 
+	if(options.videomode == NTSC )
 		HostLog("Video mode: NTSC\n");
 	else
 		HostLog("Video mode: PAL\n");
-	 
+
 	Wait(10);
 
 	// set up audio output
 	reqSpec.freq = 44100;
 	reqSpec.format = AUDIO_S16;		//AUDIO_S8;
 	reqSpec.channels = 1;
-/*	
+/*
 	if(options.videomode == NTSC)
 		reqSpec.samples = 735;
 	else
 		reqSpec.samples = 882;		// PAL
 */
-	reqSpec.samples = 1024;				// SDL_OpeAudio() likes buffer len a power of 2 (esp for PSP)
-		
+	reqSpec.samples = 1024;			// SDL_OpeAudio() likes buffer len a power of 2 (esp for PSP)
 	reqSpec.callback = fillsoundbuffer;
 	reqSpec.userdata = NULL;
 	usedSpec = &givenSpec;
@@ -430,15 +429,15 @@ int Init(void)
 		fprintf(stderr, "Couldn't allocate audioBuffer!\n");
 		HostLog("Couldn't allocate audioBuffer!");
 		exit(-1);
-		}	
+		}
 
-	memset(audioBuffer, 128, AUDIOBUFLENGTH); 
+	memset(audioBuffer, 128, AUDIOBUFLENGTH);
 
 	// set up joystick
 	if(SDL_NumJoysticks() > 0) {
 		// Open joystick
 		pJoystick=SDL_JoystickOpen(0);
-  
+
 		if(pJoystick) {
 			HostLog("Opened Joystick 0\n");
 			sprintf(s, "Name: %s\n", SDL_JoystickName(0));
@@ -532,7 +531,7 @@ void HostBlitVideo(void) {
 	//// skip every 2nd frame
 	//if (framesdrawn & 0x01)
 	//	return;
-		
+
 	//lock the surface
 	SDL_LockSurface( pBuffer ) ;
 
@@ -609,8 +608,8 @@ void HostBlitVideo(void) {
 
 	for(x=0; x<320; x++)
 		{
-		//SDL_SetPixel ( pBuffer, x, 128, 0x0D); 
-		SDL_SetPixel ( pBuffer, x, 256 - audioBuffer[x*8], 0x0F); 
+		//SDL_SetPixel ( pBuffer, x, 128, 0x0D);
+		SDL_SetPixel ( pBuffer, x, 256 - audioBuffer[x*8], 0x0F);
 		}
 #endif
 
@@ -623,7 +622,7 @@ void HostBlitVideo(void) {
 	while(frameStart >= SDL_GetTicks())
 		{
 		// give other threads some time
-		SDL_Delay(1);	
+		SDL_Delay(1);
 		}
 	now = SDL_GetTicks();
 
@@ -667,7 +666,7 @@ void HostBlitVideo(void) {
 		// 1x
 		BlitBuffer(0, 0);
 		}
- 
+
 	SDL_UpdateRect(pSurface, 0, 0, outScreenWidth, outScreenHeight);
 
 //  SDL_WM_SetCaption("Jum52_SDL", NULL);
@@ -687,8 +686,8 @@ uint8 cook_joypos(short value) {
 
 	val_out = pot_max_left + ((value + 32768) / div_factor);
 
-	
-/*	
+
+/*
 	// do 'dead zone'
 	if((value > 120) && (value < 136)) {
 		val2 = POT_CENTRE;
@@ -698,7 +697,7 @@ uint8 cook_joypos(short value) {
 		if(value < 128) {
 			val2 = POT_CENTRE - ((128 - value) * pot_range_left) / 128;
 		}
-		else { // value > 128 
+		else { // value > 128
 			val2 = POT_CENTRE + ((value - 128) * pot_range_right) / 128;
 		}
 	}
@@ -773,7 +772,7 @@ void HostDoEvents(void) {
 				}
 				break;
 
-			case SDL_MOUSEBUTTONDOWN: 
+			case SDL_MOUSEBUTTONDOWN:
 				if(2 == options.controller || 3 == options.controller) {
 					if(event.button.button == SDL_BUTTON_LEFT)
 						cont1.trig = 1;
@@ -781,7 +780,7 @@ void HostDoEvents(void) {
 						cont1.side_button = 1;
 				}
 				break;
-			case SDL_MOUSEBUTTONUP: 
+			case SDL_MOUSEBUTTONUP:
 				if(2 == options.controller || 3 == options.controller) {
 					if(event.button.button == SDL_BUTTON_LEFT)
 						cont1.trig = 0;
@@ -1113,17 +1112,17 @@ void HostProcessSoundBuffer(void) {
 
 /* NOT USED HERE - see fillsoundbuffer()
 	// update buffer with new data
-	if(options.audio) 
+	if(options.audio)
 		Pokey_process(snd, snd_buf_size);
 
 	// render "voice" buffer if necessary
 	if(options.voice)
 		renderMixSampleEvents(snd, snd_buf_size);
-		
+
 */
 
 	// update buffer with new data
-	if(options.audio) 
+	if(options.audio)
 		Pokey_process(audioBuffer, AUDIOBUFLENGTH);
 
 	// render "voice" buffer if necessary
@@ -1226,7 +1225,7 @@ char *doFileBrowseDialog(void)
 	SDL_WM_GrabInput(SDL_GRAB_ON);
 
 	if(ret == TRUE) {
-		strcpy(rompath, szFile);	
+		strcpy(rompath, szFile);
 		return rompath;
 	}
 */
@@ -1250,7 +1249,7 @@ char* DoRomMenu()
 
 	// get a list of .bin files in the rom directory
 	numroms = 0;
-	
+
 	// http://www.opengroup.org/onlinepubs/009695399/functions/opendir.html
 	printf("Reading directory...\n");
 	DIR *dir = opendir(".");			//opendir(const char *dirname);
@@ -1259,14 +1258,14 @@ char* DoRomMenu()
 		HostLog("Cannot open current folde rto read rom list!");
 		return NULL;
 		}
-	
+
 	struct dirent *dp = readdir(dir);
 	while (dp)
 		{
 		printf("File: %s\n", dp->d_name);
 		if (strstr(dp->d_name, ".bin") || strstr(dp->d_name, ".BIN") || strstr(dp->d_name, ".a52") || strstr(dp->d_name, ".A52"))
 			strcpy(romdata[numroms++].name, dp->d_name);
-		dp = readdir(dir);	
+		dp = readdir(dir);
 		}
 
 	closedir(dir);
@@ -1304,7 +1303,7 @@ char* DoRomMenu()
 					break;
 			}
 		}
-    
+
         // check if ROM selected
         if(key == SDLK_SPACE || key == SDLK_RETURN) {
             break;
@@ -1361,8 +1360,8 @@ char* DoRomMenu()
 
 		printXY("Press [Space] to select a game.", 32, 212, 0x1C);
 
-		hline(pBuffer, 4, 315, 4, 0x0F); 
-		hline(pBuffer, 4, 315, 235, 0x0F); 
+		hline(pBuffer, 4, 315, 4, 0x0F);
+		hline(pBuffer, 4, 315, 235, 0x0F);
 		vline(pBuffer, 4, 4, 235, 0x0F);
 		vline(pBuffer, 315, 4, 235, 0x0F);
 
@@ -1434,8 +1433,8 @@ void DoHelpMenu()
 
 	printXY("Press [TRI] to exit.", 32, 212, 0x1C);
 
-	//hline(pBuffer, 4, 315, 4, 0x0F); 
-	//hline(pBuffer, 4, 315, 235, 0x0F); 
+	//hline(pBuffer, 4, 315, 4, 0x0F);
+	//hline(pBuffer, 4, 315, 235, 0x0F);
 	//vline(pBuffer, 4, 4, 235, 0x0F);
 	//vline(pBuffer, 315, 4, 235, 0x0F);
 
@@ -1463,11 +1462,11 @@ void DoHelpMenu()
 					return;
 				}
 			}
-	
+
 		// check if key pressed
 		if(0 != key)
 			break;
-			
+
 		SDL_Delay(20);
 		}
 
@@ -1572,7 +1571,7 @@ int DoOptionsMenu(void)
 		if(key == SDLK_DOWN)
 			if(selected_row < SELECT_ROW_MAX) selected_row++;
 
-		if(key == SDLK_UP) 
+		if(key == SDLK_UP)
 			if(selected_row > 0) selected_row--;
 
 		if((key == SDLK_RIGHT) || (key == SDLK_LEFT))
@@ -1647,7 +1646,7 @@ int DoOptionsMenu(void)
 				case 7:
 					printXY("Reset 5200", 60, y, c);
 					break;
-				case 8: // Quit 
+				case 8: // Quit
 					printXY("Quit Jum52", 60, y, c);
 					break;
 				default:
@@ -1661,8 +1660,8 @@ int DoOptionsMenu(void)
 		printXY("Press [Esc] to return to game.", 32, 212, 0x1f);
 		printXY("Press [Q] to Quit.", 32, 220, 0x1f);
 
-		hline(pBuffer, 4, 315, 4, 0x0F); 
-		hline(pBuffer, 4, 315, 235, 0x0F); 
+		hline(pBuffer, 4, 315, 4, 0x0F);
+		hline(pBuffer, 4, 315, 235, 0x0F);
 		vline(pBuffer, 4, 4, 235, 0x0F);
 		vline(pBuffer, 315, 4, 235, 0x0F);
 
@@ -1672,7 +1671,7 @@ int DoOptionsMenu(void)
 		if(ret < 0)
 			fprintf(stderr, "BlitSurface error: %s\n", SDL_GetError());
 
- 
+
 		SDL_UpdateRect(pSurface, 0, 0, 320, 240);
 		}	// wend
 
@@ -1714,7 +1713,7 @@ int getstring(char *prompt) {
 	clrEmuScreen(0x00);
 	printXY(prompt, 0, 0, 13);
 	BlitBuffer(320, 240);
-	
+
 	i = 0; c = 0;
 	c = getkey(); //(readkey() & 0xFF);
 	while(c != 13) {
@@ -1735,10 +1734,10 @@ int getstring(char *prompt) {
 void showPMdebug(void) {
 	int i, n, x, pmbase;
 	uint8 data;
-	
+
 	// show pm gfx
 	clrEmuScreen(0x00);
-	
+
 	// single-line mode ?
 	if(memory5200[DMACTL] & 0x10) {
 		pmbase = (memory5200[PMBASE] & 0xF8) << 8;
@@ -1774,7 +1773,7 @@ void showPMdebug(void) {
 			}
 		}
 	}
-	
+
 	// print player gfx horizontal offsets
 	for(i=0; i<4; i++) {
 		sprintf(msg, "%d", memory5200[HPOSP0 + i]);
@@ -1795,10 +1794,9 @@ void showPMdebug(void) {
 // Display collision regs in debug mode
 void showcollisionregs(void) {
 	int i;
-	char s[32];	
+	char s[32];
 	clrEmuScreen(0x00);
-	
-	
+
 	// show missile 2 PF and missile 2 player
 	for(i=0; i<4; i++) {
 		sprintbin(s, M2PF[i]);
@@ -1808,7 +1806,7 @@ void showcollisionregs(void) {
 		sprintf(msg, "M%dPL %s", i, s);
 		printXY(msg, 160, i*8, 255);
 	}
-	
+
 	// show player 2 PF and player 2 player
 	for(i=0; i<4; i++) {
 		sprintbin(s, P2PF[i]);
@@ -1827,7 +1825,7 @@ void display_charset(void)
 	int i, j, k, x, y;
 	uint16 chbase;
 	uint8 d, c;
-	
+
 	chbase = memory5200[CHBASE] << 8;
 	//clear(buffer);
 	//textprintf(buffer, font, 0, 0, 15, "Character set at 0x%4X", chbase);
@@ -1893,7 +1891,7 @@ int monitor(void)
 		sprintbin(mystring, irqst);
 		sprintf(msg, "IRQST %s", mystring);
 		printXY(msg, 160, 32, 15);
-		
+
 		// ANTIC REGS
 		sprintf(msg, "DLIST %X   CHBASE %X   PMBASE %X", getaddr(DLISTL), memory5200[CHBASE] << 8, memory5200[PMBASE] << 8);
 		printXY(msg, 0, 48, 15);
@@ -1954,7 +1952,7 @@ int monitor(void)
 
 		// disassemble blits it's output to 0, 240
 		disassemble(PC, 0);		// 20 lines
-		
+
 		// get input
 		clrEmuScreen(0x00);
 		ccmd = getkey(); // (readkey() & 0xFF);
@@ -2058,34 +2056,34 @@ int monitor(void)
 		if(ccmd == '0') {
 			cont1.trig = 1;
 		}
-		
+
 		// show PM gfx
 		if(ccmd == 'p') {
 			showPMdebug();
 			getkey();
 		}
-		
+
 		// show collision regs
 		if(ccmd == '1') {
 			showcollisionregs();
 			getkey();
 		}
-		
+
 		//blit(gfxdest, screen, 0, 0, 0, 0, 384, 240);
 		SDL_UpdateRect(pSurface, 0, 0, outScreenWidth, outScreenHeight);
-		
+
 		} // wend
 
 	if(options.audio) SDL_PauseAudio(0);
 
 	debugging = 0;
- 
+
 	return 0;
 }
 
 
 // ******************************************************************************
-// Ubuntu_SDL main startup
+// Raspbian_SDL main startup
 // ******************************************************************************
 
 int main(int argc, char *argv[])
@@ -2146,9 +2144,9 @@ HostLog(text);
 				case 8 :	// quit
 					exit_app = 1;
 					break;
-				}			
+				}
 			}
-		
+
 		// main loop
 		while(!exit_app)
 			{
@@ -2196,10 +2194,11 @@ HostLog(text);
 		}
 
 	printf("Exiting jum52...\n");
-	
+
 	if(logfile)
 		fclose(logfile);
 
+/* JH 2013-03-15 - commented out to avoid crash on exit (Raspbian)
 	// close joystick
 	printf("Closing joystick...\n");
 	if (pJoystick)
@@ -2210,13 +2209,13 @@ HostLog(text);
 		SDL_FreeSurface(pBuffer);
 
 	// Clean up audio buffer
-	if (audioBuffer)	
+	if (audioBuffer)
 		free(audioBuffer);
 
 	// Clean up rom list array
-	if (romdata)	
+	if (romdata)
 		free(romdata);
-	
+*/
 	// quit SDL (else program hangs)
 	printf("Quitting SDL...\n");
 	SDL_Quit();
