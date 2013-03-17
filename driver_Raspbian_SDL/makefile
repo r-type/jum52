@@ -1,4 +1,4 @@
-# Makefile for Raspbain version of Jum52
+# Makefile for Raspbian version of Jum52
 #
 # compile SDL project from cli like so:
 #gcc -o test test.c `sdl-config --cflags --libs`

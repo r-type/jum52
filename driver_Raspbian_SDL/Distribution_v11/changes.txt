@@ -59,6 +59,8 @@ Code changes file.
    - Rom file selector reverted to cross-platform versiom.
    - Fixes to exiting by clicking Window's [X] button.
 
+17 March 2013
+   - Rasbian version built
 
 
 

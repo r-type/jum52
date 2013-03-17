@@ -1412,26 +1412,22 @@ void DoHelpMenu()
 	drawBox(4,4,315,235, 0x50);
 	printXY("Help for Controls", 60, 8, 0x4E);
 
-	printXY("SELECT            Options Menu", 16, 24, 0x18);
-	printXY("START             5200 Start Button", 16, 32, 0x18);
-	printXY("HOLD              5200 Pause Button", 16, 40, 0x18);
-	printXY("DPAD or Analog    5200 Joystick", 16, 48, 0x18);
-	printXY("X                 5200 Fire 1", 16, 56, 0x18);
-	printXY("O                 5200 Fire 2", 16, 64, 0x18);
-	printXY("LSB               5200 * Button", 16, 72, 0x18);
-	printXY("RSB               5200 # Button", 16, 80, 0x18);
-	printXY("[] + Up           5200 Keypad 1", 16, 88, 0x18);
-	printXY("[] + Right        5200 Keypad 2", 16, 96, 0x18);
-	printXY("[] + Down         5200 Keypad 3", 16, 104, 0x18);
-	printXY("[] + Left         5200 Keypad 4", 16, 112, 0x18);
-	printXY("[] + LSB          5200 Keypad 5", 16, 120, 0x18);
-	printXY("[] + RSB          5200 Keypad 6", 16, 128, 0x18);
-	printXY("[] + TRI          5200 Keypad 7", 16, 136, 0x18);
-	printXY("[] + O            5200 Keypad 8", 16, 144, 0x18);
-	printXY("[] + X            5200 Keypad 9", 16, 152, 0x18);
-	printXY("TRI               5200 Keypad 0", 16, 160, 0x18);
+	printXY("ESC             Options Menu", 16, 24, 0x18);
+	printXY("F1              5200 Start Button", 16, 32, 0x18);
+	printXY("F2              5200 Pause Button", 16, 40, 0x18);
+	printXY("F3              5200 Reset Button", 16, 48, 0x18);
+	printXY("Arrow Keys      5200 Joystick", 16, 56, 0x18);
+	printXY("Right Ctrl      5200 Fire 1", 16, 64, 0x18);
+	printXY("Right Shift     5200 Fire 2", 16, 72, 0x18);
+	printXY("F5              5200 * Button", 16, 80, 0x18);
+	printXY("F6              5200 # Button", 16, 88, 0x18);
+	printXY("E/S/D/F         Player 2 Joystick", 16, 96, 0x18);
+	printXY("Left Ctrl       Player 2 Fire 1", 16, 104, 0x18);
+	printXY("Left Shift      Player 2 Fire 2", 16, 112, 0x18);
+	printXY("F11             Show speed (FPS)", 16, 120, 0x18);
+	printXY("F12             Take a snapshot", 16, 128, 0x18);
 
-	printXY("Press [TRI] to exit.", 32, 212, 0x1C);
+	printXY("Press [Esc] to exit.", 32, 212, 0x1C);
 
 	//hline(pBuffer, 4, 315, 4, 0x0F);
 	//hline(pBuffer, 4, 315, 235, 0x0F);
