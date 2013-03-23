@@ -1,0 +1,31 @@
+1. Check Hold/Pause
+2. PSP ICON
+3. Centralise menu
+4. Stretchblit (Normal / Wide / Zoom)
+	- 320x204 to 480 x 272 - Horiz 1.5x, vert 1.333 times
+	- Repeat every 2nd horizontally, repeat every 3rd vertically
+	- Alt. use a 480x272 "stretch map"
+	- Alt. use a 480x272 "stretch map" addess array
+5. Controller: DPAD / Analog / Mouse Emulation
+6. Online Help page
+	- Keys
+	- SELECT - Options Menu
+	- DPAD / Analog - Joystick
+	- X - Fire 1
+	- O - Fire 2
+	- LSB	- *
+	- RSB	- #
+	- Start - Start
+	- Hold - Pause
+	- [] + Up 	- Keypad 1
+	- [] + Right	- Keypad 2
+	- [] + Down	- Keypad 3
+	- [] + Left	- Keypad 4
+	- [] + LSB	- Keypad 5
+	- [] + RSB	- Keypad 6
+	- [] + TRI	- Keypad 7
+	- [] + O	- Keypad 8
+	- [] + X	- Keypad 9
+	- TRI		- Keypad 0
+
+
