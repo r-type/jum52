@@ -73,7 +73,7 @@
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
-    <Library Include="..\..\SDL-1.2.13\lib\SDL.lib" />
-    <Library Include="..\..\SDL-1.2.13\lib\SDLmain.lib" />
+    <Library Include="..\..\..\SDL-1.2.13\lib\SDL.lib" />
+    <Library Include="..\..\..\SDL-1.2.13\lib\SDLmain.lib" />
   </ItemGroup>
 </Project>

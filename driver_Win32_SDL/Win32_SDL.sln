@@ -1,6 +1,6 @@
 Microsoft Visual Studio Solution File, Format Version 11.00
 # Visual C++ Express 2010
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Jum52_Win32", "Win32_SDL.vcxproj", "{1F064020-3D81-F826-D4AB-F0D4F41A4DEB}"
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Jum52_Win32", "Win32_SDL.vcxproj", "{2CE527C6-D519-8C63-686C-A4776D3601B2}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -8,10 +8,10 @@ Global
 		Release|Win32 = Release|Win32
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{1F064020-3D81-F826-D4AB-F0D4F41A4DEB}.Debug|Win32.ActiveCfg = Debug|Win32
-		{1F064020-3D81-F826-D4AB-F0D4F41A4DEB}.Debug|Win32.Build.0 = Debug|Win32
-		{1F064020-3D81-F826-D4AB-F0D4F41A4DEB}.Release|Win32.ActiveCfg = Release|Win32
-		{1F064020-3D81-F826-D4AB-F0D4F41A4DEB}.Release|Win32.Build.0 = Release|Win32
+		{2CE527C6-D519-8C63-686C-A4776D3601B2}.Debug|Win32.ActiveCfg = Debug|Win32
+		{2CE527C6-D519-8C63-686C-A4776D3601B2}.Debug|Win32.Build.0 = Debug|Win32
+		{2CE527C6-D519-8C63-686C-A4776D3601B2}.Release|Win32.ActiveCfg = Release|Win32
+		{2CE527C6-D519-8C63-686C-A4776D3601B2}.Release|Win32.Build.0 = Release|Win32
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
