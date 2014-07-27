@@ -487,7 +487,7 @@ void HostBlitVideo(void) {
     // copy 5200 buffer (gfxdest) to SDL buffer
 	// NB: only copy 320x240 from gfxdest to buffer
 	pScr = (uint8 *)pBuffer->pixels;
-	if (4 == options.scale)
+	if (4 == options.scale && !options.debugmode)
 		{
 		// 4x copy
 		for(y=0; y<240; y++)
@@ -505,7 +505,7 @@ void HostBlitVideo(void) {
 				}
 			}
 		}
-	else if (3 == options.scale)
+	else if (3 == options.scale && !options.debugmode)
 		{
 		// 3x copy
 		for(y=0; y<240; y++)
@@ -548,19 +548,26 @@ void HostBlitVideo(void) {
 				{
 				*pScr++ = *pLine++;
 				}
+			// correct pitch if in debugger mode (screen twice as wide)
+			if (1 == options.debugmode)
+				pScr += 320;
 			}
 		}
 
 #if defined(VOICE_DEBUG)
-	sprintf(s, "%d se's", numSampleEvents[0]);
-	printXY(s, 8, 0, 0x0F);
-
-	//for(x=0; x<320; x++) 
-	//	vline(pBuffer, x, 128, 255 - snd[x*3], 0x0f);
-	if (gAudioStream)
+	if (1 == options.debugmode)
 		{
-		for(x=0; x<735; x++) 
-			vline(pBuffer, x, 128, 255 - gAudioStream[x], 0x0f);
+		sprintf(s, "%d se's", numSampleEvents[0]);
+		printXY(s, 8, 0, 0x0F);
+
+		//for(x=0; x<320; x++) 
+		//	vline(pBuffer, x, 128, 255 - snd[x*3], 0x0f);
+		if (gAudioStream)
+			{
+			hline(pBuffer, 0, 319, 128, 0x0a);
+			for(x=0; x<735; x++) 
+				vline(pBuffer, x >> 1, 128, 255 - gAudioStream[x], 0x0f);
+			}
 		}
 #endif
 
@@ -1055,7 +1062,7 @@ void HostProcessSoundBuffer(void) {
 //	char s[256];
 
 	// update buffer with new data
-    if(options.audio) 
+	if(options.audio) 
 		Pokey_process(snd, snd_buf_size);
 
 	// render "voice" buffer if necessary
@@ -1828,11 +1835,18 @@ int monitor(void)
 		// quit
 		if(ccmd == 'q') strcpy(mystring, "quit");
 
-		// run n cycles
+		// RESET
 		if(ccmd == 'R') {
-			getstring("Enter address to run from:");
+			// TEST - RESET
+			Jum52_Reset();
+		}
+
+		// run from addr
+		if(ccmd == 'J') {
+			getstring("Enter address to jump to:");
 			n = sscanf(string, "%x", &new_addr);
-			exec6502debug(new_addr);
+			PC = new_addr;
+			//exec6502debug(new_addr);
 		}
 		// run To addr (n is watchdog)
 		if(ccmd == 'T') {

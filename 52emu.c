@@ -258,7 +258,9 @@ uint8 GTIAread(uint16 addr)
 #ifdef DEBUG
 		fprintf(stderr, "GTIA read of CONSOL\n");
 #endif
-        return memory5200[CONSOL];       // JH 28/1/2002
+        //return memory5200[CONSOL];       // JH 28/1/2002
+		// JH 24/7/2014 - to handle code ported from A8 
+		return 0xF;
 		break;
 	}
 	
@@ -1196,51 +1198,45 @@ int LoadConfigFile(void)
 		makeLowerCase(value);					// convert to lowercase
 
 		// try match it and apply it if we get a match
-		if(0 == strcmp(name, "videomode"))
+		if (0 == strcmp(name, "videomode"))
 			{
 			// default is ntsc
 			if(0 == strcmp(value, "pal"))
 				options.videomode = PAL;
-			continue;
 			}
-		if(0 == strcmp(name, "debug"))
+		else if (0 == strcmp(name, "debug"))
 			{
 			// default is 0
 			if(0 == strcmp(value, "yes"))
 				options.debugmode = 1;
-			continue;
 			}
-		if(0 == strcmp(name, "audio"))
+		else if (0 == strcmp(name, "audio"))
 			{
 			// default is 1
 			if(0 == strcmp(value, "no"))
 				options.audio = 0;
-			continue;
 			}
-		if(0 == strcmp(name, "voice"))
+		else if (0 == strcmp(name, "voice"))
 			{
 			// default is 1
 			if(0 == strcmp(value, "no"))
 				options.voice = 0;
-			continue;
 			}
-		if(0 == strcmp(name, "volume"))
+		else if (0 == strcmp(name, "volume"))
 			{
 			options.volume = atoi(value);
 			if(options.volume > 100)
 				options.volume = 100;
 			else if(options.volume < 0)
 				options.volume = 0;
-			continue;
 			}
-		if(0 == strcmp(name, "fullscreen"))
+		else if (0 == strcmp(name, "fullscreen"))
 			{
 			// default is 0
 			if(0 == strcmp(value, "yes"))
 				options.fullscreen = 1;
-			continue;
 			}
-		if(0 == strcmp(name, "controller"))
+		else if (0 == strcmp(name, "controller"))
 			{
 			// defaults to keyboard (0)
 			if(0 == strcmp(value, "joystick"))
@@ -1249,52 +1245,49 @@ int LoadConfigFile(void)
 				options.controller = 2;
 			else if(0 == strcmp(value, "mousepaddle"))
 				options.controller = 3;
-			continue;
 			}
-		if(0 == strcmp(name, "controlmode"))
+		else if (0 == strcmp(name, "controlmode"))
 			{
 			// defaults to normal (0)
 			if(0 == strcmp(value, "robotron"))
 				options.controlmode = 1;
 			else if(0 == strcmp(value, "pengo"))
 				options.controlmode = 2;
-			continue;
 			}
-		if(0 == strcmp(name, "palette"))
+		else if (0 == strcmp(name, "palette"))
 			{
 			loadPalette(value);
-			continue;
 			}
-		if(0 == strcmp(name, "scale"))
+		else if (0 == strcmp(name, "scale"))
 			{
-			options.scale = atoi(value);
-			if(options.scale > 4)
-				options.scale = 4;
-			else if(options.scale < 1)
-				options.scale = 1;
-			continue;
+			// JH 2014-07-27 - Only if not in debugger mode
+			if (0 == options.debugmode)
+				{
+				options.scale = atoi(value);
+				if(options.scale > 4)
+					options.scale = 4;
+				else if(options.scale < 1)
+					options.scale = 1;
+				}
 			}
-		if(0 == strcmp(name, "slow"))
+		else if (0 == strcmp(name, "slow"))
 			{
 			// defaults to 0
 			if(0 == strcmp(value, "yes"))
 				options.slow = 1;
-			continue;
 			}
-		if(0 == strcmp(name, "map"))
+		else if (0 == strcmp(name, "map"))
 			{
 			// 16k rom mapping
 			addRomMapping(value, value[9]-48, value+11);
-			continue;
 			}
-		if(0 == strcmp(name, "keymap"))
+		else if (0 == strcmp(name, "keymap"))
 			{
 			// keyboard remapping
 			int input = 0;
 			int output = 0;
 			sscanf(value, "%d,%d", &input, &output);
 			addKeyMapping((unsigned short)input, (unsigned short)output);
-			continue;
 			}
 		}
 

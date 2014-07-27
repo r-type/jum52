@@ -55,6 +55,11 @@ Code changes file.
 25 January 2011
    - Fixed bug reading jum52.cfg (only every 2nd line was being read)
 
+27 July 2014
+   - Added debugger "Jump to address" command (J)
+   - Changed debugger "R" command to reset 6502
+   - Reading GTIA CONSOL register now returns 0xF (for compatibility
+     with software ported from Atari 8-bit computers).
 
  
 

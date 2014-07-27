@@ -216,6 +216,8 @@ void initANTIC(void)
     // init IRQ's
     irqst = 0xFF;                // init to no IRQ state
     irqen = 0x0;                // no IRQ's enabled
+	antic.nmien = 0;
+	antic.nmist = 0;
 	
 }
 
