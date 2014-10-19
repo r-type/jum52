@@ -231,29 +231,29 @@ $21A POKEY Timer 4 IRQ vector
 	BlitBuffer(0, 240);
 }
 
-void printhelp(void) {
+void printhelp(int x, int y) {
 	clrEmuScreen(0x00);
-	printXY("AVAILABLE COMMANDS:", 0, 0, 13);
-	printXY("<Enter>     Disassemble at current address.", 16, 8, 13);
-	printXY("s           Step thru current instruction.", 16, 16, 13);
-	printXY("S           Step thru current scanline.", 16, 24, 13);
-	printXY("f           run till next frame / VBI", 16, 32, 13);
-	printXY("r           Run / Resume", 16, 40, 13);
-	printXY("D <addr>    disassemble address <addr>", 16, 48, 13);
-	printXY("v           View hexdump at current address", 16, 56, 13);
-	printXY("V <addr>    View hexdump at address <addr>", 16, 64, 13);
-	printXY("l           View display list data", 16, 72, 13);
-	printXY("c           View character set", 16, 80, 13);
-	printXY("p           View player/missile data", 16, 88, 13);
-	printXY("1           Show collision registers", 16, 96, 13);
-	printXY("i           List interrupt vectors", 16, 104, 13);
-	printXY("T <addr>    run to <addr>", 16, 112, 13);
-	printXY("K           trigger Keyboard interrupt", 16, 120, 13);
-	printXY("B           trigger Break interrupt", 16, 128, 13);
-	printXY("0           Set TRIG0 to 0", 16, 136, 13);
-	printXY("Q or quit   Quit / Exit", 16, 144, 13);
-	printXY("Press any key to continue...", 0, 230, 15);
-	BlitBuffer(0, 240);
+	printXY("AVAILABLE COMMANDS:", 0, 0, 31);
+	printXY("<Enter>   Disassemble at current address.", 0, 8, 29);
+	printXY("s         Step thru current instruction.", 0, 16, 29);
+	printXY("S         Step thru current scanline.", 0, 24, 29);
+	printXY("f         run till next frame / VBI", 0, 32, 29);
+	printXY("r         Run / Resume", 0, 40, 29);
+	printXY("D <addr>  disassemble address <addr>", 0, 48, 29);
+	printXY("v         View hexdump at current address", 0, 56, 29);
+	printXY("V <addr>  View hexdump at address <addr>", 0, 64, 29);
+	printXY("l         View display list data", 0, 72, 29);
+	printXY("c         View character set", 0, 80, 29);
+	printXY("p         View player/missile data", 0, 88, 29);
+	printXY("1         Show collision registers", 0, 96, 29);
+	printXY("i         List interrupt vectors", 0, 104, 29);
+	printXY("T <addr>  run To <addr>", 0, 112, 29);
+	printXY("K         trigger Keyboard interrupt", 0, 120, 29);
+	printXY("B         trigger Break interrupt", 0, 128, 29);
+	printXY("0         Set TRIG0 to 0", 0, 136, 29);
+	printXY("Q or quit Quit / Exit", 0, 144, 29);
+	//printXY("Press any key to continue...", 0, 230, 29);
+	BlitBuffer(x, y);
 }
 
 

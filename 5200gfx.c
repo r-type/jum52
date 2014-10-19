@@ -392,7 +392,7 @@ stolencycles = 0;
 		if(cmd & 0x80) {
 			dli = TRUE;			// dli for next mode line
 			// set next line for DLI interrupt
-			next_dli = vcount + modelines[cmd & 0x0F] - 1;
+			next_dli = vcount + modelines[current_mode] - 1;
 			// check for case cmd = 0 (blank lines)
 			if(current_mode == 0) {
 				next_dli = vcount + ((cmd & 0x70) >> 4);
@@ -403,27 +403,25 @@ stolencycles = 0;
 			//fprintf(stderr, "dli set at line %d with cmd %X\n", scanline, cmd);
 		}
 		// check for Horiz Scroll bit set
-		if(cmd & 0x10) {
+		if (cmd & 0x10 && current_mode > 1)
 			hscroll = 1;
-		}
-		else hscroll = 0;
+		else
+			hscroll = 0;
 		
 		// check for Vertical Scroll On/Off
 		sl = 0;
 		scrolltrig = 0;
-		if(cmd & 0x20) {
-			if(cmd & 0x0F) {			// check not mode 0
-				if(vscroll == 0) {
-					scrolltrig = 1;			// trigger vscroll start
-					vscroll = 1;
-					sl = memory5200[VSCROL] & 0x0F;
-					// adjust counter to next mode line
-					next_mode_line -= sl;
-				}
+		if (cmd & 0x20 && current_mode > 1) {
+			if (vscroll == 0) {
+				scrolltrig = 1;			// trigger vscroll start
+				vscroll = 1;
+				sl = memory5200[VSCROL] & 0x0F;
+				// adjust counter to next mode line
+				next_mode_line -= sl;
 			}
 		}
 		else {
-			if(vscroll == 1) {
+			if (vscroll == 1) {
 				scrolltrig = 2;			// trigger vscroll end
 				vscroll = 0;
 				// adjust counter to next mode line
@@ -432,12 +430,13 @@ stolencycles = 0;
 				// adjust scanline for next DLI
 				next_dli = next_mode_line - 1;
 				// if single-line mode, DLI will be postponed one line (???)
-				if(next_dli == vcount) next_dli = vcount + 1;
+				if(next_dli == vcount)
+					next_dli = vcount + 1;
 			}
 		}
 		
 		// setup according to mode
-		switch(current_mode) {		// get mode/cmd nibble
+		switch (current_mode) {		// get mode/cmd nibble
 		case 0	:	// blank lines
 			next_mode_line = vcount + ((cmd & 0x70) >> 4) + 1;
 			break;

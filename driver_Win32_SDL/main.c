@@ -1688,7 +1688,7 @@ int monitor(void)
 
 	if(options.audio) SDL_PauseAudio(1);
 
-	printhelp();
+	printhelp(320, 240);
 	while(strcmp(mystring, "quit") != 0) {
 		
 		rtc5200 = (memory5200[RTC_HI] << 8) + memory5200[RTC_LO];
@@ -1787,9 +1787,13 @@ int monitor(void)
 		// single step
 		if(ccmd == 's') {
 			exec6502debug(1);
+			HostBlitVideo();
 		}
         // hundred step (run 100 cycles)
-        if(ccmd == 'S') exec6502debug(100);
+        if(ccmd == 'S') {
+			exec6502debug(100);
+			HostBlitVideo();
+		}
 		// run (resume)
 		if(ccmd == 'r') {
 			break;
@@ -1802,7 +1806,7 @@ int monitor(void)
 		}
 		// help command
 		if(ccmd == 'h') {
-			printhelp();
+			printhelp(0, 240);
 			getkey();
 		}
 		// check for v command

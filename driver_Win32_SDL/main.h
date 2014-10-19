@@ -21,7 +21,7 @@ extern int bytes_per_line;
 extern int framesdrawn;
 extern int stolencycles;               // no of cycles stolen in this horiz line
 
-void printhelp(void);
+void printhelp(int x, int y);
 unsigned int disassemble(uint16 addr1, uint16 addr2);
 void hexview(uint16 viewaddr);
 void display_charset(void);
