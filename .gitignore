@@ -63,6 +63,7 @@ local.properties
 .builds
 *.dotCover
 *.tlog
+*.o
 
 ## TODO: If you have NuGet Package Restore enabled, uncomment this
 #packages/

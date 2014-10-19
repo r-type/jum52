@@ -43,7 +43,7 @@ SDL_Surface *pBuffer;
 SDL_AudioSpec reqSpec;
 SDL_AudioSpec givenSpec;
 SDL_AudioSpec *usedSpec;
-#define AUDIOBUFLENGTH	4096
+#define AUDIOBUFLENGTH	736		//4096
 uint8 *audioBuffer = NULL;				// audio ring buffer (pokey output buffer and SDL audio buffer have different lengths)
 
 SDL_Joystick *pJoystick;
@@ -60,7 +60,7 @@ int debugging = 0;
 
 // 48kHz sample rate (see global.h)
 // we need 800 samples for NTSC, 960 for PAL
-unsigned short audiobuffer16[2000];
+//unsigned short audiobuffer16[2000];
 
 int controller2connected = 0;
 
@@ -264,24 +264,19 @@ void fillsoundbuffer(void *userdata, Uint8 *stream, int len){
 	int vol64;
 
 	vol64 = (options.volume * 63) / 100;
-
 /*
+	// U8 version
 	for(i=0; i<len; i++)
 	{
 		// TODO: filter?
-		stream[i] = (vol64 * snd[i]) >> 6;
+		stream[i] = (vol64 * audioBuffer[i]) >> 6;
 	}
 */
-/*
-	// update buffer with new data
-	if(options.audio)
-		Pokey_process(audioBuffer, len);
-
-	// render "voice" buffer if necessary
-	if(options.voice)
-		renderMixSampleEvents(audioBuffer, len);
-*/
+	// S16 version
 	// Copy from ring buffer
+	if (len > AUDIOBUFLENGTH)
+		len = AUDIOBUFLENGTH;	// safety
+		
 	for (i = 0; i < len; i++)
 		{
 		// NB: SDL sound buffer is in signed 16-bit format
@@ -289,13 +284,14 @@ void fillsoundbuffer(void *userdata, Uint8 *stream, int len){
 		//short value = vol64 * audioBuffer[i];
 		short value = audioBuffer[i];
 		value -= 128;
-		value *= 64;
+		value *= vol64;	//64;
 		stream[i*2] = value & 0xFF;
 		stream[i*2+1] = value >> 8;
 		//if (ringBufPlayPos == RINGBUFLENGTH)
 		//	ringBufPlayPos = 0;
 		}
 
+	//fprintf(stderr, "fillsoundbuffer: %d samples\n", len);
 
 }
 
@@ -393,13 +389,14 @@ int Init(void)
 	reqSpec.freq = 44100;
 	reqSpec.format = AUDIO_S16;		//AUDIO_S8;
 	reqSpec.channels = 1;
+	//reqSpec.silence = 128;
 /*
 	if(options.videomode == NTSC)
 		reqSpec.samples = 735;
 	else
 		reqSpec.samples = 882;		// PAL
 */
-	reqSpec.samples = 1024;			// SDL_OpeAudio() likes buffer len a power of 2 (esp for PSP)
+	reqSpec.samples = 735; //1024;			// SDL_OpeAudio() likes buffer len a power of 2 (esp for PSP)
 	reqSpec.callback = fillsoundbuffer;
 	reqSpec.userdata = NULL;
 	usedSpec = &givenSpec;
@@ -2212,6 +2209,10 @@ HostLog(text);
 	if (romdata)
 		free(romdata);
 */
+	// Clean up audio buffer
+	if (audioBuffer)
+		free(audioBuffer);
+
 	// quit SDL (else program hangs)
 	printf("Quitting SDL...\n");
 	SDL_Quit();
