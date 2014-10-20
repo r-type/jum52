@@ -1,10 +1,32 @@
-* NTSC / PAL switch
-* Implement Controller 2		*** DONE ***
-* Save/Load gamesave			*** DONE ***
+* remove PAL stuff
 * Autoswitch to analog mode
 * Fix non-working games
-
 
 * Trigger keypad keys using PS2/PSP analog controller
   (to better support Star Raiders and other "keypad" games)
   (controller mode "keypad")
+
+GUI fixes:
+- Allow esc from rom select screen
+- Allow more space for rom name in rom select screen
+- Show count of roms in rom select screen
+- Show folder name in rom select screen
+- Add "Options" submenu
+	- Volume
+	- Controller
+	- Control mode
+	- Scale
+	- Palette
+- Keys to change options while playing:
+	- Vol up/down/mute  (+/-/backspace ?)
+	- Toggle slow-mo (F8?)
+
+Sound fixes:
+- Record sound output and analyse in Audacity.
+- Investigate if sub-frame audio calcs are neccessary
+		- Log on which scanlines POKEY is written to (for multiple games)
+
+Other fixes:
+- More accurate palettes (NTSC palette, PAL palette)
+- Integrate with 
+
