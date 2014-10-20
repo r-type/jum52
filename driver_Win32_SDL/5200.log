@@ -4,14 +4,522 @@ Initialising Jum52...
 Reading config file 'jum52.cfg'...
 Loading palette file 'real.act'...
 Video mode: NTSC
-vid address: 19235104
+vid address: 11174144
 Videomode: 15  snd_buf_size: 735
+rom: Astro_Chase.BIN
 rom: Ballblazer (1984) (Atari-Lucasfilm Games).bin
+rom: Battlezone.BIN
+rom: Beamrider.BIN
 rom: Berzerk.BIN
+rom: Blueprint.BIN
+rom: Buck_Rogers.BIN
+rom: Centipede.BIN
+rom: Choplifter.BIN
+rom: Congo_Bongo.BIN
+rom: Countermeasure.BIN
+rom: DECATHLN.BIN
+rom: defender.bin
+rom: diagnost.bin
 rom: DIGDUG.BIN
 rom: Frogger.BIN
+rom: hello.bin
 rom: Hero.BIN
+rom: James_Bond.BIN
 rom: JUMPONG2.BIN
-Trying to load 'DIGDUG.BIN', crc32=0x6A687F9C
-Rom 'DIGDUG.BIN' loaded OK.
+rom: Jungle_Hunt.BIN
+rom: Keystone_Kapers.BIN
+rom: MRDOCAST.BIN
+rom: Qix.BIN
+rom: snoopy.bin
+rom: Zaxxon.BIN
+Trying to load 'Astro_Chase.BIN', crc32=0x4019ECEC
+Rom 'Astro_Chase.BIN' loaded OK.
+Executing 2000000000 CPU ticks...
+rom: Astro_Chase.BIN
+rom: Ballblazer (1984) (Atari-Lucasfilm Games).bin
+rom: Battlezone.BIN
+rom: Beamrider.BIN
+rom: Berzerk.BIN
+rom: Blueprint.BIN
+rom: Buck_Rogers.BIN
+rom: Centipede.BIN
+rom: Choplifter.BIN
+rom: Congo_Bongo.BIN
+rom: Countermeasure.BIN
+rom: DECATHLN.BIN
+rom: defender.bin
+rom: diagnost.bin
+rom: DIGDUG.BIN
+rom: Frogger.BIN
+rom: hello.bin
+rom: Hero.BIN
+rom: James_Bond.BIN
+rom: JUMPONG2.BIN
+rom: Jungle_Hunt.BIN
+rom: Keystone_Kapers.BIN
+rom: MRDOCAST.BIN
+rom: Qix.BIN
+rom: snoopy.bin
+rom: Zaxxon.BIN
+Trying to load 'Battlezone.BIN', crc32=0xB3B8E314
+Rom 'Battlezone.BIN' loaded OK.
+Executing 2000000000 CPU ticks...
+rom: Astro_Chase.BIN
+rom: Ballblazer (1984) (Atari-Lucasfilm Games).bin
+rom: Battlezone.BIN
+rom: Beamrider.BIN
+rom: Berzerk.BIN
+rom: Blueprint.BIN
+rom: Buck_Rogers.BIN
+rom: Centipede.BIN
+rom: Choplifter.BIN
+rom: Congo_Bongo.BIN
+rom: Countermeasure.BIN
+rom: DECATHLN.BIN
+rom: defender.bin
+rom: diagnost.bin
+rom: DIGDUG.BIN
+rom: Frogger.BIN
+rom: hello.bin
+rom: Hero.BIN
+rom: James_Bond.BIN
+rom: JUMPONG2.BIN
+rom: Jungle_Hunt.BIN
+rom: Keystone_Kapers.BIN
+rom: MRDOCAST.BIN
+rom: Qix.BIN
+rom: snoopy.bin
+rom: Zaxxon.BIN
+Trying to load 'Beamrider.BIN', crc32=0x71FA5A79
+Rom 'Beamrider.BIN' loaded OK.
+Executing 2000000000 CPU ticks...
+rom: Astro_Chase.BIN
+rom: Ballblazer (1984) (Atari-Lucasfilm Games).bin
+rom: Battlezone.BIN
+rom: Beamrider.BIN
+rom: Berzerk.BIN
+rom: Blueprint.BIN
+rom: Buck_Rogers.BIN
+rom: Centipede.BIN
+rom: Choplifter.BIN
+rom: Congo_Bongo.BIN
+rom: Countermeasure.BIN
+rom: DECATHLN.BIN
+rom: defender.bin
+rom: diagnost.bin
+rom: DIGDUG.BIN
+rom: Frogger.BIN
+rom: hello.bin
+rom: Hero.BIN
+rom: James_Bond.BIN
+rom: JUMPONG2.BIN
+rom: Jungle_Hunt.BIN
+rom: Keystone_Kapers.BIN
+rom: MRDOCAST.BIN
+rom: Qix.BIN
+rom: snoopy.bin
+rom: Zaxxon.BIN
+Trying to load 'Blueprint.BIN', crc32=0x613B9379
+Rom 'Blueprint.BIN' loaded OK.
+Executing 2000000000 CPU ticks...
+rom: Astro_Chase.BIN
+rom: Ballblazer (1984) (Atari-Lucasfilm Games).bin
+rom: Battlezone.BIN
+rom: Beamrider.BIN
+rom: Berzerk.BIN
+rom: Blueprint.BIN
+rom: Buck_Rogers.BIN
+rom: Centipede.BIN
+rom: Choplifter.BIN
+rom: Congo_Bongo.BIN
+rom: Countermeasure.BIN
+rom: DECATHLN.BIN
+rom: defender.bin
+rom: diagnost.bin
+rom: DIGDUG.BIN
+rom: Frogger.BIN
+rom: hello.bin
+rom: Hero.BIN
+rom: James_Bond.BIN
+rom: JUMPONG2.BIN
+rom: Jungle_Hunt.BIN
+rom: Keystone_Kapers.BIN
+rom: MRDOCAST.BIN
+rom: Qix.BIN
+rom: snoopy.bin
+rom: Zaxxon.BIN
+Trying to load 'Buck_Rogers.BIN', crc32=0x20DF4927
+Rom 'Buck_Rogers.BIN' loaded OK.
+Executing 2000000000 CPU ticks...
+Executing 2000000000 CPU ticks...
+rom: Astro_Chase.BIN
+rom: Ballblazer (1984) (Atari-Lucasfilm Games).bin
+rom: Battlezone.BIN
+rom: Beamrider.BIN
+rom: Berzerk.BIN
+rom: Blueprint.BIN
+rom: Buck_Rogers.BIN
+rom: Centipede.BIN
+rom: Choplifter.BIN
+rom: Congo_Bongo.BIN
+rom: Countermeasure.BIN
+rom: DECATHLN.BIN
+rom: defender.bin
+rom: diagnost.bin
+rom: DIGDUG.BIN
+rom: Frogger.BIN
+rom: hello.bin
+rom: Hero.BIN
+rom: James_Bond.BIN
+rom: JUMPONG2.BIN
+rom: Jungle_Hunt.BIN
+rom: Keystone_Kapers.BIN
+rom: MRDOCAST.BIN
+rom: Qix.BIN
+rom: snoopy.bin
+rom: Zaxxon.BIN
+Trying to load 'Centipede.BIN', crc32=0x536A70FE
+Rom 'Centipede.BIN' loaded OK.
+Executing 2000000000 CPU ticks...
+rom: Astro_Chase.BIN
+rom: Ballblazer (1984) (Atari-Lucasfilm Games).bin
+rom: Battlezone.BIN
+rom: Beamrider.BIN
+rom: Berzerk.BIN
+rom: Blueprint.BIN
+rom: Buck_Rogers.BIN
+rom: Centipede.BIN
+rom: Choplifter.BIN
+rom: Congo_Bongo.BIN
+rom: Countermeasure.BIN
+rom: DECATHLN.BIN
+rom: defender.bin
+rom: diagnost.bin
+rom: DIGDUG.BIN
+rom: Frogger.BIN
+rom: hello.bin
+rom: Hero.BIN
+rom: James_Bond.BIN
+rom: JUMPONG2.BIN
+rom: Jungle_Hunt.BIN
+rom: Keystone_Kapers.BIN
+rom: MRDOCAST.BIN
+rom: Qix.BIN
+rom: snoopy.bin
+rom: Zaxxon.BIN
+Trying to load 'Choplifter.BIN', crc32=0x0851D277
+Rom 'Choplifter.BIN' loaded OK.
+Executing 2000000000 CPU ticks...
+rom: Astro_Chase.BIN
+rom: Ballblazer (1984) (Atari-Lucasfilm Games).bin
+rom: Battlezone.BIN
+rom: Beamrider.BIN
+rom: Berzerk.BIN
+rom: Blueprint.BIN
+rom: Buck_Rogers.BIN
+rom: Centipede.BIN
+rom: Choplifter.BIN
+rom: Congo_Bongo.BIN
+rom: Countermeasure.BIN
+rom: DECATHLN.BIN
+rom: defender.bin
+rom: diagnost.bin
+rom: DIGDUG.BIN
+rom: Frogger.BIN
+rom: hello.bin
+rom: Hero.BIN
+rom: James_Bond.BIN
+rom: JUMPONG2.BIN
+rom: Jungle_Hunt.BIN
+rom: Keystone_Kapers.BIN
+rom: MRDOCAST.BIN
+rom: Qix.BIN
+rom: snoopy.bin
+rom: Zaxxon.BIN
+Trying to load 'Congo_Bongo.BIN', crc32=0xF1F42BBD
+Rom 'Congo_Bongo.BIN' loaded OK.
+Executing 2000000000 CPU ticks...
+rom: Astro_Chase.BIN
+rom: Ballblazer (1984) (Atari-Lucasfilm Games).bin
+rom: Battlezone.BIN
+rom: Beamrider.BIN
+rom: Berzerk.BIN
+rom: Blueprint.BIN
+rom: Buck_Rogers.BIN
+rom: Centipede.BIN
+rom: Choplifter.BIN
+rom: Congo_Bongo.BIN
+rom: Countermeasure.BIN
+rom: DECATHLN.BIN
+rom: defender.bin
+rom: diagnost.bin
+rom: DIGDUG.BIN
+rom: Frogger.BIN
+rom: hello.bin
+rom: Hero.BIN
+rom: James_Bond.BIN
+rom: JUMPONG2.BIN
+rom: Jungle_Hunt.BIN
+rom: Keystone_Kapers.BIN
+rom: MRDOCAST.BIN
+rom: Qix.BIN
+rom: snoopy.bin
+rom: Zaxxon.BIN
+Trying to load 'Countermeasure.BIN', crc32=0xFD541C80
+Rom 'Countermeasure.BIN' loaded OK.
+Executing 2000000000 CPU ticks...
+rom: Astro_Chase.BIN
+rom: Ballblazer (1984) (Atari-Lucasfilm Games).bin
+rom: Battlezone.BIN
+rom: Beamrider.BIN
+rom: Berzerk.BIN
+rom: Blueprint.BIN
+rom: Buck_Rogers.BIN
+rom: Centipede.BIN
+rom: Choplifter.BIN
+rom: Congo_Bongo.BIN
+rom: Countermeasure.BIN
+rom: DECATHLN.BIN
+rom: defender.bin
+rom: diagnost.bin
+rom: DIGDUG.BIN
+rom: Frogger.BIN
+rom: hello.bin
+rom: Hero.BIN
+rom: James_Bond.BIN
+rom: JUMPONG2.BIN
+rom: Jungle_Hunt.BIN
+rom: Keystone_Kapers.BIN
+rom: MRDOCAST.BIN
+rom: Qix.BIN
+rom: snoopy.bin
+rom: Zaxxon.BIN
+Trying to load 'DECATHLN.BIN', crc32=0x1F9ED238
+Rom 'DECATHLN.BIN' loaded OK.
+Executing 2000000000 CPU ticks...
+rom: Astro_Chase.BIN
+rom: Ballblazer (1984) (Atari-Lucasfilm Games).bin
+rom: Battlezone.BIN
+rom: Beamrider.BIN
+rom: Berzerk.BIN
+rom: Blueprint.BIN
+rom: Buck_Rogers.BIN
+rom: Centipede.BIN
+rom: Choplifter.BIN
+rom: Congo_Bongo.BIN
+rom: Countermeasure.BIN
+rom: DECATHLN.BIN
+rom: defender.bin
+rom: diagnost.bin
+rom: DIGDUG.BIN
+rom: Frogger.BIN
+rom: hello.bin
+rom: Hero.BIN
+rom: James_Bond.BIN
+rom: JUMPONG2.BIN
+rom: Jungle_Hunt.BIN
+rom: Keystone_Kapers.BIN
+rom: MRDOCAST.BIN
+rom: Qix.BIN
+rom: snoopy.bin
+rom: Zaxxon.BIN
+Trying to load 'defender.bin', crc32=0xEBAD58BA
+Rom 'defender.bin' loaded OK.
+Executing 2000000000 CPU ticks...
+rom: Astro_Chase.BIN
+rom: Ballblazer (1984) (Atari-Lucasfilm Games).bin
+rom: Battlezone.BIN
+rom: Beamrider.BIN
+rom: Berzerk.BIN
+rom: Blueprint.BIN
+rom: Buck_Rogers.BIN
+rom: Centipede.BIN
+rom: Choplifter.BIN
+rom: Congo_Bongo.BIN
+rom: Countermeasure.BIN
+rom: DECATHLN.BIN
+rom: defender.bin
+rom: diagnost.bin
+rom: DIGDUG.BIN
+rom: Frogger.BIN
+rom: hello.bin
+rom: Hero.BIN
+rom: James_Bond.BIN
+rom: JUMPONG2.BIN
+rom: Jungle_Hunt.BIN
+rom: Keystone_Kapers.BIN
+rom: MRDOCAST.BIN
+rom: Qix.BIN
+rom: snoopy.bin
+rom: Zaxxon.BIN
+Trying to load 'James_Bond.BIN', crc32=0xD9AE4518
+Rom 'James_Bond.BIN' loaded OK.
+Executing 2000000000 CPU ticks...
+rom: Astro_Chase.BIN
+rom: Ballblazer (1984) (Atari-Lucasfilm Games).bin
+rom: Battlezone.BIN
+rom: Beamrider.BIN
+rom: Berzerk.BIN
+rom: Blueprint.BIN
+rom: Buck_Rogers.BIN
+rom: Centipede.BIN
+rom: Choplifter.BIN
+rom: Congo_Bongo.BIN
+rom: Countermeasure.BIN
+rom: DECATHLN.BIN
+rom: defender.bin
+rom: diagnost.bin
+rom: DIGDUG.BIN
+rom: Frogger.BIN
+rom: hello.bin
+rom: Hero.BIN
+rom: James_Bond.BIN
+rom: JUMPONG2.BIN
+rom: Jungle_Hunt.BIN
+rom: Keystone_Kapers.BIN
+rom: MRDOCAST.BIN
+rom: Qix.BIN
+rom: snoopy.bin
+rom: Zaxxon.BIN
+Trying to load 'Jungle_Hunt.BIN', crc32=0x2C676662
+Rom 'Jungle_Hunt.BIN' loaded OK.
+Executing 2000000000 CPU ticks...
+rom: Astro_Chase.BIN
+rom: Ballblazer (1984) (Atari-Lucasfilm Games).bin
+rom: Battlezone.BIN
+rom: Beamrider.BIN
+rom: Berzerk.BIN
+rom: Blueprint.BIN
+rom: Buck_Rogers.BIN
+rom: Centipede.BIN
+rom: Choplifter.BIN
+rom: Congo_Bongo.BIN
+rom: Countermeasure.BIN
+rom: DECATHLN.BIN
+rom: defender.bin
+rom: diagnost.bin
+rom: DIGDUG.BIN
+rom: Frogger.BIN
+rom: hello.bin
+rom: Hero.BIN
+rom: James_Bond.BIN
+rom: JUMPONG2.BIN
+rom: Jungle_Hunt.BIN
+rom: Keystone_Kapers.BIN
+rom: MRDOCAST.BIN
+rom: Qix.BIN
+rom: snoopy.bin
+rom: Zaxxon.BIN
+Trying to load 'Keystone_Kapers.BIN', crc32=0xE905ED94
+Rom 'Keystone_Kapers.BIN' loaded OK.
+Executing 2000000000 CPU ticks...
+rom: Astro_Chase.BIN
+rom: Ballblazer (1984) (Atari-Lucasfilm Games).bin
+rom: Battlezone.BIN
+rom: Beamrider.BIN
+rom: Berzerk.BIN
+rom: Blueprint.BIN
+rom: Buck_Rogers.BIN
+rom: Centipede.BIN
+rom: Choplifter.BIN
+rom: Congo_Bongo.BIN
+rom: Countermeasure.BIN
+rom: DECATHLN.BIN
+rom: defender.bin
+rom: diagnost.bin
+rom: DIGDUG.BIN
+rom: Frogger.BIN
+rom: hello.bin
+rom: Hero.BIN
+rom: James_Bond.BIN
+rom: JUMPONG2.BIN
+rom: Jungle_Hunt.BIN
+rom: Keystone_Kapers.BIN
+rom: MRDOCAST.BIN
+rom: Qix.BIN
+rom: snoopy.bin
+rom: Zaxxon.BIN
+Trying to load 'Qix.BIN', crc32=0x85F750D4
+Rom 'Qix.BIN' loaded OK.
+Executing 2000000000 CPU ticks...
+rom: Astro_Chase.BIN
+rom: Ballblazer (1984) (Atari-Lucasfilm Games).bin
+rom: Battlezone.BIN
+rom: Beamrider.BIN
+rom: Berzerk.BIN
+rom: Blueprint.BIN
+rom: Buck_Rogers.BIN
+rom: Centipede.BIN
+rom: Choplifter.BIN
+rom: Congo_Bongo.BIN
+rom: Countermeasure.BIN
+rom: DECATHLN.BIN
+rom: defender.bin
+rom: diagnost.bin
+rom: DIGDUG.BIN
+rom: Frogger.BIN
+rom: hello.bin
+rom: Hero.BIN
+rom: James_Bond.BIN
+rom: JUMPONG2.BIN
+rom: Jungle_Hunt.BIN
+rom: Keystone_Kapers.BIN
+rom: MRDOCAST.BIN
+rom: Qix.BIN
+rom: snoopy.bin
+rom: Zaxxon.BIN
+Could not load snoopy.bin !rom: Astro_Chase.BIN
+rom: Ballblazer (1984) (Atari-Lucasfilm Games).bin
+rom: Battlezone.BIN
+rom: Beamrider.BIN
+rom: Berzerk.BIN
+rom: Blueprint.BIN
+rom: Buck_Rogers.BIN
+rom: Centipede.BIN
+rom: Choplifter.BIN
+rom: Congo_Bongo.BIN
+rom: Countermeasure.BIN
+rom: DECATHLN.BIN
+rom: defender.bin
+rom: diagnost.bin
+rom: DIGDUG.BIN
+rom: Frogger.BIN
+rom: hello.bin
+rom: Hero.BIN
+rom: James_Bond.BIN
+rom: JUMPONG2.BIN
+rom: Jungle_Hunt.BIN
+rom: Keystone_Kapers.BIN
+rom: MRDOCAST.BIN
+rom: Qix.BIN
+rom: snoopy.bin
+rom: Zaxxon.BIN
+Could not load snoopy.bin !rom: Astro_Chase.BIN
+rom: Ballblazer (1984) (Atari-Lucasfilm Games).bin
+rom: Battlezone.BIN
+rom: Beamrider.BIN
+rom: Berzerk.BIN
+rom: Blueprint.BIN
+rom: Buck_Rogers.BIN
+rom: Centipede.BIN
+rom: Choplifter.BIN
+rom: Congo_Bongo.BIN
+rom: Countermeasure.BIN
+rom: DECATHLN.BIN
+rom: defender.bin
+rom: diagnost.bin
+rom: DIGDUG.BIN
+rom: Frogger.BIN
+rom: hello.bin
+rom: Hero.BIN
+rom: James_Bond.BIN
+rom: JUMPONG2.BIN
+rom: Jungle_Hunt.BIN
+rom: Keystone_Kapers.BIN
+rom: MRDOCAST.BIN
+rom: Qix.BIN
+rom: snoopy.bin
+rom: Zaxxon.BIN
+Trying to load 'Zaxxon.BIN', crc32=0x741746D1
+Rom 'Zaxxon.BIN' loaded OK.
 Executing 2000000000 CPU ticks...

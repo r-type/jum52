@@ -7,8 +7,8 @@
   (controller mode "keypad")
 
 GUI fixes:
-- Allow esc from rom select screen
-- Allow more space for rom name in rom select screen
+- [DONE] Allow esc from rom select screen
+- [DONE] Allow more space for rom name in rom select screen
 - Show count of roms in rom select screen
 - Show folder name in rom select screen
 - Add "Options" submenu

@@ -85,12 +85,11 @@ int     jprintf_y = 8;
 struct ROMdata *romdata;
 int num_roms = 0;
 int selection = 0;
+static char *filename;					// currently selected filename
 int frame_position;
 int frame_selection = 0;
 int currentromindex = 0;
-
 int is_robotron_mode = 1;
-
 char string[256];
 char rompath[260];
 
@@ -579,6 +578,7 @@ void HostBlitVideo(void) {
 	// sync, update and flip buffers here
 	while(frameStart >= SDL_GetTicks()) {
 		// do idle loop stuff here	
+		SDL_Delay(1);
 	}
 	now = SDL_GetTicks();
 
@@ -665,7 +665,7 @@ uint8 cook_joypos(short value) {
 // Also, allow OS to grab  CPU to process it's own events here if neccesary
 void HostDoEvents(void) {
 	int mouse_dx, mouse_dy;
-	int selected;
+	//int selected;
 	char s[256];
 	SDL_Event event ;
 	unsigned short mappedKeyCode = 0;
@@ -830,7 +830,7 @@ void HostDoEvents(void) {
 					case SDLK_KP_MINUS :	// Reset button PL2
 						cont2.key[4] = 1;
 						break;
-					case SDLK_ESCAPE :		// Escape to monitor
+					case SDLK_ESCAPE :		// Escape to menu
 						running = 0;
 						break;
 					case SDLK_F4	:		// Monitor
@@ -1026,6 +1026,7 @@ void HostDoEvents(void) {
 	if (1 == exit_app)
 		return;
 
+/*
     // SELECT menu
     if(!running) {
         selected = DoOptionsMenu();
@@ -1047,6 +1048,7 @@ void HostDoEvents(void) {
                 break;
         }
     }
+*/
 }
 
 // Interrupts
@@ -1174,13 +1176,14 @@ char *doFileBrowseDialog(void)
 // ROM selection menu (new version)
 char* DoRomMenu()
 {
-    int i, ret;
+    int i;
 	char s[256];
     int y;
 	int key;
     int debounce = 0;
 	SDL_Event event ;
 	long findHandle;
+	int escaped = 0;
 
 	struct _finddata_t fileinfo;
 
@@ -1209,7 +1212,6 @@ char* DoRomMenu()
 		HostLog(s);
 	}
 #endif
-
 
 	// choose rom from list
     while(1) {
@@ -1257,18 +1259,23 @@ char* DoRomMenu()
 			//debounce = DEBOUNCE_RATE;
 		}
 
+		if(key == SDLK_ESCAPE) {
+			escaped = 1;
+			break;
+		}
+
         // clear draw buffer
         clrEmuScreen(0x00);
         drawBox(4,4,315,235, 0x50);
         printXY("Jum's Atari 5200 Emulator", 48, 8, 0x4E);
-        printXY("by James Higgs 2000-2010", 52, 16, 0x44);
+        printXY("by James Higgs 2000-2014", 52, 16, 0x44);
 
         // Draw text in scroll box
         y = 32;
         for(i=frame_position;i<(frame_position+19);i++) {
 			if(i>=0 && i < num_roms) {
-	            if(i == selection) printXY(romdata[i].name, 60, y, 0x0f);
-	            else printXY(romdata[i].name, 60, y, 0x18);
+	            if(i == selection) printXY(romdata[i].name, 32, y, 0x0f);
+	            else printXY(romdata[i].name, 32, y, 0x18);
 			}
             y += 8;
         }
@@ -1285,27 +1292,24 @@ char* DoRomMenu()
         //if(debounce) debounce--;                    // update key delay if neccessary
 
 		while(frameStart > SDL_GetTicks()) {
-		// do idle loop stuff here	
+			// do idle loop stuff here
+			SDL_Delay(20);
 		}
 		frameStart = SDL_GetTicks() + 20;
 
-		ret = SDL_BlitSurface(pBuffer, NULL, pSurface, NULL);
-		if(ret < 0)
-			fprintf(stderr, "BlitSurface error: %s\n", SDL_GetError());
-
+		SDL_BlitSurface(pBuffer, NULL, pSurface, NULL);
  		SDL_UpdateRect(pSurface, 0, 0, 320, 240);
-
-		// quit loop if we have quitted
-		if (1 == exit_app)
-			break;
-
     }
 
     currentromindex = selection;
 
-	// is user quitting?
+	// is user quitting or escaped?
 	if (1 == exit_app)
 		return NULL;
+
+	// Did user escape?
+	if (1 == escaped)
+		return "esc";
 
     // return the full path name of this rom file
     //return getRomFullPath(selection);
@@ -1315,18 +1319,19 @@ char* DoRomMenu()
 
 
 // SELECT menu
-// 0. Load game
-// 1. Save Game State
-// 2. Load Game State
-// 3. Controller: K/M/J
-// 4. Control Mode: Normal/Robotron/Pengo
-// 5. Volume: 0 to 100%
-// 6. Reset 5200
-// 7. Quit Jum52
-#define SELECT_ROW_MAX     7
+// 0. Resume game
+// 1. Load game
+// 2. Save Game State
+// 3. Load Game State
+// 4. Controller: K/M/J
+// 5. Control Mode: Normal/Robotron/Pengo
+// 6. Volume: 0 to 100%
+// 7. Reset 5200
+// 8. Quit Jum52
+#define SELECT_ROW_MAX     8
 int DoOptionsMenu(void)
 {
-	int i, ret, selected_row;
+	int i, selected_row;
 	int key;
 	int y;
     int debounce = 0;
@@ -1336,9 +1341,6 @@ int DoOptionsMenu(void)
 	SDL_Event event ;
 
 	if(debugging) return -1;
-
-    if(options.audio) SDL_PauseAudio(1);
-
 
     selected_row = 0;
 	while(1) {
@@ -1358,39 +1360,41 @@ int DoOptionsMenu(void)
 		}
 
 		if(key == SDLK_q) {
-			selected_row = 7;
+			selected_row = 8;
 			break;
 		}
 
         // check for button press
 		if(key == SDLK_SPACE || key == SDLK_RETURN) { // SPACE/RETURN
-            if(selected_row == 0) break; // load game
-            if(selected_row == 7) break; // quit
-            if(selected_row == 1) {
+            if (0 == selected_row)
+				break; // resume game
+            else if (1 == selected_row)
+				break;	// load game
+            else if (2 == selected_row) {
                 SaveState("state");
 				strcpy(msg, "Game state saved.");
                 Wait(30);
             }
-            if(selected_row == 2) {
+            else if (3 == selected_row) {
                 LoadState("state");
 				strcpy(msg, "Game state loaded.");
                 Wait(30);
             }
-            if(selected_row == 6) {
+            else if (7 == selected_row) {
 				Jum52_Reset();
 				strcpy(msg, "5200 reset.");
                 Wait(30);
 			}
-
+            else if (8 == selected_row)
+				break; // quit
 		}
 
         // return to game
         if(key == SDLK_ESCAPE) {
-            selected_row = -1;
+            selected_row = 0;
             Wait(30);
             break;
         }
-
 
         // move ROM selector up/down
         if(key == SDLK_DOWN)
@@ -1401,15 +1405,15 @@ int DoOptionsMenu(void)
 
         if((key == SDLK_RIGHT) || (key == SDLK_LEFT)) {
             switch(selected_row) {
-                case 3 : // controller
+                case 4 : // controller
 					options.controller++;
-					if(4 == options.controller) options.controller = 0;
+					if (4 == options.controller) options.controller = 0;
                     break;
-                case 4 : // control mode
-//					options.controlmode++;
-//					if(3 == options.controlmode) options.controlmode = 0;
+                case 5 : // control mode
+					options.controlmode++;
+					if (3 == options.controlmode) options.controlmode = 0;
                     break;
-                case 5 : // volume
+                case 6 : // volume
 					if(key == SDLK_RIGHT) {
 						options.volume += 5;
 						if(options.volume > 100) options.volume = 100;
@@ -1426,78 +1430,75 @@ int DoOptionsMenu(void)
         // clear draw buffer
         clrEmuScreen(0x00);
         drawBox(4,4,315, 235, 0x50);
-        printXY("Jum52 Options Menu", 80, 8, 0x1f);
+        //printXY("Jum52 Options Menu", 80, 8, 0x1f);
+		printXY("Jum's Atari 5200 Emulator", 48, 8, 0x4E);
+        printXY("by James Higgs 2000-2014", 52, 16, 0x44);
 
 		// Draw options list
-		y = 32;
+#define INDENT 80
+		y = 48;
 		for(i=0;i<=SELECT_ROW_MAX; i++) {
             c = 0x18;
             if(i == selected_row) c = 0x0f;
             switch(i) {
                 case 0:
-                    printXY("Load Game", 60, y, c);
+                    printXY("Resume Game", INDENT, y, c);
                     break;
                 case 1:
-                    printXY("Save State", 60, y, c);
+                    printXY("Load Game", INDENT, y, c);
                     break;
                 case 2:
-                    printXY("Load State", 60, y, c);
+                    printXY("Save State", INDENT, y, c);
                     break;
                 case 3:
+                    printXY("Load State", INDENT, y, c);
+                    break;
+                case 4:
 					strcpy(s, "Controller: Keyboard");
 					if(1 == options.controller) strcpy(s, "Controller: Joystick");
 					else if(2 == options.controller) strcpy(s, "Controller: Mouse");
 					else if(3 == options.controller) strcpy(s, "Controller: MousePaddle");
-                    printXY(s, 60, y, c);
+                    printXY(s, INDENT, y, c);
                     break;
-                case 4:
+                case 5:
 					strcpy(s, "Control Mode: Normal");
 					if(1 == options.controlmode) strcpy(s, "Control Mode: Robotron");
 					else if(2 == options.controlmode) strcpy(s, "Control Mode: Pengo");
-                    printXY(s, 60, y, c);
-                    break;
-                case 5:
-                    sprintf(s, "Volume: %d%%", options.volume);
-                    printXY(s, 60, y, c);
+                    printXY(s, INDENT, y, c);
                     break;
                 case 6:
-                    printXY("Reset 5200", 60, y, c);
+                    sprintf(s, "Volume: %d%%", options.volume);
+                    printXY(s, INDENT, y, c);
                     break;
-                case 7: // Quit 
-                    printXY("Quit Jum52", 60, y, c);
+                case 7:
+                    printXY("Reset 5200", INDENT, y, c);
+                    break;
+                case 8: // Quit 
+                    printXY("Quit Jum52", INDENT, y, c);
                     break;
                 default:
-                    printXY("Oops!", 60, y, c);
+                    printXY("Oops!", INDENT, y, c);
             }
 			y += 8;
    		}
 
 		printXY(msg, 32, 160, 0x3f);
-
 		printXY("Press [Esc] to return to game.", 32, 212, 0x1f);
 		printXY("Press [Q] to Quit.", 32, 220, 0x1f);
-
 		hline(pBuffer, 4, 315, 4, 0x0F); 
 		hline(pBuffer, 4, 315, 235, 0x0F); 
 		vline(pBuffer, 4, 4, 235, 0x0F);
 		vline(pBuffer, 315, 4, 235, 0x0F);
 
 		while(frameStart > SDL_GetTicks()) {
-		// do idle loop stuff here	
+			// do idle loop stuff here
+			SDL_Delay(20);
 		}
 		frameStart = SDL_GetTicks() + 20;
 
-		ret = SDL_BlitSurface(pBuffer, NULL, pSurface, NULL);
-		if(ret < 0)
-			fprintf(stderr, "BlitSurface error: %s\n", SDL_GetError());
-
- 
+		SDL_BlitSurface(pBuffer, NULL, pSurface, NULL);
 		SDL_UpdateRect(pSurface, 0, 0, 320, 240);
-
-
 	}
-
-    if(options.audio) SDL_PauseAudio(0);
 
 	return selected_row;
 }
@@ -1921,9 +1922,9 @@ int monitor(void)
 
 int main(int argc, char *argv[])
 {
-    char *filename;
     char text[256];
-
+	int loadRom = 0;
+	int showMenu = 0;
 
 	// open log file - don't care if it fails :P
 	logfile = fopen("5200.log", "w");
@@ -1969,52 +1970,80 @@ HostLog(text);
         frame_position = -9;
         exit_app = 0;
 
-		// show options menu first if no rom specified on cmd-line, quit if selected
-		if(filename == NULL) {
-			switch(DoOptionsMenu()) {
-				case 7 :	// quit
-					exit_app = 1;
-					break;
-			}			
-		}
-		
+		// Whether to show the menu or load the specified file
+		loadRom = (NULL == filename) ? 0 : 1;
+		showMenu = (NULL == filename) ? 1 : 0;
+
         // main loop
         while(!exit_app) {
 
-            // select rom to load from menu
-			if(filename == NULL)
-	            filename = DoRomMenu();
-
-			// no roms found, exit
-			if(filename == NULL) {
-				HostLog("No roms found!\n");
-				exit(1);
+			// Select rom to load from menu
+			if(showMenu) {
+				while(1) {
+					int ret = DoOptionsMenu();
+					if (0 == ret && filename != NULL) {	// resume game
+						break;
+					}
+					else if (1 == ret) {		// load rom
+						filename = DoRomMenu();
+						if(NULL == filename) {
+							// no roms found, exit
+							HostLog("No roms found!\n");
+							exit(1);
+						}
+						else if (0 == strcmp(filename, "esc")) {
+							// user escaped from rom menu
+							filename = NULL;
+						}
+						else {
+							// user selected a rom - continue
+							loadRom = 1;
+						}
+						// else show options menu again
+					}
+					else if (8 == ret) {				// quit
+						exit_app = 1;
+						break;
+					}
+				}
 			}
+
+			if (1 == exit_app)
+				break;
 
             clrEmuScreen(0x72);
             jprintf_y = 16;
 
+			// Load a rom if specified
+			if (loadRom) {
+	            if (0 == Jum52_LoadROM( filename )) {
+					sprintf(text, "Rom '%s' loaded OK.\n", filename);
+					HostLog(text);
+				}
+				else {
+	                sprintf(text, "Could not load %s !", filename);
+		            HostLog(text);
+					filename = NULL;
+				}
+            }
+			loadRom = 0;
+			showMenu = 1;
 
-            if (Jum52_LoadROM( filename ) == 0)
-            {
-				sprintf(text, "Rom '%s' loaded OK.\n", filename);
-                HostLog(text);
-
+			// Run if loaded OK
+			if (filename != NULL) {
                 clrEmuScreen(0x00);
-
                 //SetupPlatformVideoOutput();
-                if(options.audio) SDL_PauseAudio(0);
+                if(options.audio)
+					SDL_PauseAudio(0);
 
                 Jum52_Emulate();
-                if(options.audio) SDL_PauseAudio(1);
+
+                if(options.audio)
+					SDL_PauseAudio(1);
                 //TeardownPlatformVideoOutput();
             }
-            else {
-                sprintf(text, "Could not load %s !", filename);
-                HostLog(text);
-            }
 
-			filename = NULL;
+			//filename = NULL;
         } // end while
     }
     else {
