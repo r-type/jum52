@@ -172,3 +172,5 @@ driver_Win32_SDL/Captain Beeble 5200 Conversion by Kenfuzed (2004) (InHome Softw
 driver_Win32_SDL/Rescue on Fractalus (1984) (Atari-Lucasfilm Games).a52
 driver_Win32_SDL/Win32_SDL.suo
 driver_Win32_SDL/Win32_SDL.suo
+*.log
+*.suo

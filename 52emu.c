@@ -690,6 +690,10 @@ void IOEXPwrite(uint16 addr, uint8 byte)
     // ???
 }
 
+#ifdef DEBUG
+#define LOG_POKEY_WRITE
+#endif
+
 // Write to POKEY regs
 void POKEYwrite(uint16 addr, uint8 byte)
 {
@@ -702,6 +706,10 @@ void POKEYwrite(uint16 addr, uint8 byte)
 		// write value to sound POKEYSOUND emulation
 		//Update_pokey_sound (uint16 addr, uint8 val, uint8 chip, uint8 gain)
 		Update_pokey_sound((uint16)(addr & 0x0F), byte, 0, 64);
+#ifdef LOG_POKEY_WRITE
+		sprintf(logmsg, "POKEY WRITE: vcount = %d\n", vcount);
+		HostLog(logmsg);
+#endif
 		break;
 	case 0x01 :	//	AUDC1
 	case 0x03 :	//	AUDC2
@@ -721,6 +729,10 @@ HostLog(logmsg);
 			Update_pokey_sound((uint16)(addr & 0x0F), byte, 0, 64);
 		}
 //fprintf(logfile, "Write to POKEY: %X, %X\n", addr, byte);
+#ifdef LOG_POKEY_WRITE
+		sprintf(logmsg, "POKEY WRITE: vcount = %d\n", vcount);
+		HostLog(logmsg);
+#endif
 		break;
 	case 0x09 :	//	STIMER
 		// writing any non-zero val will reset audio clocks to

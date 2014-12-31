@@ -4,522 +4,1485 @@ Initialising Jum52...
 Reading config file 'jum52.cfg'...
 Loading palette file 'real.act'...
 Video mode: NTSC
-vid address: 11174144
+vid address: 20550016
 Videomode: 15  snd_buf_size: 735
+rom: Analog Classics #1.bin
+rom: Analog Classics demo.BIN
+rom: Analog Multi-Cart version 2 (Conv).bin
+rom: Asteroids - Vector Edition (Asteroids Hack).a52
 rom: Astro_Chase.BIN
 rom: Ballblazer (1984) (Atari-Lucasfilm Games).bin
 rom: Battlezone.BIN
 rom: Beamrider.BIN
+rom: Beef Drop - Ultimate SD Digital Edition.rom
 rom: Berzerk.BIN
 rom: Blueprint.BIN
 rom: Buck_Rogers.BIN
+rom: Captain Beeble (Conv).bin
+rom: Captain Beeble 5200 Conversion by Kenfuzed (2004) (InHome Software).a52
+rom: Capture the Flag.rom
+rom: Caverns of Mars (Conv).bin
 rom: Centipede.BIN
+rom: Chop Suey.rom
 rom: Choplifter.BIN
+rom: Claim Jumper.rom
+rom: Combat II Demo.a52
 rom: Congo_Bongo.BIN
 rom: Countermeasure.BIN
 rom: DECATHLN.BIN
 rom: defender.bin
 rom: diagnost.bin
 rom: DIGDUG.BIN
+rom: Doom by Jeffry Johnston (PD).bin
 rom: Frogger.BIN
+rom: Gateway to Apshai.bin
 rom: hello.bin
 rom: Hero.BIN
 rom: James_Bond.BIN
+rom: John Anderson's Rally Speedway.bin
+rom: Journey to the Planets.rom
 rom: JUMPONG2.BIN
 rom: Jungle_Hunt.BIN
 rom: Keystone_Kapers.BIN
+rom: Laser Gates.bin
 rom: MRDOCAST.BIN
+rom: Necromancer.bin
 rom: Qix.BIN
+rom: Rescue on Fractalus (1984) (Atari-Lucasfilm Games).a52
+rom: Satans Hollow (Conv).bin
+rom: Shamus Case II.rom
 rom: snoopy.bin
-rom: Zaxxon.BIN
-Trying to load 'Astro_Chase.BIN', crc32=0x4019ECEC
-Rom 'Astro_Chase.BIN' loaded OK.
-Executing 2000000000 CPU ticks...
-rom: Astro_Chase.BIN
-rom: Ballblazer (1984) (Atari-Lucasfilm Games).bin
-rom: Battlezone.BIN
-rom: Beamrider.BIN
-rom: Berzerk.BIN
-rom: Blueprint.BIN
-rom: Buck_Rogers.BIN
-rom: Centipede.BIN
-rom: Choplifter.BIN
-rom: Congo_Bongo.BIN
-rom: Countermeasure.BIN
-rom: DECATHLN.BIN
-rom: defender.bin
-rom: diagnost.bin
-rom: DIGDUG.BIN
-rom: Frogger.BIN
-rom: hello.bin
-rom: Hero.BIN
-rom: James_Bond.BIN
-rom: JUMPONG2.BIN
-rom: Jungle_Hunt.BIN
-rom: Keystone_Kapers.BIN
-rom: MRDOCAST.BIN
-rom: Qix.BIN
-rom: snoopy.bin
-rom: Zaxxon.BIN
-Trying to load 'Battlezone.BIN', crc32=0xB3B8E314
-Rom 'Battlezone.BIN' loaded OK.
-Executing 2000000000 CPU ticks...
-rom: Astro_Chase.BIN
-rom: Ballblazer (1984) (Atari-Lucasfilm Games).bin
-rom: Battlezone.BIN
-rom: Beamrider.BIN
-rom: Berzerk.BIN
-rom: Blueprint.BIN
-rom: Buck_Rogers.BIN
-rom: Centipede.BIN
-rom: Choplifter.BIN
-rom: Congo_Bongo.BIN
-rom: Countermeasure.BIN
-rom: DECATHLN.BIN
-rom: defender.bin
-rom: diagnost.bin
-rom: DIGDUG.BIN
-rom: Frogger.BIN
-rom: hello.bin
-rom: Hero.BIN
-rom: James_Bond.BIN
-rom: JUMPONG2.BIN
-rom: Jungle_Hunt.BIN
-rom: Keystone_Kapers.BIN
-rom: MRDOCAST.BIN
-rom: Qix.BIN
-rom: snoopy.bin
-rom: Zaxxon.BIN
-Trying to load 'Beamrider.BIN', crc32=0x71FA5A79
-Rom 'Beamrider.BIN' loaded OK.
-Executing 2000000000 CPU ticks...
-rom: Astro_Chase.BIN
-rom: Ballblazer (1984) (Atari-Lucasfilm Games).bin
-rom: Battlezone.BIN
-rom: Beamrider.BIN
-rom: Berzerk.BIN
-rom: Blueprint.BIN
-rom: Buck_Rogers.BIN
-rom: Centipede.BIN
-rom: Choplifter.BIN
-rom: Congo_Bongo.BIN
-rom: Countermeasure.BIN
-rom: DECATHLN.BIN
-rom: defender.bin
-rom: diagnost.bin
-rom: DIGDUG.BIN
-rom: Frogger.BIN
-rom: hello.bin
-rom: Hero.BIN
-rom: James_Bond.BIN
-rom: JUMPONG2.BIN
-rom: Jungle_Hunt.BIN
-rom: Keystone_Kapers.BIN
-rom: MRDOCAST.BIN
-rom: Qix.BIN
-rom: snoopy.bin
+rom: Space Invaders (1982) (Atari).a52
+rom: Spy Hunter (XL Conversion).bin
+rom: Superfly.bin
+rom: Tapper (Conv).bin
+rom: Xagon (XL Conversion).bin
 rom: Zaxxon.BIN
 Trying to load 'Blueprint.BIN', crc32=0x613B9379
 Rom 'Blueprint.BIN' loaded OK.
 Executing 2000000000 CPU ticks...
-rom: Astro_Chase.BIN
-rom: Ballblazer (1984) (Atari-Lucasfilm Games).bin
-rom: Battlezone.BIN
-rom: Beamrider.BIN
-rom: Berzerk.BIN
-rom: Blueprint.BIN
-rom: Buck_Rogers.BIN
-rom: Centipede.BIN
-rom: Choplifter.BIN
-rom: Congo_Bongo.BIN
-rom: Countermeasure.BIN
-rom: DECATHLN.BIN
-rom: defender.bin
-rom: diagnost.bin
-rom: DIGDUG.BIN
-rom: Frogger.BIN
-rom: hello.bin
-rom: Hero.BIN
-rom: James_Bond.BIN
-rom: JUMPONG2.BIN
-rom: Jungle_Hunt.BIN
-rom: Keystone_Kapers.BIN
-rom: MRDOCAST.BIN
-rom: Qix.BIN
-rom: snoopy.bin
-rom: Zaxxon.BIN
-Trying to load 'Buck_Rogers.BIN', crc32=0x20DF4927
-Rom 'Buck_Rogers.BIN' loaded OK.
-Executing 2000000000 CPU ticks...
-Executing 2000000000 CPU ticks...
-rom: Astro_Chase.BIN
-rom: Ballblazer (1984) (Atari-Lucasfilm Games).bin
-rom: Battlezone.BIN
-rom: Beamrider.BIN
-rom: Berzerk.BIN
-rom: Blueprint.BIN
-rom: Buck_Rogers.BIN
-rom: Centipede.BIN
-rom: Choplifter.BIN
-rom: Congo_Bongo.BIN
-rom: Countermeasure.BIN
-rom: DECATHLN.BIN
-rom: defender.bin
-rom: diagnost.bin
-rom: DIGDUG.BIN
-rom: Frogger.BIN
-rom: hello.bin
-rom: Hero.BIN
-rom: James_Bond.BIN
-rom: JUMPONG2.BIN
-rom: Jungle_Hunt.BIN
-rom: Keystone_Kapers.BIN
-rom: MRDOCAST.BIN
-rom: Qix.BIN
-rom: snoopy.bin
-rom: Zaxxon.BIN
-Trying to load 'Centipede.BIN', crc32=0x536A70FE
-Rom 'Centipede.BIN' loaded OK.
-Executing 2000000000 CPU ticks...
-rom: Astro_Chase.BIN
-rom: Ballblazer (1984) (Atari-Lucasfilm Games).bin
-rom: Battlezone.BIN
-rom: Beamrider.BIN
-rom: Berzerk.BIN
-rom: Blueprint.BIN
-rom: Buck_Rogers.BIN
-rom: Centipede.BIN
-rom: Choplifter.BIN
-rom: Congo_Bongo.BIN
-rom: Countermeasure.BIN
-rom: DECATHLN.BIN
-rom: defender.bin
-rom: diagnost.bin
-rom: DIGDUG.BIN
-rom: Frogger.BIN
-rom: hello.bin
-rom: Hero.BIN
-rom: James_Bond.BIN
-rom: JUMPONG2.BIN
-rom: Jungle_Hunt.BIN
-rom: Keystone_Kapers.BIN
-rom: MRDOCAST.BIN
-rom: Qix.BIN
-rom: snoopy.bin
-rom: Zaxxon.BIN
-Trying to load 'Choplifter.BIN', crc32=0x0851D277
-Rom 'Choplifter.BIN' loaded OK.
-Executing 2000000000 CPU ticks...
-rom: Astro_Chase.BIN
-rom: Ballblazer (1984) (Atari-Lucasfilm Games).bin
-rom: Battlezone.BIN
-rom: Beamrider.BIN
-rom: Berzerk.BIN
-rom: Blueprint.BIN
-rom: Buck_Rogers.BIN
-rom: Centipede.BIN
-rom: Choplifter.BIN
-rom: Congo_Bongo.BIN
-rom: Countermeasure.BIN
-rom: DECATHLN.BIN
-rom: defender.bin
-rom: diagnost.bin
-rom: DIGDUG.BIN
-rom: Frogger.BIN
-rom: hello.bin
-rom: Hero.BIN
-rom: James_Bond.BIN
-rom: JUMPONG2.BIN
-rom: Jungle_Hunt.BIN
-rom: Keystone_Kapers.BIN
-rom: MRDOCAST.BIN
-rom: Qix.BIN
-rom: snoopy.bin
-rom: Zaxxon.BIN
-Trying to load 'Congo_Bongo.BIN', crc32=0xF1F42BBD
-Rom 'Congo_Bongo.BIN' loaded OK.
-Executing 2000000000 CPU ticks...
-rom: Astro_Chase.BIN
-rom: Ballblazer (1984) (Atari-Lucasfilm Games).bin
-rom: Battlezone.BIN
-rom: Beamrider.BIN
-rom: Berzerk.BIN
-rom: Blueprint.BIN
-rom: Buck_Rogers.BIN
-rom: Centipede.BIN
-rom: Choplifter.BIN
-rom: Congo_Bongo.BIN
-rom: Countermeasure.BIN
-rom: DECATHLN.BIN
-rom: defender.bin
-rom: diagnost.bin
-rom: DIGDUG.BIN
-rom: Frogger.BIN
-rom: hello.bin
-rom: Hero.BIN
-rom: James_Bond.BIN
-rom: JUMPONG2.BIN
-rom: Jungle_Hunt.BIN
-rom: Keystone_Kapers.BIN
-rom: MRDOCAST.BIN
-rom: Qix.BIN
-rom: snoopy.bin
-rom: Zaxxon.BIN
-Trying to load 'Countermeasure.BIN', crc32=0xFD541C80
-Rom 'Countermeasure.BIN' loaded OK.
-Executing 2000000000 CPU ticks...
-rom: Astro_Chase.BIN
-rom: Ballblazer (1984) (Atari-Lucasfilm Games).bin
-rom: Battlezone.BIN
-rom: Beamrider.BIN
-rom: Berzerk.BIN
-rom: Blueprint.BIN
-rom: Buck_Rogers.BIN
-rom: Centipede.BIN
-rom: Choplifter.BIN
-rom: Congo_Bongo.BIN
-rom: Countermeasure.BIN
-rom: DECATHLN.BIN
-rom: defender.bin
-rom: diagnost.bin
-rom: DIGDUG.BIN
-rom: Frogger.BIN
-rom: hello.bin
-rom: Hero.BIN
-rom: James_Bond.BIN
-rom: JUMPONG2.BIN
-rom: Jungle_Hunt.BIN
-rom: Keystone_Kapers.BIN
-rom: MRDOCAST.BIN
-rom: Qix.BIN
-rom: snoopy.bin
-rom: Zaxxon.BIN
-Trying to load 'DECATHLN.BIN', crc32=0x1F9ED238
-Rom 'DECATHLN.BIN' loaded OK.
-Executing 2000000000 CPU ticks...
-rom: Astro_Chase.BIN
-rom: Ballblazer (1984) (Atari-Lucasfilm Games).bin
-rom: Battlezone.BIN
-rom: Beamrider.BIN
-rom: Berzerk.BIN
-rom: Blueprint.BIN
-rom: Buck_Rogers.BIN
-rom: Centipede.BIN
-rom: Choplifter.BIN
-rom: Congo_Bongo.BIN
-rom: Countermeasure.BIN
-rom: DECATHLN.BIN
-rom: defender.bin
-rom: diagnost.bin
-rom: DIGDUG.BIN
-rom: Frogger.BIN
-rom: hello.bin
-rom: Hero.BIN
-rom: James_Bond.BIN
-rom: JUMPONG2.BIN
-rom: Jungle_Hunt.BIN
-rom: Keystone_Kapers.BIN
-rom: MRDOCAST.BIN
-rom: Qix.BIN
-rom: snoopy.bin
-rom: Zaxxon.BIN
-Trying to load 'defender.bin', crc32=0xEBAD58BA
-Rom 'defender.bin' loaded OK.
-Executing 2000000000 CPU ticks...
-rom: Astro_Chase.BIN
-rom: Ballblazer (1984) (Atari-Lucasfilm Games).bin
-rom: Battlezone.BIN
-rom: Beamrider.BIN
-rom: Berzerk.BIN
-rom: Blueprint.BIN
-rom: Buck_Rogers.BIN
-rom: Centipede.BIN
-rom: Choplifter.BIN
-rom: Congo_Bongo.BIN
-rom: Countermeasure.BIN
-rom: DECATHLN.BIN
-rom: defender.bin
-rom: diagnost.bin
-rom: DIGDUG.BIN
-rom: Frogger.BIN
-rom: hello.bin
-rom: Hero.BIN
-rom: James_Bond.BIN
-rom: JUMPONG2.BIN
-rom: Jungle_Hunt.BIN
-rom: Keystone_Kapers.BIN
-rom: MRDOCAST.BIN
-rom: Qix.BIN
-rom: snoopy.bin
-rom: Zaxxon.BIN
-Trying to load 'James_Bond.BIN', crc32=0xD9AE4518
-Rom 'James_Bond.BIN' loaded OK.
-Executing 2000000000 CPU ticks...
-rom: Astro_Chase.BIN
-rom: Ballblazer (1984) (Atari-Lucasfilm Games).bin
-rom: Battlezone.BIN
-rom: Beamrider.BIN
-rom: Berzerk.BIN
-rom: Blueprint.BIN
-rom: Buck_Rogers.BIN
-rom: Centipede.BIN
-rom: Choplifter.BIN
-rom: Congo_Bongo.BIN
-rom: Countermeasure.BIN
-rom: DECATHLN.BIN
-rom: defender.bin
-rom: diagnost.bin
-rom: DIGDUG.BIN
-rom: Frogger.BIN
-rom: hello.bin
-rom: Hero.BIN
-rom: James_Bond.BIN
-rom: JUMPONG2.BIN
-rom: Jungle_Hunt.BIN
-rom: Keystone_Kapers.BIN
-rom: MRDOCAST.BIN
-rom: Qix.BIN
-rom: snoopy.bin
-rom: Zaxxon.BIN
-Trying to load 'Jungle_Hunt.BIN', crc32=0x2C676662
-Rom 'Jungle_Hunt.BIN' loaded OK.
-Executing 2000000000 CPU ticks...
-rom: Astro_Chase.BIN
-rom: Ballblazer (1984) (Atari-Lucasfilm Games).bin
-rom: Battlezone.BIN
-rom: Beamrider.BIN
-rom: Berzerk.BIN
-rom: Blueprint.BIN
-rom: Buck_Rogers.BIN
-rom: Centipede.BIN
-rom: Choplifter.BIN
-rom: Congo_Bongo.BIN
-rom: Countermeasure.BIN
-rom: DECATHLN.BIN
-rom: defender.bin
-rom: diagnost.bin
-rom: DIGDUG.BIN
-rom: Frogger.BIN
-rom: hello.bin
-rom: Hero.BIN
-rom: James_Bond.BIN
-rom: JUMPONG2.BIN
-rom: Jungle_Hunt.BIN
-rom: Keystone_Kapers.BIN
-rom: MRDOCAST.BIN
-rom: Qix.BIN
-rom: snoopy.bin
-rom: Zaxxon.BIN
-Trying to load 'Keystone_Kapers.BIN', crc32=0xE905ED94
-Rom 'Keystone_Kapers.BIN' loaded OK.
-Executing 2000000000 CPU ticks...
-rom: Astro_Chase.BIN
-rom: Ballblazer (1984) (Atari-Lucasfilm Games).bin
-rom: Battlezone.BIN
-rom: Beamrider.BIN
-rom: Berzerk.BIN
-rom: Blueprint.BIN
-rom: Buck_Rogers.BIN
-rom: Centipede.BIN
-rom: Choplifter.BIN
-rom: Congo_Bongo.BIN
-rom: Countermeasure.BIN
-rom: DECATHLN.BIN
-rom: defender.bin
-rom: diagnost.bin
-rom: DIGDUG.BIN
-rom: Frogger.BIN
-rom: hello.bin
-rom: Hero.BIN
-rom: James_Bond.BIN
-rom: JUMPONG2.BIN
-rom: Jungle_Hunt.BIN
-rom: Keystone_Kapers.BIN
-rom: MRDOCAST.BIN
-rom: Qix.BIN
-rom: snoopy.bin
-rom: Zaxxon.BIN
-Trying to load 'Qix.BIN', crc32=0x85F750D4
-Rom 'Qix.BIN' loaded OK.
-Executing 2000000000 CPU ticks...
-rom: Astro_Chase.BIN
-rom: Ballblazer (1984) (Atari-Lucasfilm Games).bin
-rom: Battlezone.BIN
-rom: Beamrider.BIN
-rom: Berzerk.BIN
-rom: Blueprint.BIN
-rom: Buck_Rogers.BIN
-rom: Centipede.BIN
-rom: Choplifter.BIN
-rom: Congo_Bongo.BIN
-rom: Countermeasure.BIN
-rom: DECATHLN.BIN
-rom: defender.bin
-rom: diagnost.bin
-rom: DIGDUG.BIN
-rom: Frogger.BIN
-rom: hello.bin
-rom: Hero.BIN
-rom: James_Bond.BIN
-rom: JUMPONG2.BIN
-rom: Jungle_Hunt.BIN
-rom: Keystone_Kapers.BIN
-rom: MRDOCAST.BIN
-rom: Qix.BIN
-rom: snoopy.bin
-rom: Zaxxon.BIN
-Could not load snoopy.bin !rom: Astro_Chase.BIN
-rom: Ballblazer (1984) (Atari-Lucasfilm Games).bin
-rom: Battlezone.BIN
-rom: Beamrider.BIN
-rom: Berzerk.BIN
-rom: Blueprint.BIN
-rom: Buck_Rogers.BIN
-rom: Centipede.BIN
-rom: Choplifter.BIN
-rom: Congo_Bongo.BIN
-rom: Countermeasure.BIN
-rom: DECATHLN.BIN
-rom: defender.bin
-rom: diagnost.bin
-rom: DIGDUG.BIN
-rom: Frogger.BIN
-rom: hello.bin
-rom: Hero.BIN
-rom: James_Bond.BIN
-rom: JUMPONG2.BIN
-rom: Jungle_Hunt.BIN
-rom: Keystone_Kapers.BIN
-rom: MRDOCAST.BIN
-rom: Qix.BIN
-rom: snoopy.bin
-rom: Zaxxon.BIN
-Could not load snoopy.bin !rom: Astro_Chase.BIN
-rom: Ballblazer (1984) (Atari-Lucasfilm Games).bin
-rom: Battlezone.BIN
-rom: Beamrider.BIN
-rom: Berzerk.BIN
-rom: Blueprint.BIN
-rom: Buck_Rogers.BIN
-rom: Centipede.BIN
-rom: Choplifter.BIN
-rom: Congo_Bongo.BIN
-rom: Countermeasure.BIN
-rom: DECATHLN.BIN
-rom: defender.bin
-rom: diagnost.bin
-rom: DIGDUG.BIN
-rom: Frogger.BIN
-rom: hello.bin
-rom: Hero.BIN
-rom: James_Bond.BIN
-rom: JUMPONG2.BIN
-rom: Jungle_Hunt.BIN
-rom: Keystone_Kapers.BIN
-rom: MRDOCAST.BIN
-rom: Qix.BIN
-rom: snoopy.bin
-rom: Zaxxon.BIN
-Trying to load 'Zaxxon.BIN', crc32=0x741746D1
-Rom 'Zaxxon.BIN' loaded OK.
-Executing 2000000000 CPU ticks...
+POKEY WRITE: vcount = -1
+POKEY WRITE: vcount = -1
+POKEY WRITE: vcount = -1
+POKEY WRITE: vcount = -1
+POKEY WRITE: vcount = -1
+POKEY WRITE: vcount = 0
+POKEY WRITE: vcount = 0
+POKEY WRITE: vcount = 0
+POKEY WRITE: vcount = 0
+POKEY WRITE: vcount = 3
+POKEY WRITE: vcount = 3
+POKEY WRITE: vcount = 3
+POKEY WRITE: vcount = 3
+POKEY WRITE: vcount = 4
+POKEY WRITE: vcount = 4
+POKEY WRITE: vcount = 4
+POKEY WRITE: vcount = 4
+POKEY WRITE: vcount = 4
+POKEY WRITE: vcount = 6
+POKEY WRITE: vcount = 6
+POKEY WRITE: vcount = 7
+POKEY WRITE: vcount = 7
+POKEY WRITE: vcount = 7
+POKEY WRITE: vcount = 7
+POKEY WRITE: vcount = 8
+POKEY WRITE: vcount = 8
+POKEY WRITE: vcount = 8
+POKEY WRITE: vcount = 10
+POKEY WRITE: vcount = 10
+POKEY WRITE: vcount = 10
+POKEY WRITE: vcount = 10
+POKEY WRITE: vcount = 11
+POKEY WRITE: vcount = 11
+POKEY WRITE: vcount = 11
+POKEY WRITE: vcount = 11
+POKEY WRITE: vcount = 12
+POKEY WRITE: vcount = 13
+POKEY WRITE: vcount = 14
+POKEY WRITE: vcount = 14
+POKEY WRITE: vcount = 14
+POKEY WRITE: vcount = 14
+POKEY WRITE: vcount = 14
+POKEY WRITE: vcount = 15
+POKEY WRITE: vcount = 15
+POKEY WRITE: vcount = 15
+POKEY WRITE: vcount = 17
+POKEY WRITE: vcount = 17
+POKEY WRITE: vcount = 17
+POKEY WRITE: vcount = 17
+POKEY WRITE: vcount = 18
+POKEY WRITE: vcount = 18
+POKEY WRITE: vcount = 18
+POKEY WRITE: vcount = 18
+POKEY WRITE: vcount = 19
+POKEY WRITE: vcount = 20
+POKEY WRITE: vcount = 21
+POKEY WRITE: vcount = 21
+POKEY WRITE: vcount = 21
+POKEY WRITE: vcount = 21
+POKEY WRITE: vcount = 21
+POKEY WRITE: vcount = 22
+POKEY WRITE: vcount = 22
+POKEY WRITE: vcount = 22
+POKEY WRITE: vcount = 24
+POKEY WRITE: vcount = 24
+POKEY WRITE: vcount = 24
+POKEY WRITE: vcount = 25
+POKEY WRITE: vcount = 25
+POKEY WRITE: vcount = 25
+POKEY WRITE: vcount = 25
+POKEY WRITE: vcount = 25
+POKEY WRITE: vcount = 26
+POKEY WRITE: vcount = 27
+POKEY WRITE: vcount = 28
+POKEY WRITE: vcount = 28
+POKEY WRITE: vcount = 28
+POKEY WRITE: vcount = 28
+POKEY WRITE: vcount = 29
+POKEY WRITE: vcount = 29
+POKEY WRITE: vcount = 29
+POKEY WRITE: vcount = 29
+POKEY WRITE: vcount = 31
+POKEY WRITE: vcount = 31
+POKEY WRITE: vcount = 31
+POKEY WRITE: vcount = 32
+POKEY WRITE: vcount = 32
+POKEY WRITE: vcount = 32
+POKEY WRITE: vcount = 32
+POKEY WRITE: vcount = 32
+POKEY WRITE: vcount = 33
+POKEY WRITE: vcount = 34
+POKEY WRITE: vcount = 35
+POKEY WRITE: vcount = 35
+POKEY WRITE: vcount = 35
+POKEY WRITE: vcount = 35
+POKEY WRITE: vcount = 36
+POKEY WRITE: vcount = 36
+POKEY WRITE: vcount = 36
+POKEY WRITE: vcount = 36
+POKEY WRITE: vcount = 38
+POKEY WRITE: vcount = 38
+POKEY WRITE: vcount = 38
+POKEY WRITE: vcount = 39
+POKEY WRITE: vcount = 39
+POKEY WRITE: vcount = 39
+POKEY WRITE: vcount = 39
+POKEY WRITE: vcount = 40
+POKEY WRITE: vcount = 40
+POKEY WRITE: vcount = 42
+POKEY WRITE: vcount = 42
+POKEY WRITE: vcount = 42
+POKEY WRITE: vcount = 42
+POKEY WRITE: vcount = 42
+POKEY WRITE: vcount = 43
+POKEY WRITE: vcount = 43
+POKEY WRITE: vcount = 43
+POKEY WRITE: vcount = 43
+POKEY WRITE: vcount = 45
+POKEY WRITE: vcount = 45
+POKEY WRITE: vcount = 45
+POKEY WRITE: vcount = 46
+POKEY WRITE: vcount = 46
+POKEY WRITE: vcount = 46
+POKEY WRITE: vcount = 46
+POKEY WRITE: vcount = 47
+POKEY WRITE: vcount = 47
+POKEY WRITE: vcount = 49
+POKEY WRITE: vcount = 49
+POKEY WRITE: vcount = 49
+POKEY WRITE: vcount = 49
+POKEY WRITE: vcount = 49
+POKEY WRITE: vcount = 50
+POKEY WRITE: vcount = 50
+POKEY WRITE: vcount = 50
+POKEY WRITE: vcount = 50
+POKEY WRITE: vcount = 52
+POKEY WRITE: vcount = 52
+POKEY WRITE: vcount = 53
+POKEY WRITE: vcount = 53
+POKEY WRITE: vcount = 53
+POKEY WRITE: vcount = 53
+POKEY WRITE: vcount = 53
+POKEY WRITE: vcount = 54
+POKEY WRITE: vcount = 54
+POKEY WRITE: vcount = 175
+POKEY WRITE: vcount = 251
+POKEY WRITE: vcount = 251
+POKEY WRITE: vcount = 252
+POKEY WRITE: vcount = 252
+POKEY WRITE: vcount = 253
+POKEY WRITE: vcount = 253
+POKEY WRITE: vcount = 251
+POKEY WRITE: vcount = 252
+POKEY WRITE: vcount = 251
+POKEY WRITE: vcount = 252
+POKEY WRITE: vcount = 253
+POKEY WRITE: vcount = 254
+POKEY WRITE: vcount = 252
+POKEY WRITE: vcount = 253
+POKEY WRITE: vcount = 252
+POKEY WRITE: vcount = 253
+POKEY WRITE: vcount = 252
+POKEY WRITE: vcount = 253
+POKEY WRITE: vcount = 252
+POKEY WRITE: vcount = 253
+POKEY WRITE: vcount = 252
+POKEY WRITE: vcount = 253
+POKEY WRITE: vcount = 252
+POKEY WRITE: vcount = 253
+POKEY WRITE: vcount = 252
+POKEY WRITE: vcount = 253
+POKEY WRITE: vcount = 252
+POKEY WRITE: vcount = 253
+POKEY WRITE: vcount = 252
+POKEY WRITE: vcount = 253
+POKEY WRITE: vcount = 252
+POKEY WRITE: vcount = 253
+POKEY WRITE: vcount = 252
+POKEY WRITE: vcount = 253
+POKEY WRITE: vcount = 252
+POKEY WRITE: vcount = 253
+POKEY WRITE: vcount = 254
+POKEY WRITE: vcount = 253
+POKEY WRITE: vcount = 253
+POKEY WRITE: vcount = 254
+POKEY WRITE: vcount = 252
+POKEY WRITE: vcount = 253
+POKEY WRITE: vcount = 252
+POKEY WRITE: vcount = 253
+POKEY WRITE: vcount = 252
+POKEY WRITE: vcount = 253
+POKEY WRITE: vcount = 252
+POKEY WRITE: vcount = 253
+POKEY WRITE: vcount = 252
+POKEY WRITE: vcount = 253
+POKEY WRITE: vcount = 252
+POKEY WRITE: vcount = 253
+POKEY WRITE: vcount = 252
+POKEY WRITE: vcount = 253
+POKEY WRITE: vcount = 252
+POKEY WRITE: vcount = 253
+POKEY WRITE: vcount = 252
+POKEY WRITE: vcount = 253
+POKEY WRITE: vcount = 252
+POKEY WRITE: vcount = 253
+POKEY WRITE: vcount = 252
+POKEY WRITE: vcount = 253
+POKEY WRITE: vcount = 252
+POKEY WRITE: vcount = 253
+POKEY WRITE: vcount = 252
+POKEY WRITE: vcount = 253
+POKEY WRITE: vcount = 252
+POKEY WRITE: vcount = 253
+POKEY WRITE: vcount = 252
+POKEY WRITE: vcount = 253
+POKEY WRITE: vcount = 254
+POKEY WRITE: vcount = 253
+POKEY WRITE: vcount = 253
+POKEY WRITE: vcount = 254
+POKEY WRITE: vcount = 252
+POKEY WRITE: vcount = 253
+POKEY WRITE: vcount = 252
+POKEY WRITE: vcount = 253
+POKEY WRITE: vcount = 252
+POKEY WRITE: vcount = 253
+POKEY WRITE: vcount = 252
+POKEY WRITE: vcount = 253
+POKEY WRITE: vcount = 252
+POKEY WRITE: vcount = 253
+POKEY WRITE: vcount = 252
+POKEY WRITE: vcount = 253
+POKEY WRITE: vcount = 252
+POKEY WRITE: vcount = 253
+POKEY WRITE: vcount = 252
+POKEY WRITE: vcount = 253
+POKEY WRITE: vcount = 252
+POKEY WRITE: vcount = 253
+POKEY WRITE: vcount = 252
+POKEY WRITE: vcount = 253
+POKEY WRITE: vcount = 252
+POKEY WRITE: vcount = 253
+POKEY WRITE: vcount = 252
+POKEY WRITE: vcount = 253
+POKEY WRITE: vcount = 252
+POKEY WRITE: vcount = 253
+POKEY WRITE: vcount = 252
+POKEY WRITE: vcount = 253
+POKEY WRITE: vcount = 252
+POKEY WRITE: vcount = 253
+POKEY WRITE: vcount = 254
+POKEY WRITE: vcount = 253
+POKEY WRITE: vcount = 253
+POKEY WRITE: vcount = 254
+POKEY WRITE: vcount = 252
+POKEY WRITE: vcount = 253
+POKEY WRITE: vcount = 252
+POKEY WRITE: vcount = 253
+POKEY WRITE: vcount = 252
+POKEY WRITE: vcount = 253
+POKEY WRITE: vcount = 252
+POKEY WRITE: vcount = 253
+POKEY WRITE: vcount = 252
+POKEY WRITE: vcount = 253
+POKEY WRITE: vcount = 252
+POKEY WRITE: vcount = 253
+POKEY WRITE: vcount = 252
+POKEY WRITE: vcount = 253
+POKEY WRITE: vcount = 252
+POKEY WRITE: vcount = 253
+POKEY WRITE: vcount = 252
+POKEY WRITE: vcount = 253
+POKEY WRITE: vcount = 252
+POKEY WRITE: vcount = 253
+POKEY WRITE: vcount = 252
+POKEY WRITE: vcount = 253
+POKEY WRITE: vcount = 252
+POKEY WRITE: vcount = 253
+POKEY WRITE: vcount = 252
+POKEY WRITE: vcount = 253
+POKEY WRITE: vcount = 252
+POKEY WRITE: vcount = 253
+POKEY WRITE: vcount = 252
+POKEY WRITE: vcount = 253
+POKEY WRITE: vcount = 253
+POKEY WRITE: vcount = 254
+POKEY WRITE: vcount = 253
+POKEY WRITE: vcount = 253
+POKEY WRITE: vcount = 254
+POKEY WRITE: vcount = 254
+POKEY WRITE: vcount = 252
+POKEY WRITE: vcount = 253
+POKEY WRITE: vcount = 252
+POKEY WRITE: vcount = 253
+POKEY WRITE: vcount = 252
+POKEY WRITE: vcount = 253
+POKEY WRITE: vcount = 252
+POKEY WRITE: vcount = 253
+POKEY WRITE: vcount = 252
+POKEY WRITE: vcount = 253
+POKEY WRITE: vcount = 252
+POKEY WRITE: vcount = 253
+POKEY WRITE: vcount = 252
+POKEY WRITE: vcount = 253
+POKEY WRITE: vcount = 252
+POKEY WRITE: vcount = 253
+POKEY WRITE: vcount = 252
+POKEY WRITE: vcount = 253
+POKEY WRITE: vcount = 252
+POKEY WRITE: vcount = 253
+POKEY WRITE: vcount = 252
+POKEY WRITE: vcount = 253
+POKEY WRITE: vcount = 252
+POKEY WRITE: vcount = 253
+POKEY WRITE: vcount = 252
+POKEY WRITE: vcount = 253
+POKEY WRITE: vcount = 252
+POKEY WRITE: vcount = 253
+POKEY WRITE: vcount = 252
+POKEY WRITE: vcount = 253
+POKEY WRITE: vcount = 254
+POKEY WRITE: vcount = 253
+POKEY WRITE: vcount = 253
+POKEY WRITE: vcount = 254
+POKEY WRITE: vcount = 252
+POKEY WRITE: vcount = 253
+POKEY WRITE: vcount = 252
+POKEY WRITE: vcount = 253
+POKEY WRITE: vcount = 252
+POKEY WRITE: vcount = 253
+POKEY WRITE: vcount = 252
+POKEY WRITE: vcount = 253
+POKEY WRITE: vcount = 252
+POKEY WRITE: vcount = 253
+POKEY WRITE: vcount = 252
+POKEY WRITE: vcount = 253
+POKEY WRITE: vcount = 252
+POKEY WRITE: vcount = 253
+POKEY WRITE: vcount = 252
+POKEY WRITE: vcount = 253
+POKEY WRITE: vcount = 252
+POKEY WRITE: vcount = 253
+POKEY WRITE: vcount = 252
+POKEY WRITE: vcount = 253
+POKEY WRITE: vcount = 252
+POKEY WRITE: vcount = 253
+POKEY WRITE: vcount = 252
+POKEY WRITE: vcount = 253
+POKEY WRITE: vcount = 252
+POKEY WRITE: vcount = 253
+POKEY WRITE: vcount = 252
+POKEY WRITE: vcount = 253
+POKEY WRITE: vcount = 252
+POKEY WRITE: vcount = 253
+POKEY WRITE: vcount = 254
+POKEY WRITE: vcount = 253
+POKEY WRITE: vcount = 253
+POKEY WRITE: vcount = 254
+POKEY WRITE: vcount = 252
+POKEY WRITE: vcount = 253
+POKEY WRITE: vcount = 252
+POKEY WRITE: vcount = 253
+POKEY WRITE: vcount = 252
+POKEY WRITE: vcount = 253
+POKEY WRITE: vcount = 252
+POKEY WRITE: vcount = 253
+POKEY WRITE: vcount = 252
+POKEY WRITE: vcount = 253
+POKEY WRITE: vcount = 252
+POKEY WRITE: vcount = 253
+POKEY WRITE: vcount = 252
+POKEY WRITE: vcount = 253
+POKEY WRITE: vcount = 252
+POKEY WRITE: vcount = 253
+POKEY WRITE: vcount = 252
+POKEY WRITE: vcount = 253
+POKEY WRITE: vcount = 252
+POKEY WRITE: vcount = 253
+POKEY WRITE: vcount = 252
+POKEY WRITE: vcount = 253
+POKEY WRITE: vcount = 252
+POKEY WRITE: vcount = 253
+POKEY WRITE: vcount = 252
+POKEY WRITE: vcount = 253
+POKEY WRITE: vcount = 252
+POKEY WRITE: vcount = 253
+POKEY WRITE: vcount = 252
+POKEY WRITE: vcount = 253
+POKEY WRITE: vcount = 254
+POKEY WRITE: vcount = 253
+POKEY WRITE: vcount = 253
+POKEY WRITE: vcount = 254
+POKEY WRITE: vcount = 252
+POKEY WRITE: vcount = 253
+POKEY WRITE: vcount = 252
+POKEY WRITE: vcount = 253
+POKEY WRITE: vcount = 252
+POKEY WRITE: vcount = 253
+POKEY WRITE: vcount = 252
+POKEY WRITE: vcount = 253
+POKEY WRITE: vcount = 252
+POKEY WRITE: vcount = 253
+POKEY WRITE: vcount = 252
+POKEY WRITE: vcount = 253
+POKEY WRITE: vcount = 252
+POKEY WRITE: vcount = 253
+POKEY WRITE: vcount = 252
+POKEY WRITE: vcount = 253
+POKEY WRITE: vcount = 252
+POKEY WRITE: vcount = 253
+POKEY WRITE: vcount = 252
+POKEY WRITE: vcount = 253
+POKEY WRITE: vcount = 252
+POKEY WRITE: vcount = 253
+POKEY WRITE: vcount = 252
+POKEY WRITE: vcount = 253
+POKEY WRITE: vcount = 252
+POKEY WRITE: vcount = 253
+POKEY WRITE: vcount = 252
+POKEY WRITE: vcount = 253
+POKEY WRITE: vcount = 252
+POKEY WRITE: vcount = 253
+POKEY WRITE: vcount = 253
+POKEY WRITE: vcount = 254
+POKEY WRITE: vcount = 254
+POKEY WRITE: vcount = 254
+POKEY WRITE: vcount = 256
+POKEY WRITE: vcount = 256
+POKEY WRITE: vcount = 252
+POKEY WRITE: vcount = 253
+POKEY WRITE: vcount = 252
+POKEY WRITE: vcount = 253
+POKEY WRITE: vcount = 252
+POKEY WRITE: vcount = 253
+POKEY WRITE: vcount = 252
+POKEY WRITE: vcount = 253
+POKEY WRITE: vcount = 252
+POKEY WRITE: vcount = 253
+POKEY WRITE: vcount = 252
+POKEY WRITE: vcount = 253
+POKEY WRITE: vcount = 252
+POKEY WRITE: vcount = 253
+POKEY WRITE: vcount = 252
+POKEY WRITE: vcount = 253
+POKEY WRITE: vcount = 252
+POKEY WRITE: vcount = 253
+POKEY WRITE: vcount = 252
+POKEY WRITE: vcount = 253
+POKEY WRITE: vcount = 252
+POKEY WRITE: vcount = 253
+POKEY WRITE: vcount = 252
+POKEY WRITE: vcount = 253
+POKEY WRITE: vcount = 252
+POKEY WRITE: vcount = 253
+POKEY WRITE: vcount = 252
+POKEY WRITE: vcount = 253
+POKEY WRITE: vcount = 252
+POKEY WRITE: vcount = 253
+POKEY WRITE: vcount = 253
+POKEY WRITE: vcount = 254
+POKEY WRITE: vcount = 253
+POKEY WRITE: vcount = 253
+POKEY WRITE: vcount = 254
+POKEY WRITE: vcount = 254
+POKEY WRITE: vcount = 252
+POKEY WRITE: vcount = 253
+POKEY WRITE: vcount = 252
+POKEY WRITE: vcount = 253
+POKEY WRITE: vcount = 252
+POKEY WRITE: vcount = 253
+POKEY WRITE: vcount = 252
+POKEY WRITE: vcount = 253
+POKEY WRITE: vcount = 252
+POKEY WRITE: vcount = 253
+POKEY WRITE: vcount = 252
+POKEY WRITE: vcount = 253
+POKEY WRITE: vcount = 252
+POKEY WRITE: vcount = 253
+POKEY WRITE: vcount = 252
+POKEY WRITE: vcount = 253
+POKEY WRITE: vcount = 252
+POKEY WRITE: vcount = 253
+POKEY WRITE: vcount = 252
+POKEY WRITE: vcount = 253
+POKEY WRITE: vcount = 252
+POKEY WRITE: vcount = 253
+POKEY WRITE: vcount = 252
+POKEY WRITE: vcount = 253
+POKEY WRITE: vcount = 252
+POKEY WRITE: vcount = 253
+POKEY WRITE: vcount = 252
+POKEY WRITE: vcount = 253
+POKEY WRITE: vcount = 252
+POKEY WRITE: vcount = 253
+POKEY WRITE: vcount = 253
+POKEY WRITE: vcount = 254
+POKEY WRITE: vcount = 253
+POKEY WRITE: vcount = 253
+POKEY WRITE: vcount = 254
+POKEY WRITE: vcount = 254
+POKEY WRITE: vcount = 252
+POKEY WRITE: vcount = 253
+POKEY WRITE: vcount = 252
+POKEY WRITE: vcount = 253
+POKEY WRITE: vcount = 252
+POKEY WRITE: vcount = 253
+POKEY WRITE: vcount = 252
+POKEY WRITE: vcount = 253
+POKEY WRITE: vcount = 252
+POKEY WRITE: vcount = 253
+POKEY WRITE: vcount = 252
+POKEY WRITE: vcount = 253
+POKEY WRITE: vcount = 252
+POKEY WRITE: vcount = 253
+POKEY WRITE: vcount = 252
+POKEY WRITE: vcount = 253
+POKEY WRITE: vcount = 252
+POKEY WRITE: vcount = 253
+POKEY WRITE: vcount = 252
+POKEY WRITE: vcount = 253
+POKEY WRITE: vcount = 252
+POKEY WRITE: vcount = 253
+POKEY WRITE: vcount = 252
+POKEY WRITE: vcount = 253
+POKEY WRITE: vcount = 252
+POKEY WRITE: vcount = 253
+POKEY WRITE: vcount = 252
+POKEY WRITE: vcount = 253
+POKEY WRITE: vcount = 252
+POKEY WRITE: vcount = 253
+POKEY WRITE: vcount = 253
+POKEY WRITE: vcount = 254
+POKEY WRITE: vcount = 253
+POKEY WRITE: vcount = 253
+POKEY WRITE: vcount = 254
+POKEY WRITE: vcount = 254
+POKEY WRITE: vcount = 252
+POKEY WRITE: vcount = 253
+POKEY WRITE: vcount = 252
+POKEY WRITE: vcount = 253
+POKEY WRITE: vcount = 252
+POKEY WRITE: vcount = 253
+POKEY WRITE: vcount = 252
+POKEY WRITE: vcount = 253
+POKEY WRITE: vcount = 252
+POKEY WRITE: vcount = 253
+POKEY WRITE: vcount = 252
+POKEY WRITE: vcount = 253
+POKEY WRITE: vcount = 252
+POKEY WRITE: vcount = 253
+POKEY WRITE: vcount = 252
+POKEY WRITE: vcount = 253
+POKEY WRITE: vcount = 252
+POKEY WRITE: vcount = 253
+POKEY WRITE: vcount = 252
+POKEY WRITE: vcount = 253
+POKEY WRITE: vcount = 252
+POKEY WRITE: vcount = 253
+POKEY WRITE: vcount = 252
+POKEY WRITE: vcount = 253
+POKEY WRITE: vcount = 252
+POKEY WRITE: vcount = 253
+POKEY WRITE: vcount = 252
+POKEY WRITE: vcount = 253
+POKEY WRITE: vcount = 252
+POKEY WRITE: vcount = 253
+POKEY WRITE: vcount = 253
+POKEY WRITE: vcount = 254
+POKEY WRITE: vcount = 253
+POKEY WRITE: vcount = 253
+POKEY WRITE: vcount = 254
+POKEY WRITE: vcount = 254
+POKEY WRITE: vcount = 252
+POKEY WRITE: vcount = 253
+POKEY WRITE: vcount = 252
+POKEY WRITE: vcount = 253
+POKEY WRITE: vcount = 252
+POKEY WRITE: vcount = 253
+POKEY WRITE: vcount = 252
+POKEY WRITE: vcount = 253
+POKEY WRITE: vcount = 252
+POKEY WRITE: vcount = 253
+POKEY WRITE: vcount = 252
+POKEY WRITE: vcount = 253
+POKEY WRITE: vcount = 252
+POKEY WRITE: vcount = 253
+POKEY WRITE: vcount = 252
+POKEY WRITE: vcount = 253
+POKEY WRITE: vcount = 252
+POKEY WRITE: vcount = 253
+POKEY WRITE: vcount = 252
+POKEY WRITE: vcount = 253
+POKEY WRITE: vcount = 252
+POKEY WRITE: vcount = 253
+POKEY WRITE: vcount = 252
+POKEY WRITE: vcount = 253
+POKEY WRITE: vcount = 252
+POKEY WRITE: vcount = 253
+POKEY WRITE: vcount = 252
+POKEY WRITE: vcount = 253
+POKEY WRITE: vcount = 252
+POKEY WRITE: vcount = 253
+POKEY WRITE: vcount = 253
+POKEY WRITE: vcount = 254
+POKEY WRITE: vcount = 253
+POKEY WRITE: vcount = 253
+POKEY WRITE: vcount = 254
+POKEY WRITE: vcount = 254
+POKEY WRITE: vcount = 252
+POKEY WRITE: vcount = 253
+POKEY WRITE: vcount = 252
+POKEY WRITE: vcount = 253
+POKEY WRITE: vcount = 252
+POKEY WRITE: vcount = 253
+POKEY WRITE: vcount = 252
+POKEY WRITE: vcount = 253
+POKEY WRITE: vcount = 252
+POKEY WRITE: vcount = 253
+POKEY WRITE: vcount = 252
+POKEY WRITE: vcount = 253
+POKEY WRITE: vcount = 252
+POKEY WRITE: vcount = 253
+POKEY WRITE: vcount = 252
+POKEY WRITE: vcount = 253
+POKEY WRITE: vcount = 252
+POKEY WRITE: vcount = 253
+POKEY WRITE: vcount = 252
+POKEY WRITE: vcount = 253
+POKEY WRITE: vcount = 252
+POKEY WRITE: vcount = 253
+POKEY WRITE: vcount = 252
+POKEY WRITE: vcount = 253
+POKEY WRITE: vcount = 252
+POKEY WRITE: vcount = 253
+POKEY WRITE: vcount = 252
+POKEY WRITE: vcount = 253
+POKEY WRITE: vcount = 252
+POKEY WRITE: vcount = 253
+POKEY WRITE: vcount = 253
+POKEY WRITE: vcount = 254
+POKEY WRITE: vcount = 253
+POKEY WRITE: vcount = 253
+POKEY WRITE: vcount = 254
+POKEY WRITE: vcount = 254
+POKEY WRITE: vcount = 252
+POKEY WRITE: vcount = 253
+POKEY WRITE: vcount = 252
+POKEY WRITE: vcount = 253
+POKEY WRITE: vcount = 252
+POKEY WRITE: vcount = 253
+POKEY WRITE: vcount = 252
+POKEY WRITE: vcount = 253
+POKEY WRITE: vcount = 252
+POKEY WRITE: vcount = 253
+POKEY WRITE: vcount = 252
+POKEY WRITE: vcount = 253
+POKEY WRITE: vcount = 252
+POKEY WRITE: vcount = 253
+POKEY WRITE: vcount = 252
+POKEY WRITE: vcount = 253
+POKEY WRITE: vcount = 252
+POKEY WRITE: vcount = 253
+POKEY WRITE: vcount = 252
+POKEY WRITE: vcount = 253
+POKEY WRITE: vcount = 252
+POKEY WRITE: vcount = 253
+POKEY WRITE: vcount = 252
+POKEY WRITE: vcount = 253
+POKEY WRITE: vcount = 252
+POKEY WRITE: vcount = 253
+POKEY WRITE: vcount = 252
+POKEY WRITE: vcount = 253
+POKEY WRITE: vcount = 252
+POKEY WRITE: vcount = 253
+POKEY WRITE: vcount = 253
+POKEY WRITE: vcount = 254
+POKEY WRITE: vcount = 253
+POKEY WRITE: vcount = 253
+POKEY WRITE: vcount = 254
+POKEY WRITE: vcount = 254
+POKEY WRITE: vcount = 252
+POKEY WRITE: vcount = 253
+POKEY WRITE: vcount = 252
+POKEY WRITE: vcount = 253
+POKEY WRITE: vcount = 252
+POKEY WRITE: vcount = 253
+POKEY WRITE: vcount = 252
+POKEY WRITE: vcount = 253
+POKEY WRITE: vcount = 252
+POKEY WRITE: vcount = 253
+POKEY WRITE: vcount = 252
+POKEY WRITE: vcount = 253
+POKEY WRITE: vcount = 252
+POKEY WRITE: vcount = 253
+POKEY WRITE: vcount = 252
+POKEY WRITE: vcount = 253
+POKEY WRITE: vcount = 252
+POKEY WRITE: vcount = 253
+POKEY WRITE: vcount = 252
+POKEY WRITE: vcount = 253
+POKEY WRITE: vcount = 252
+POKEY WRITE: vcount = 253
+POKEY WRITE: vcount = 252
+POKEY WRITE: vcount = 253
+POKEY WRITE: vcount = 252
+POKEY WRITE: vcount = 253
+POKEY WRITE: vcount = 252
+POKEY WRITE: vcount = 253
+POKEY WRITE: vcount = 252
+POKEY WRITE: vcount = 253
+POKEY WRITE: vcount = 253
+POKEY WRITE: vcount = 254
+POKEY WRITE: vcount = 254
+POKEY WRITE: vcount = 254
+POKEY WRITE: vcount = 256
+POKEY WRITE: vcount = 256
+POKEY WRITE: vcount = 252
+POKEY WRITE: vcount = 253
+POKEY WRITE: vcount = 252
+POKEY WRITE: vcount = 253
+POKEY WRITE: vcount = 252
+POKEY WRITE: vcount = 253
+POKEY WRITE: vcount = 252
+POKEY WRITE: vcount = 253
+POKEY WRITE: vcount = 252
+POKEY WRITE: vcount = 253
+POKEY WRITE: vcount = 252
+POKEY WRITE: vcount = 253
+POKEY WRITE: vcount = 252
+POKEY WRITE: vcount = 253
+POKEY WRITE: vcount = 252
+POKEY WRITE: vcount = 253
+POKEY WRITE: vcount = 252
+POKEY WRITE: vcount = 253
+POKEY WRITE: vcount = 252
+POKEY WRITE: vcount = 253
+POKEY WRITE: vcount = 252
+POKEY WRITE: vcount = 253
+POKEY WRITE: vcount = 252
+POKEY WRITE: vcount = 253
+POKEY WRITE: vcount = 252
+POKEY WRITE: vcount = 253
+POKEY WRITE: vcount = 252
+POKEY WRITE: vcount = 253
+POKEY WRITE: vcount = 252
+POKEY WRITE: vcount = 253
+POKEY WRITE: vcount = 253
+POKEY WRITE: vcount = 254
+POKEY WRITE: vcount = 253
+POKEY WRITE: vcount = 253
+POKEY WRITE: vcount = 254
+POKEY WRITE: vcount = 254
+POKEY WRITE: vcount = 252
+POKEY WRITE: vcount = 253
+POKEY WRITE: vcount = 252
+POKEY WRITE: vcount = 253
+POKEY WRITE: vcount = 252
+POKEY WRITE: vcount = 253
+POKEY WRITE: vcount = 252
+POKEY WRITE: vcount = 253
+POKEY WRITE: vcount = 252
+POKEY WRITE: vcount = 253
+POKEY WRITE: vcount = 252
+POKEY WRITE: vcount = 253
+POKEY WRITE: vcount = 252
+POKEY WRITE: vcount = 253
+POKEY WRITE: vcount = 252
+POKEY WRITE: vcount = 253
+POKEY WRITE: vcount = 252
+POKEY WRITE: vcount = 253
+POKEY WRITE: vcount = 252
+POKEY WRITE: vcount = 253
+POKEY WRITE: vcount = 252
+POKEY WRITE: vcount = 253
+POKEY WRITE: vcount = 252
+POKEY WRITE: vcount = 253
+POKEY WRITE: vcount = 252
+POKEY WRITE: vcount = 253
+POKEY WRITE: vcount = 252
+POKEY WRITE: vcount = 253
+POKEY WRITE: vcount = 252
+POKEY WRITE: vcount = 253
+POKEY WRITE: vcount = 253
+POKEY WRITE: vcount = 254
+POKEY WRITE: vcount = 253
+POKEY WRITE: vcount = 253
+POKEY WRITE: vcount = 254
+POKEY WRITE: vcount = 254
+POKEY WRITE: vcount = 252
+POKEY WRITE: vcount = 253
+POKEY WRITE: vcount = 252
+POKEY WRITE: vcount = 253
+POKEY WRITE: vcount = 252
+POKEY WRITE: vcount = 253
+POKEY WRITE: vcount = 252
+POKEY WRITE: vcount = 253
+POKEY WRITE: vcount = 252
+POKEY WRITE: vcount = 253
+POKEY WRITE: vcount = 252
+POKEY WRITE: vcount = 253
+POKEY WRITE: vcount = 252
+POKEY WRITE: vcount = 253
+POKEY WRITE: vcount = 252
+POKEY WRITE: vcount = 253
+POKEY WRITE: vcount = 252
+POKEY WRITE: vcount = 253
+POKEY WRITE: vcount = 252
+POKEY WRITE: vcount = 253
+POKEY WRITE: vcount = 252
+POKEY WRITE: vcount = 253
+POKEY WRITE: vcount = 252
+POKEY WRITE: vcount = 253
+POKEY WRITE: vcount = 252
+POKEY WRITE: vcount = 253
+POKEY WRITE: vcount = 252
+POKEY WRITE: vcount = 253
+POKEY WRITE: vcount = 252
+POKEY WRITE: vcount = 253
+POKEY WRITE: vcount = 253
+POKEY WRITE: vcount = 254
+POKEY WRITE: vcount = 253
+POKEY WRITE: vcount = 253
+POKEY WRITE: vcount = 254
+POKEY WRITE: vcount = 254
+POKEY WRITE: vcount = 252
+POKEY WRITE: vcount = 253
+POKEY WRITE: vcount = 252
+POKEY WRITE: vcount = 253
+POKEY WRITE: vcount = 252
+POKEY WRITE: vcount = 253
+POKEY WRITE: vcount = 252
+POKEY WRITE: vcount = 253
+POKEY WRITE: vcount = 252
+POKEY WRITE: vcount = 253
+POKEY WRITE: vcount = 252
+POKEY WRITE: vcount = 253
+POKEY WRITE: vcount = 252
+POKEY WRITE: vcount = 253
+POKEY WRITE: vcount = 252
+POKEY WRITE: vcount = 253
+POKEY WRITE: vcount = 252
+POKEY WRITE: vcount = 253
+POKEY WRITE: vcount = 252
+POKEY WRITE: vcount = 253
+POKEY WRITE: vcount = 252
+POKEY WRITE: vcount = 253
+POKEY WRITE: vcount = 252
+POKEY WRITE: vcount = 253
+POKEY WRITE: vcount = 252
+POKEY WRITE: vcount = 253
+POKEY WRITE: vcount = 252
+POKEY WRITE: vcount = 253
+POKEY WRITE: vcount = 252
+POKEY WRITE: vcount = 253
+POKEY WRITE: vcount = 253
+POKEY WRITE: vcount = 254
+POKEY WRITE: vcount = 253
+POKEY WRITE: vcount = 254
+POKEY WRITE: vcount = 255
+POKEY WRITE: vcount = 256
+POKEY WRITE: vcount = 252
+POKEY WRITE: vcount = 253
+POKEY WRITE: vcount = 252
+POKEY WRITE: vcount = 253
+POKEY WRITE: vcount = 252
+POKEY WRITE: vcount = 253
+POKEY WRITE: vcount = 252
+POKEY WRITE: vcount = 253
+POKEY WRITE: vcount = 252
+POKEY WRITE: vcount = 253
+POKEY WRITE: vcount = 252
+POKEY WRITE: vcount = 253
+POKEY WRITE: vcount = 252
+POKEY WRITE: vcount = 253
+POKEY WRITE: vcount = 252
+POKEY WRITE: vcount = 253
+POKEY WRITE: vcount = 252
+POKEY WRITE: vcount = 253
+POKEY WRITE: vcount = 252
+POKEY WRITE: vcount = 253
+POKEY WRITE: vcount = 252
+POKEY WRITE: vcount = 253
+POKEY WRITE: vcount = 252
+POKEY WRITE: vcount = 253
+POKEY WRITE: vcount = 252
+POKEY WRITE: vcount = 253
+POKEY WRITE: vcount = 252
+POKEY WRITE: vcount = 253
+POKEY WRITE: vcount = 252
+POKEY WRITE: vcount = 253
+POKEY WRITE: vcount = 253
+POKEY WRITE: vcount = 254
+POKEY WRITE: vcount = 253
+POKEY WRITE: vcount = 253
+POKEY WRITE: vcount = 254
+POKEY WRITE: vcount = 254
+POKEY WRITE: vcount = 252
+POKEY WRITE: vcount = 253
+POKEY WRITE: vcount = 252
+POKEY WRITE: vcount = 253
+POKEY WRITE: vcount = 252
+POKEY WRITE: vcount = 253
+POKEY WRITE: vcount = 252
+POKEY WRITE: vcount = 253
+POKEY WRITE: vcount = 252
+POKEY WRITE: vcount = 253
+POKEY WRITE: vcount = 252
+POKEY WRITE: vcount = 253
+POKEY WRITE: vcount = 252
+POKEY WRITE: vcount = 253
+POKEY WRITE: vcount = 252
+POKEY WRITE: vcount = 253
+POKEY WRITE: vcount = 252
+POKEY WRITE: vcount = 253
+POKEY WRITE: vcount = 252
+POKEY WRITE: vcount = 253
+POKEY WRITE: vcount = 252
+POKEY WRITE: vcount = 253
+POKEY WRITE: vcount = 252
+POKEY WRITE: vcount = 253
+POKEY WRITE: vcount = 252
+POKEY WRITE: vcount = 253
+POKEY WRITE: vcount = 252
+POKEY WRITE: vcount = 253
+POKEY WRITE: vcount = 252
+POKEY WRITE: vcount = 253
+POKEY WRITE: vcount = 253
+POKEY WRITE: vcount = 254
+POKEY WRITE: vcount = 253
+POKEY WRITE: vcount = 253
+POKEY WRITE: vcount = 254
+POKEY WRITE: vcount = 254
+POKEY WRITE: vcount = 252
+POKEY WRITE: vcount = 253
+POKEY WRITE: vcount = 252
+POKEY WRITE: vcount = 253
+POKEY WRITE: vcount = 252
+POKEY WRITE: vcount = 253
+POKEY WRITE: vcount = 252
+POKEY WRITE: vcount = 253
+POKEY WRITE: vcount = 252
+POKEY WRITE: vcount = 253
+POKEY WRITE: vcount = 252
+POKEY WRITE: vcount = 253
+POKEY WRITE: vcount = 252
+POKEY WRITE: vcount = 253
+POKEY WRITE: vcount = 252
+POKEY WRITE: vcount = 253
+POKEY WRITE: vcount = 252
+POKEY WRITE: vcount = 253
+POKEY WRITE: vcount = 252
+POKEY WRITE: vcount = 253
+POKEY WRITE: vcount = 252
+POKEY WRITE: vcount = 253
+POKEY WRITE: vcount = 252
+POKEY WRITE: vcount = 253
+POKEY WRITE: vcount = 252
+POKEY WRITE: vcount = 253
+POKEY WRITE: vcount = 252
+POKEY WRITE: vcount = 253
+POKEY WRITE: vcount = 252
+POKEY WRITE: vcount = 253
+POKEY WRITE: vcount = 253
+POKEY WRITE: vcount = 254
+POKEY WRITE: vcount = 253
+POKEY WRITE: vcount = 253
+POKEY WRITE: vcount = 254
+POKEY WRITE: vcount = 254
+POKEY WRITE: vcount = 252
+POKEY WRITE: vcount = 253
+POKEY WRITE: vcount = 252
+POKEY WRITE: vcount = 253
+POKEY WRITE: vcount = 252
+POKEY WRITE: vcount = 253
+POKEY WRITE: vcount = 252
+POKEY WRITE: vcount = 253
+POKEY WRITE: vcount = 252
+POKEY WRITE: vcount = 253
+POKEY WRITE: vcount = 252
+POKEY WRITE: vcount = 253
+POKEY WRITE: vcount = 252
+POKEY WRITE: vcount = 253
+POKEY WRITE: vcount = 252
+POKEY WRITE: vcount = 253
+POKEY WRITE: vcount = 252
+POKEY WRITE: vcount = 253
+POKEY WRITE: vcount = 252
+POKEY WRITE: vcount = 253
+POKEY WRITE: vcount = 252
+POKEY WRITE: vcount = 253
+POKEY WRITE: vcount = 252
+POKEY WRITE: vcount = 253
+POKEY WRITE: vcount = 252
+POKEY WRITE: vcount = 253
+POKEY WRITE: vcount = 252
+POKEY WRITE: vcount = 253
+POKEY WRITE: vcount = 252
+POKEY WRITE: vcount = 253
+POKEY WRITE: vcount = 253
+POKEY WRITE: vcount = 254
+POKEY WRITE: vcount = 253
+POKEY WRITE: vcount = 254
+POKEY WRITE: vcount = 256
+POKEY WRITE: vcount = 256
+POKEY WRITE: vcount = 252
+POKEY WRITE: vcount = 253
+POKEY WRITE: vcount = 252
+POKEY WRITE: vcount = 253
+POKEY WRITE: vcount = 252
+POKEY WRITE: vcount = 253
+POKEY WRITE: vcount = 252
+POKEY WRITE: vcount = 253
+POKEY WRITE: vcount = 252
+POKEY WRITE: vcount = 253
+POKEY WRITE: vcount = 252
+POKEY WRITE: vcount = 253
+POKEY WRITE: vcount = 252
+POKEY WRITE: vcount = 253
+POKEY WRITE: vcount = 252
+POKEY WRITE: vcount = 253
+POKEY WRITE: vcount = 252
+POKEY WRITE: vcount = 253
+POKEY WRITE: vcount = 252
+POKEY WRITE: vcount = 253
+POKEY WRITE: vcount = 252
+POKEY WRITE: vcount = 253
+POKEY WRITE: vcount = 252
+POKEY WRITE: vcount = 253
+POKEY WRITE: vcount = 252
+POKEY WRITE: vcount = 253
+POKEY WRITE: vcount = 252
+POKEY WRITE: vcount = 253
+POKEY WRITE: vcount = 252
+POKEY WRITE: vcount = 253
+POKEY WRITE: vcount = 252
+POKEY WRITE: vcount = 253
+POKEY WRITE: vcount = 252
+POKEY WRITE: vcount = 253
+POKEY WRITE: vcount = 252
+POKEY WRITE: vcount = 253
+POKEY WRITE: vcount = 252
+POKEY WRITE: vcount = 253
+POKEY WRITE: vcount = 252
+POKEY WRITE: vcount = 253
+POKEY WRITE: vcount = 252
+POKEY WRITE: vcount = 253
+POKEY WRITE: vcount = 252
+POKEY WRITE: vcount = 253
+POKEY WRITE: vcount = 252
+POKEY WRITE: vcount = 253
+POKEY WRITE: vcount = 252
+POKEY WRITE: vcount = 253
+POKEY WRITE: vcount = 252
+POKEY WRITE: vcount = 253
+POKEY WRITE: vcount = 252
+POKEY WRITE: vcount = 253
+POKEY WRITE: vcount = 252
+POKEY WRITE: vcount = 253
+POKEY WRITE: vcount = 252
+POKEY WRITE: vcount = 253
+POKEY WRITE: vcount = 252
+POKEY WRITE: vcount = 253
+POKEY WRITE: vcount = 252
+POKEY WRITE: vcount = 253
+POKEY WRITE: vcount = 252
+POKEY WRITE: vcount = 253
+POKEY WRITE: vcount = 252
+POKEY WRITE: vcount = 253
+POKEY WRITE: vcount = 252
+POKEY WRITE: vcount = 253
+POKEY WRITE: vcount = 252
+POKEY WRITE: vcount = 253
+POKEY WRITE: vcount = 252
+POKEY WRITE: vcount = 253
+POKEY WRITE: vcount = 252
+POKEY WRITE: vcount = 253
+POKEY WRITE: vcount = 252
+POKEY WRITE: vcount = 253
+POKEY WRITE: vcount = 252
+POKEY WRITE: vcount = 253
+POKEY WRITE: vcount = 252
+POKEY WRITE: vcount = 253
+POKEY WRITE: vcount = 252
+POKEY WRITE: vcount = 253
+POKEY WRITE: vcount = 252
+POKEY WRITE: vcount = 253
+POKEY WRITE: vcount = 252
+POKEY WRITE: vcount = 253
+POKEY WRITE: vcount = 252
+POKEY WRITE: vcount = 253
+POKEY WRITE: vcount = 252
+POKEY WRITE: vcount = 253
+POKEY WRITE: vcount = 252
+POKEY WRITE: vcount = 253
+POKEY WRITE: vcount = 252
+POKEY WRITE: vcount = 253
+POKEY WRITE: vcount = 252
+POKEY WRITE: vcount = 253
+POKEY WRITE: vcount = 252
+POKEY WRITE: vcount = 253
+POKEY WRITE: vcount = 252
+POKEY WRITE: vcount = 253
+POKEY WRITE: vcount = 252
+POKEY WRITE: vcount = 253
+POKEY WRITE: vcount = 252
+POKEY WRITE: vcount = 253
+POKEY WRITE: vcount = 252
+POKEY WRITE: vcount = 253
+POKEY WRITE: vcount = 252
+POKEY WRITE: vcount = 253
+POKEY WRITE: vcount = 252
+POKEY WRITE: vcount = 253
+POKEY WRITE: vcount = 252
+POKEY WRITE: vcount = 253
+POKEY WRITE: vcount = 252
+POKEY WRITE: vcount = 253
+POKEY WRITE: vcount = 252
+POKEY WRITE: vcount = 253
+POKEY WRITE: vcount = 252
+POKEY WRITE: vcount = 253
+POKEY WRITE: vcount = 252
+POKEY WRITE: vcount = 253
+POKEY WRITE: vcount = 252
+POKEY WRITE: vcount = 253
+POKEY WRITE: vcount = 252
+POKEY WRITE: vcount = 253
+POKEY WRITE: vcount = 252
+POKEY WRITE: vcount = 253
+POKEY WRITE: vcount = 252
+POKEY WRITE: vcount = 253
+POKEY WRITE: vcount = 253
+POKEY WRITE: vcount = 254
+POKEY WRITE: vcount = 253
+POKEY WRITE: vcount = 253
+POKEY WRITE: vcount = 254
+POKEY WRITE: vcount = 254
+POKEY WRITE: vcount = 255
+POKEY WRITE: vcount = 255
+POKEY WRITE: vcount = 254
+POKEY WRITE: vcount = 254
+POKEY WRITE: vcount = 254
+POKEY WRITE: vcount = 254
+POKEY WRITE: vcount = 254
+POKEY WRITE: vcount = 254
+POKEY WRITE: vcount = 254
+POKEY WRITE: vcount = 254
+POKEY WRITE: vcount = 254
+POKEY WRITE: vcount = 254
+POKEY WRITE: vcount = 254
+POKEY WRITE: vcount = 254
+POKEY WRITE: vcount = 254
+POKEY WRITE: vcount = 254
+POKEY WRITE: vcount = 254
+POKEY WRITE: vcount = 254
+POKEY WRITE: vcount = 254
+POKEY WRITE: vcount = 255
+POKEY WRITE: vcount = 254
+POKEY WRITE: vcount = 254
+POKEY WRITE: vcount = 254
+POKEY WRITE: vcount = 254
+POKEY WRITE: vcount = 254
+POKEY WRITE: vcount = 254
+POKEY WRITE: vcount = 254
+POKEY WRITE: vcount = 254
+POKEY WRITE: vcount = 254
+POKEY WRITE: vcount = 254
+POKEY WRITE: vcount = 254
+POKEY WRITE: vcount = 254
+POKEY WRITE: vcount = 254
+POKEY WRITE: vcount = 254
+POKEY WRITE: vcount = 254
+POKEY WRITE: vcount = 254
+POKEY WRITE: vcount = 254
+POKEY WRITE: vcount = 255
+POKEY WRITE: vcount = 254
+POKEY WRITE: vcount = 254
+POKEY WRITE: vcount = 254
+POKEY WRITE: vcount = 254
+POKEY WRITE: vcount = 254
+POKEY WRITE: vcount = 254
+POKEY WRITE: vcount = 254
+POKEY WRITE: vcount = 254
+POKEY WRITE: vcount = 254
+POKEY WRITE: vcount = 254
+POKEY WRITE: vcount = 254
+POKEY WRITE: vcount = 254
+POKEY WRITE: vcount = 254
+POKEY WRITE: vcount = 254
+POKEY WRITE: vcount = 254
+POKEY WRITE: vcount = 254
+POKEY WRITE: vcount = 254
+POKEY WRITE: vcount = 254
+POKEY WRITE: vcount = 254
+POKEY WRITE: vcount = 254
+POKEY WRITE: vcount = 254
+POKEY WRITE: vcount = 254
+POKEY WRITE: vcount = 254
+POKEY WRITE: vcount = 254
+POKEY WRITE: vcount = 254
+POKEY WRITE: vcount = 254
+POKEY WRITE: vcount = 254
+POKEY WRITE: vcount = 254
+POKEY WRITE: vcount = 254
+POKEY WRITE: vcount = 254
+POKEY WRITE: vcount = 254
+POKEY WRITE: vcount = 254
+POKEY WRITE: vcount = 254
+POKEY WRITE: vcount = 255
+POKEY WRITE: vcount = 254
+POKEY WRITE: vcount = 254
+POKEY WRITE: vcount = 254
+POKEY WRITE: vcount = 254
+POKEY WRITE: vcount = 254
+POKEY WRITE: vcount = 254
+POKEY WRITE: vcount = 254
+POKEY WRITE: vcount = 254
+POKEY WRITE: vcount = 254
+POKEY WRITE: vcount = 254
+POKEY WRITE: vcount = 254
+POKEY WRITE: vcount = 254
+POKEY WRITE: vcount = 254
+POKEY WRITE: vcount = 254
+POKEY WRITE: vcount = 254
+POKEY WRITE: vcount = 254
+POKEY WRITE: vcount = 254
+POKEY WRITE: vcount = 255
+POKEY WRITE: vcount = 254
+POKEY WRITE: vcount = 254
+POKEY WRITE: vcount = 254
+POKEY WRITE: vcount = 254
+POKEY WRITE: vcount = 254
+POKEY WRITE: vcount = 254
+POKEY WRITE: vcount = 254
+POKEY WRITE: vcount = 254
+POKEY WRITE: vcount = 254
+POKEY WRITE: vcount = 255
+POKEY WRITE: vcount = 254
+POKEY WRITE: vcount = 254
+POKEY WRITE: vcount = 254
+POKEY WRITE: vcount = 254
+POKEY WRITE: vcount = 254
+POKEY WRITE: vcount = 254
+POKEY WRITE: vcount = 254
+POKEY WRITE: vcount = 254
+POKEY WRITE: vcount = 254
+POKEY WRITE: vcount = 254
+POKEY WRITE: vcount = 254
+POKEY WRITE: vcount = 254
+POKEY WRITE: vcount = 254
+POKEY WRITE: vcount = 254
+POKEY WRITE: vcount = 254
+POKEY WRITE: vcount = 254
+POKEY WRITE: vcount = 254
+POKEY WRITE: vcount = 255
+POKEY WRITE: vcount = 254
+POKEY WRITE: vcount = 254
+POKEY WRITE: vcount = 254
+POKEY WRITE: vcount = 254
+POKEY WRITE: vcount = 254
+POKEY WRITE: vcount = 254
+POKEY WRITE: vcount = 254
+POKEY WRITE: vcount = 254
+POKEY WRITE: vcount = 254
+POKEY WRITE: vcount = 255
+POKEY WRITE: vcount = 254
+POKEY WRITE: vcount = 254
+POKEY WRITE: vcount = 254
+POKEY WRITE: vcount = 254
+POKEY WRITE: vcount = 254
+POKEY WRITE: vcount = 254
+POKEY WRITE: vcount = 254
+POKEY WRITE: vcount = 254
+POKEY WRITE: vcount = 254
+POKEY WRITE: vcount = 255
+POKEY WRITE: vcount = 254
+POKEY WRITE: vcount = 254
+POKEY WRITE: vcount = 254
+POKEY WRITE: vcount = 254
+POKEY WRITE: vcount = 254
+POKEY WRITE: vcount = 254
+POKEY WRITE: vcount = 254
+POKEY WRITE: vcount = 254
+POKEY WRITE: vcount = 255
+POKEY WRITE: vcount = 255
+POKEY WRITE: vcount = 254
+POKEY WRITE: vcount = 254
+POKEY WRITE: vcount = 254
+POKEY WRITE: vcount = 254
+POKEY WRITE: vcount = 254
+POKEY WRITE: vcount = 254
+POKEY WRITE: vcount = 254
+POKEY WRITE: vcount = 254
+POKEY WRITE: vcount = 254
+POKEY WRITE: vcount = 254
+POKEY WRITE: vcount = 254
+POKEY WRITE: vcount = 254
+POKEY WRITE: vcount = 254
+POKEY WRITE: vcount = 254
+POKEY WRITE: vcount = 254
+POKEY WRITE: vcount = 254
+POKEY WRITE: vcount = 254
+POKEY WRITE: vcount = 255
+POKEY WRITE: vcount = 254
+POKEY WRITE: vcount = 254
+POKEY WRITE: vcount = 254
+POKEY WRITE: vcount = 254
+POKEY WRITE: vcount = 254
+POKEY WRITE: vcount = 254
+POKEY WRITE: vcount = 254
+POKEY WRITE: vcount = 254
+POKEY WRITE: vcount = 254
+POKEY WRITE: vcount = 254
+POKEY WRITE: vcount = 254
+POKEY WRITE: vcount = 254
+POKEY WRITE: vcount = 254
+POKEY WRITE: vcount = 254
+POKEY WRITE: vcount = 254
+POKEY WRITE: vcount = 254
+POKEY WRITE: vcount = 254
+POKEY WRITE: vcount = 255
+POKEY WRITE: vcount = 254
+POKEY WRITE: vcount = 254
+POKEY WRITE: vcount = 254
+POKEY WRITE: vcount = 254
+POKEY WRITE: vcount = 254
+POKEY WRITE: vcount = 254
+POKEY WRITE: vcount = 254
+POKEY WRITE: vcount = 254
+POKEY WRITE: vcount = 254
+POKEY WRITE: vcount = 254
+POKEY WRITE: vcount = 254
+POKEY WRITE: vcount = 254
+POKEY WRITE: vcount = 254
+POKEY WRITE: vcount = 254
+POKEY WRITE: vcount = 254
+POKEY WRITE: vcount = 254
+POKEY WRITE: vcount = 254
+POKEY WRITE: vcount = 254
+POKEY WRITE: vcount = 254
+POKEY WRITE: vcount = 254
+POKEY WRITE: vcount = 254
+POKEY WRITE: vcount = 254
+POKEY WRITE: vcount = 254
+POKEY WRITE: vcount = 254
+POKEY WRITE: vcount = 254
+POKEY WRITE: vcount = 254
+POKEY WRITE: vcount = 254
+POKEY WRITE: vcount = 254
+POKEY WRITE: vcount = 254
+POKEY WRITE: vcount = 254
+POKEY WRITE: vcount = 254
+POKEY WRITE: vcount = 254
+POKEY WRITE: vcount = 254
+POKEY WRITE: vcount = 255
+POKEY WRITE: vcount = 254
+POKEY WRITE: vcount = 254
+POKEY WRITE: vcount = 254
+POKEY WRITE: vcount = 254
+POKEY WRITE: vcount = 254
+POKEY WRITE: vcount = 254
+POKEY WRITE: vcount = 254
+POKEY WRITE: vcount = 254
+POKEY WRITE: vcount = 254
+POKEY WRITE: vcount = 254
+POKEY WRITE: vcount = 254
+POKEY WRITE: vcount = 254
+POKEY WRITE: vcount = 254
+POKEY WRITE: vcount = 254
+POKEY WRITE: vcount = 254
+POKEY WRITE: vcount = 254
+POKEY WRITE: vcount = 254
+POKEY WRITE: vcount = 255
+POKEY WRITE: vcount = 254
+POKEY WRITE: vcount = 254
+POKEY WRITE: vcount = 254
+POKEY WRITE: vcount = 254
+POKEY WRITE: vcount = 254
+POKEY WRITE: vcount = 254
+POKEY WRITE: vcount = 254
+POKEY WRITE: vcount = 254
+POKEY WRITE: vcount = 254
+POKEY WRITE: vcount = 255
+POKEY WRITE: vcount = 254
+POKEY WRITE: vcount = 254
+POKEY WRITE: vcount = 254
+POKEY WRITE: vcount = 254
+POKEY WRITE: vcount = 254
+POKEY WRITE: vcount = 254
+POKEY WRITE: vcount = 254
+POKEY WRITE: vcount = 254
+POKEY WRITE: vcount = 254
+POKEY WRITE: vcount = 254
+POKEY WRITE: vcount = 254
+POKEY WRITE: vcount = 254
+POKEY WRITE: vcount = 254
+POKEY WRITE: vcount = 254
+POKEY WRITE: vcount = 254
+POKEY WRITE: vcount = 254
+POKEY WRITE: vcount = 254
+POKEY WRITE: vcount = 255
+POKEY WRITE: vcount = 254
+POKEY WRITE: vcount = 254
+POKEY WRITE: vcount = 254
+POKEY WRITE: vcount = 254
+POKEY WRITE: vcount = 254
+POKEY WRITE: vcount = 254
+POKEY WRITE: vcount = 254
+POKEY WRITE: vcount = 254
+POKEY WRITE: vcount = 254
+POKEY WRITE: vcount = 255
+POKEY WRITE: vcount = 254
+POKEY WRITE: vcount = 254
+POKEY WRITE: vcount = 254
+POKEY WRITE: vcount = 254
+POKEY WRITE: vcount = 254
+POKEY WRITE: vcount = 254
+POKEY WRITE: vcount = 254
+POKEY WRITE: vcount = 254
+POKEY WRITE: vcount = 254
+POKEY WRITE: vcount = 255
+POKEY WRITE: vcount = 254
+POKEY WRITE: vcount = 254
+POKEY WRITE: vcount = 254
+POKEY WRITE: vcount = 254
+POKEY WRITE: vcount = 254
+POKEY WRITE: vcount = 254

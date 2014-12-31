@@ -27,7 +27,7 @@ Sound fixes:
 		- Log on which scanlines POKEY is written to (for multiple games)
 
 Other fixes:
-- Load .A52 files and .ROM files
+- [DONE] Load .A52 files and .ROM files
 - More accurate palettes (NTSC palette, PAL palette)
 - Integrate with 
 

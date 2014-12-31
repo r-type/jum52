@@ -1235,35 +1235,42 @@ char *doFileBrowseDialog(void)
 // ROM selection menu (new version)
 char *DoRomMenu()
 {
-  int i;
-  char s[256];
-  int y;
-  int key;
-  int debounce = 0;
-  SDL_Event event;
-  long findHandle;
-  int escaped = 0;
+	int i;
+	char s[256];
+	int y;
+	int key;
+	int debounce = 0;
+	SDL_Event event;
+	long findHandle;
+	int escaped = 0;
 
-  struct _finddata_t fileinfo;
+	struct _finddata_t fileinfo;
 
-  //return doFileBrowseDialog();
+	//return doFileBrowseDialog();
 
-  // *** THE CODE BELOW IS UNUSED, BUT IS LEFT HERE FOR REFERENCE
-  // *** AND POSSIBLE USE IN ANOTHER PORT :)
+	// *** THE CODE BELOW IS UNUSED, BUT IS LEFT HERE FOR REFERENCE
+	// *** AND POSSIBLE USE IN ANOTHER PORT :)
 
-  // get a list of .bin files in the rom directory
-  num_roms = 0;
+	// get a list of .bin files in the rom directory
+	num_roms = 0;
 
-  findHandle = _findfirst("*.bin;*.BIN;*.a52;*.A52;*.rom;*.ROM", &fileinfo);
-  if (findHandle > -1)
-	strcpy(romdata[num_roms++].name, fileinfo.name);
-  else
-	return NULL;	// no roms found!
+	// Find *.*, then filter by extensions .bin, .a52, .rom
+	findHandle = _findfirst("*.*", &fileinfo);
+	if (-1 == findHandle)
+		return NULL;	// no roms found!
 
-  while (0 == _findnext(findHandle, &fileinfo) && num_roms < MAX_ROMS)
-	strcpy(romdata[num_roms++].name, fileinfo.name);
+	do {
+		if (strlen(fileinfo.name) > 4) {
+			if (strstr(fileinfo.name, ".bin") || strstr(fileinfo.name, ".BIN") ||
+				strstr(fileinfo.name, ".a52") || strstr(fileinfo.name, ".A52") || 
+				strstr(fileinfo.name, ".rom") || strstr(fileinfo.name, ".ROM")) {
+				strcpy(romdata[num_roms++].name, fileinfo.name);
+			}
+		}
+	}
+	while (0 == _findnext(findHandle, &fileinfo) && num_roms < MAX_ROMS);
 
-  _findclose(findHandle);
+	_findclose(findHandle);
 
 #ifdef _DEBUG
 	for(i=0; i<num_roms; i++) {
