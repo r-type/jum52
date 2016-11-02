@@ -130,8 +130,8 @@
 #define PAL		0x01
 
 typedef struct {
-	unsigned char	nmien;
-    unsigned char	nmist;
+	unsigned char nmien;
+	unsigned char nmist;
 } ANTICTYPE;
 
 extern ANTICTYPE antic;

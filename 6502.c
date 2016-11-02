@@ -1,4 +1,4 @@
-// Most of this is by a guy called Neil.
+// Most of this is by Neil Bradley circa 1998?
 // The hacked parts are by James.
 
 #include "global.h"
@@ -23,31 +23,31 @@
 uint8 a_reg,x_reg,y_reg,flag_reg,s_reg;
 uint16 pc_reg = 0;
 
-
 /* Address mask. Atari Asteroids/Deluxe use 0x7fff -
  * but use 0xffff for full 16 bit decode
  */
-uint16 addrmask = 0xFFFF;
+static const uint16 addrmask = 0xFFFF;
 
 /* internal registers */
-uint8 opcode;
-int clockticks6502 = 0;
-int totalticks;
-int timerTicks;
+static uint8 opcode = 0;
+static int clockticks6502 = 0;
+static int totalticks;
+static int timerTicks;
 int running;
 extern int stolencycles;
 
 /* help variables */
-uint16 savepc;
-uint8 value;
-int sum,saveflags;
+static uint16 savepc;
+static uint8 value;
+static int sum;
+static int saveflags;
 int nmi_busy, irq_busy, irq_pending;
 
 /* arrays */
 void (*adrmode[256])();
 void (*instruction[256])();
-int ticks[256];
-uint16 help;
+static int ticks[256];
+static uint16 help;
 
 /* Adressing modes */
 /* Implied */

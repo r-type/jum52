@@ -21,24 +21,25 @@ typedef long int32;
 
 
 // Defines
-#define VID_HEIGHT		270
-#define VID_WIDTH		384
+#define JUM52_VERSION	"1.3"
+#define VID_HEIGHT			270
+#define VID_WIDTH				384
 #define VISIBLE_HEIGHT	240
-#define VISIBLE_WIDTH	320
+#define VISIBLE_WIDTH		320
 
 #ifdef _EE
-#define SND_RATE        48000
+#define SND_RATE	48000
 #else
-#define SND_RATE		44100
+#define SND_RATE	44100
 #endif
 
 #define CONT_MODE_ANALOG    1
 #define CONT_MODE_DIGITAL   0
 
 // Controllers
-typedef struct {
-
-    int mode;           // 0 = digital, 1 = analog
+typedef struct
+{
+	int mode;           // 0 = digital, 1 = analog
 
 	// All values are 1 or 0, or perhaps not...
 	int left;
@@ -46,12 +47,12 @@ typedef struct {
 	int up;
 	int down;
 
-    // JH 6/2002 - for PS2 analog sticks
-    unsigned char analog_h;
-    unsigned char analog_v;
-	
+	// JH 6/2002 - for PS2 analog sticks
+	unsigned char analog_h;
+	unsigned char analog_v;
+
 	int trig;
-    int side_button;
+	int side_button;
 
 	// These may be set to 1. The core handles clearing them.
 	// [BREAK]  [ # ]  [ 0 ]  [ * ]
@@ -59,11 +60,11 @@ typedef struct {
 	// [PAUSE]  [ 6 ]  [ 5 ]  [ 4 ]
 	// [START]  [ 3 ]  [ 2 ]  [ 1 ]
 	int key[16];
-    int last_key_still_pressed;
-	
+	int last_key_still_pressed;
+
 	// Mode
 	int fake_mouse_support;
-	
+
 	// Do not touch these (private data)
 	int vpos, hpos;
 	int lastRead;
@@ -80,9 +81,10 @@ extern int pot_max_right;
 
 // for direct samples
 #define MAX_SAMPLE_EVENTS   200
-typedef struct {
-    short vcount;
-    unsigned char value;
+typedef struct
+{
+	short vcount;
+	unsigned char value;
 } SampleEvent_t;
 
 extern int numSampleEvents[4];
@@ -93,7 +95,8 @@ extern void addSampleEvent(int vcount, int channel, unsigned char value);
 extern void renderMixSampleEvents(unsigned char *pokeyBuf, uint16 size);
 
 // Global vars
-typedef struct {
+typedef struct
+{
 	int videomode;				// 1 (NTSC) or 15 (PAL)
 	int debugmode;				// 0 or 1
 	int controller;				// 0 (keys), 1 (joystick), 2 (mouse)
@@ -110,7 +113,8 @@ extern Options_t options;
 
 #define NUM_16K_ROM_MAPS 200
 
-typedef struct {				// 80 bytes
+typedef struct
+{				// 80 bytes
 	char crc[8];
 	int mapping;
 	char description[68];
@@ -118,7 +122,7 @@ typedef struct {				// 80 bytes
 
 extern Map16k_t *p16Maps;
 
-extern int num16kMappings;			// number of 16k rom mappings
+//extern int num16kMappings;			// number of 16k rom mappings
 
 #define KEY_MAP_SIZE 320		// size of key map
 extern unsigned short keyMap[KEY_MAP_SIZE];
@@ -127,7 +131,7 @@ extern unsigned int colourtable[256];
 extern uint8 *memory5200;		// 6502 memory
 extern uint8 *vid;
 extern uint8 *snd;				// pokey output buffer
-extern int8 *voiceBuffer;		// voice/sample output buffer
+//extern int8 *voiceBuffer;		// voice/sample output buffer
 extern int running;				// System executing?
 extern int videomode;			// NTSC or PAL?
 extern uint16 snd_buf_size;		// size of sound buffer (735 for NTSC)
