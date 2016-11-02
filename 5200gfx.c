@@ -327,7 +327,7 @@ void updateANTIC(void)
 // Render 1 line of playfield
 int pf_line_render(void)
 {
-	uint8 cmd, d, c, ci, chr, alt_clr_bit;
+	uint8 d, c, ci;
 	uint16 ch_base, ch_addr;
 	int i, j, k, x;
 	uint8 gfxcol[4];
@@ -385,7 +385,7 @@ int pf_line_render(void)
 	if (vcount == next_mode_line) {					// optimise
 		scanaddr += bytes_per_line;
 		mode_y = 0;
-		cmd = memory5200[dladdr++];
+		uint8 cmd = memory5200[dladdr++];
 		current_mode = cmd & 0x0F;
 		next_mode_line += modelines[current_mode];
 
@@ -514,7 +514,7 @@ int pf_line_render(void)
 			for (i = 0; i < bytes_per_line; i++) {
 				k = x;
 				// get character no.
-				chr = memory5200[scanaddr + i];
+				uint8 chr = memory5200[scanaddr + i];
 				ch_addr = ch_base + ((chr & 0x7f) << 3);
 				d = memory5200[ch_addr + vscrollStartLine + mode_y];
 				// check if inverted (bit 7 is set)
@@ -651,7 +651,7 @@ int pf_line_render(void)
 				k = x;
 				// get character
 				d = memory5200[scanaddr + i];
-				alt_clr_bit = d & 0x80;
+				uint8 alt_clr_bit = d & 0x80;
 				d &= 0x7F;
 				ch_addr = ch_base + (d << 3);
 				d = memory5200[ch_addr + j];

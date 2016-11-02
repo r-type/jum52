@@ -55,6 +55,7 @@ static int lastSecondTick = 0;
 static int exit_app = 0;
 //static int gotcartlist = 0;
 static int debugging = 0;
+static char msg[256];
 
 // 48kHz sample rate (see global.h)
 // we need 800 samples for NTSC, 960 for PAL

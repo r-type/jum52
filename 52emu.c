@@ -1076,8 +1076,6 @@ int loadPalette(char *filename)
 {
 	int i;
 	FILE *pfile;
-	uint8 r, g, b;
-	uint32 rgb32;
 
 	sprintf(errormsg, "Loading palette file '%s'...\n", filename);
 	HostLog(errormsg);
@@ -1091,10 +1089,10 @@ int loadPalette(char *filename)
 
 	for (i = 0; i < 256; i++)
 		{
-		r = fgetc(pfile);
-		g = fgetc(pfile);
-		b = fgetc(pfile);
-		rgb32 = (r << 16) | (g << 8) | b;
+		uint8 r = fgetc(pfile);
+		uint8 g = fgetc(pfile);
+		uint8 b = fgetc(pfile);
+		uint32 rgb32 = (r << 16) | (g << 8) | b;
 		colourtable[i] = rgb32;
 		//HostSetPaletteEntry(i, r, g, b);
 		}

@@ -512,13 +512,9 @@ void Update_pokey_sound (uint16 addr, uint8 val, uint8 chip, uint8 gain)
 /* Outputs: the buffer will be filled with n bytes of audio - no return val  */
 /*                                                                           */
 /*****************************************************************************/
-
-void Pokey_process (unsigned char *buffer, uint16 n)
+void Pokey_process(unsigned char *buffer, uint16 n)
 {
-    uint32 *div_n_ptr;
     uint32 *samp_cnt_w_ptr;
-    uint32 event_min;
-    uint8 next_event;
 #ifdef CLIP                      /* if clipping is selected */
     int16 cur_val;      /* then we have to count as 16-bit signed */
 #else
@@ -570,11 +566,11 @@ void Pokey_process (unsigned char *buffer, uint16 n)
        /* 'accelerated' time by adjusting all pointers by that amount. */
 
        /* find next smallest event (either sample or chan 1-4) */
-       next_event = SAMPLE;
+       uint8 next_event = SAMPLE;
        //event_min = *samp_cnt_w_ptr;
-       event_min = *samp_cnt_w_ptr / 256;       // jh - TO COMPENSATE
+       uint32 event_min = *samp_cnt_w_ptr / 256;       // jh - TO COMPENSATE
 
-       div_n_ptr = Div_n_cnt;
+       uint32 *div_n_ptr = Div_n_cnt;
 
        // JH - took out multiple pokey loop here
        if (*div_n_ptr <= event_min) {
