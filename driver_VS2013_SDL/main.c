@@ -16,6 +16,7 @@
 #include "../gamesave.h"
 #include "main.h"
 
+#define JUM52_VERSION	"1.3"
 #define VOICE_DEBUG
 #define MAX_ROMS	200
 
@@ -253,29 +254,31 @@ char getkey(void)
 }
 
 static Uint8 *gAudioStream = NULL;
+static unsigned char fillSoundBufferDone = 1;			// to sync emu to audio stream
 
 // sound mixer callback
 void fillsoundbuffer(void *userdata, Uint8 *stream, int len)
 {
-	int i;
-	int vol64;
-	static Uint8 oldValue = 128;
+  static Uint8 oldValue = 128;
 
-	vol64 = (options.volume * 63) / 100;
+  const int vol64 = (options.volume * 63) / 100;
 
-	for (i = 0; i < len; i++)
+  for (int i = 0; i < len; i++)
 	{
-		// TODO: filter?
-		char val = (char)snd[i] - 128;
-		int ampedVal = (vol64 * val) / 64;
-		//stream[i] = 128 + ampedVal;
-		// simple filter code
-		Uint8 newValue = 128 + ampedVal;
-		stream[i] = (oldValue + newValue) >> 1;
-		oldValue = newValue;
+	  // TODO: filter?
+	  char val = (char)snd[i] - 128;
+	  int ampedVal = (vol64 * val) / 64;
+	  //stream[i] = 128 + ampedVal;
+	  // simple filter code
+	  Uint8 newValue = 128 + ampedVal;
+	  stream[i] = newValue;
+	  //stream[i] = (oldValue + newValue) >> 1;
+	  //stream[i] = newValue - ((newValue - oldValue) / 2);
+	  oldValue = newValue;
 	}
 
-	gAudioStream = stream;
+  gAudioStream = stream;
+  fillSoundBufferDone = 1;
 }
 
 
@@ -367,7 +370,7 @@ int Init(void)
 
 	// set up audio output
 	reqSpec.freq = SND_RATE;
-	reqSpec.format = AUDIO_S8; //AUDIO_U8; //AUDIO_S8;
+	reqSpec.format = AUDIO_S8; // AUDIO_U8 in Win32_DSL version
 	reqSpec.channels = 1;
 	reqSpec.silence = 128;
 	if (options.videomode == NTSC)
@@ -387,8 +390,13 @@ int Init(void)
 		options.audio = 0;
 	}
 
-	if (usedSpec == NULL)
-		usedSpec = &reqSpec;
+#ifdef _DEBUG
+  DebugPrint("SDL audio sample buffer size: %d\n", usedSpec->samples);
+#endif
+
+
+  if (usedSpec == NULL)
+	usedSpec = &reqSpec;
 
 	// set up joystick
 	if (SDL_NumJoysticks() > 0)
@@ -710,6 +718,13 @@ void HostDoEvents(void)
 		if (cont1.analog_h > POT_RIGHT)
 			cont1.analog_h = POT_RIGHT;
 	}
+
+	// 2016-06-18 - Reset 5200 keypad input
+	for (int i = 0; i < 16; i++)
+		{
+		cont1.key[i] = 0;
+		cont2.key[i] = 0;
+		}
 
 	// read keyboard and fill cont1 & cont2 structures
 	unsigned short mappedKeyCode = 0;
@@ -1052,8 +1067,6 @@ void HostDoEvents(void)
 				} //end switch keyup
 				break;
 		} // end outer switch
-
-
 	}
 
 	// bypass SELECT menu if user issued SDL_QUIT
@@ -1097,13 +1110,23 @@ void HostDisableInterrupts(void)
 // Sound output
 void HostProcessSoundBuffer(void)
 {
-	// update buffer with new data
-	if (options.audio)
-		Pokey_process(snd, snd_buf_size);
+  // 2017-01-03 wait until clear to fill the sound buffer
+  // (ie: until fillsoundbuffer() has been run)
+  // this will sync the audio output, and sync the emu to the audio output)
+  while (0 == fillSoundBufferDone)
+	{
+	Sleep(1);
+	}
 
-	// render "voice" buffer if necessary
-	if (options.voice)
-		renderMixSampleEvents(snd, snd_buf_size);
+  // update buffer with new data
+  if (options.audio)
+	Pokey_process(snd, snd_buf_size);
+
+  // render "voice" buffer if necessary
+  if (options.voice)
+	renderMixSampleEvents(snd, snd_buf_size);
+
+  fillSoundBufferDone = 0;
 }
 
 

@@ -30,10 +30,10 @@
 
 #define P_DMA	0x40;
 #define M_DMA	0x20;
-#define CYCLESPERLINE	114
+#define CYCLESPERLINE	120 //114
 
-#define KEYS_LINE		246
-#define VBI_LINE		250
+#define KEYS_LINE		245
+#define VBI_LINE		248
 
 // global variables
 ANTICTYPE antic = { 0, 0 };			// ANTIC NMI stuff
@@ -239,12 +239,27 @@ void updateANTIC(void)
 	// DEBUG
 	//fprintf(stderr, "vcount=%d\n", vcount);
 
-	// check for key IRQ just before VBI
-	// (otherwise it gets lost in VBI)
-	// (do_keys() commented out in code below)
-	if (vcount == KEYS_LINE) {
-		do_keys();				// get kbcode and set interrupt
-	}
+	// Reset VBI status bit on line 39
+	if (39 == vcount)
+		{
+		// reset VBI NMI interrupt
+		antic.nmist &= 0xBF;
+		memory5200[NMIST] = antic.nmist;
+		}
+
+	//// check for key IRQ just before VBI
+	//// (otherwise it gets lost in VBI)
+	//// (do_keys() commented out in code below)
+	//if(vcount == KEYS_LINE || vcount == 120) {
+	//		do_keys();				// get kbcode and set interrupt
+	//}	
+
+	// NB: 5200 will do a keyboard IRQ every 32 scanlines if a key is held down
+	//     (and kbd IRQ is enabled)
+	if (32 == vcount || 64 == vcount || 96 == vcount || 128 == vcount || 160 == vcount || 192 == vcount)
+		{
+		do_keys();				// get kbcode and trigger interrupt if neccessary
+		}
 
 	// do actual drawing area of screen
 	if (vcount <= VBI_LINE) {
@@ -310,7 +325,7 @@ void updateANTIC(void)
 	else {
 		// just check for end of frame
 		// fiddling with this might get some games working???
-		if (vcount == 260) {
+		if (260 == vcount) {
 			vcount = -2;
 			next_mode_line = 8;
 			scanline = 0;

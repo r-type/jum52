@@ -74,8 +74,14 @@ Code changes file.
         - Allow esc from rom select screen
         - Allow more space for rom name in rom select screen
         - Load .A52 files and .ROM files
-
-
+11 June 2016
+   - Load 8k roms (mirrored 4x)
+   - Fix to 65C02 "decimal mode" (ADC and SBC opcodes)
+   
+3 January 2017
+   Update to version 1.3
+   - Fix to synchronising of audio buffer (less crackly audio)
+   - Changes to keyboard reading
 
 
 

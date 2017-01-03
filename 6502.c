@@ -13,6 +13,8 @@
 #define FALSE	0
 #endif
 
+extern void _cdecl DebugPrint(const char *format, ...);
+
 //#define DEBUG
 // CPU cycles between HBL's
 // should be 114, but we need to subtract cycles for ANTIC DMA etc
@@ -173,13 +175,52 @@ static void adc6502()
       // might have adc'd with some register, with no forethought
       // for poor emu programmers
       value = get6502memory(savepc);
-      saveflags=(P & 0x01);
+      saveflags = (P & C_FLAG);
+
+      if (P & D_FLAG)
+				{
+				// Decimal (BCD) mode
+				// This code from Altirra (JH 2016-06-11)
+				uint32 lowResult, highResult;
+				uint8 flags;
+				lowResult = (A & 0xF) + (value & 0xF) + saveflags;
+				if (lowResult >= 10)
+					lowResult += 6;
+				if (lowResult >= 0x20)
+					lowResult -= 0x10;
+				highResult = (A & 0xf0) + (value & 0xf0) + lowResult;
+				flags = P & ~(C_FLAG | N_FLAG | Z_FLAG | V_FLAG);
+				flags += (((highResult ^ A) & ~(value ^ A)) >> 1) & V_FLAG;
+				flags += (highResult & 0x80);							// update N flag
+				if (highResult >= 0xA0)
+					highResult += 0x60;
+				if (highResult >= 0x100)
+					flags += C_FLAG;
+				if (!(uint8)(A + value + saveflags))
+					flags += Z_FLAG;
+				A = (uint8)highResult;
+				P = flags;
+				}
+			else
+				{
+				// Normal/hex mode
+				sum= ((char) A) + ((char) value) + saveflags;
+				if ((sum>0x7f) || (sum<-0x80)) P |= V_FLAG; else P &= 0xbf;
+				sum= A + value + saveflags;
+				if (sum>0xff) P |= C_FLAG; else P &= 0xfe;
+				A=sum;
+				clockticks6502++;
+				if (A) P &= 0xfd; else P |= Z_FLAG;
+				if (A & 0x80) P |= N_FLAG; else P &= 0x7f;
+				}
+
+/* old code
       sum= ((char) A) + ((char) value) + saveflags;
-      if ((sum>0x7f) || (sum<-0x80)) P |= 0x40; else P &= 0xbf;
+      if ((sum>0x7f) || (sum<-0x80)) P |= V_FLAG; else P &= 0xbf;
       sum= A + value + saveflags;
-      if (sum>0xff) P |= 0x01; else P &= 0xfe;
+      if (sum>0xff) P |= C_FLAG; else P &= 0xfe;
       A=sum;
-      if (P & 0x08)
+      if (P & D_FLAG)
       {
               P &= 0xfe;
               if ((A & 0x0f)>0x09)
@@ -187,15 +228,17 @@ static void adc6502()
               if ((A & 0xf0)>0x90)
               {
                       A += 0x60;
-                      P |= 0x01;
+                      P |= C_FLAG;
               }
       }
       else
       {
               clockticks6502++;
       }
-      if (A) P &= 0xfd; else P |= 0x02;
-      if (A & 0x80) P |= 0x80; else P &= 0x7f;
+
+      if (A) P &= 0xfd; else P |= Z_FLAG;
+      if (A & 0x80) P |= N_FLAG; else P &= 0x7f;
+*/
 }
 
 static void and6502()
@@ -658,8 +701,54 @@ static void sbc6502()
       adrmode[opcode]();
       //value = memory5200[savepc] ^ 0xff;
       value = get6502memory(savepc) ^ 0xFF;
+      saveflags = (P & C_FLAG);
+			// JH 2016-06-11 new code from Altirra
+			if (P & D_FLAG)
+				{
+				// Pole Position needs N set properly here for its passing counter
+				// to stop correctly!
+				uint32 carry7, result, lowResult, highCarry, highResult;
+				uint8 p;
 
-      saveflags=(P & 0x01);
+				// Flags set according to binary op
+				carry7 = (A & 0x7f) + (value & 0x7f) + saveflags;
+				result = carry7 + (A & 0x80) + (value & 0x80);
+
+				// BCD
+				lowResult = (A & 15) + (value & 15) + saveflags;
+				highCarry = 0x10;
+				if (lowResult < 0x10) {
+					lowResult -= 6;
+					highCarry = 0;
+				}
+
+				highResult = (A & 0xf0) + (value & 0xf0) + (lowResult & 0x0f) + highCarry;
+
+				if (highResult < 0x100)
+					highResult -= 0x60;
+
+				// Set flags
+				p = P & ~(C_FLAG | N_FLAG | Z_FLAG | V_FLAG);
+				p += (result & 0x80);				// set N flag
+				if (result >= 0x100) p += C_FLAG;
+				if (!(result & 0xff))	p += Z_FLAG;
+				p += ((result >> 2) ^ (carry7 >> 1)) & V_FLAG;
+				P = p;
+				A = (uint8)highResult;
+				}
+			else
+				{
+				sum = ((char) A) + ((char) value) + (saveflags << 4);
+				if ((sum>0x7f) || (sum<-0x80)) P |= 0x40; else P &= 0xbf;
+				sum = A + value + saveflags;
+				if (sum>0xff) P |= 0x01; else P &= 0xfe;
+				A=sum;
+				clockticks6502++;
+				if (A) P &= 0xfd; else P |= 0x02;
+				if (A & 0x80) P |= 0x80; else P &= 0x7f;
+				}
+
+/* old code
       sum= ((char) A) + ((char) value) + (saveflags << 4);
       if ((sum>0x7f) || (sum<-0x80)) P |= 0x40; else P &= 0xbf;
       sum= A + value + saveflags;
@@ -683,6 +772,7 @@ static void sbc6502()
       }
       if (A) P &= 0xfd; else P |= 0x02;
       if (A & 0x80) P |= 0x80; else P &= 0x7f;
+*/
 }
 
 static void sec6502()
@@ -1339,8 +1429,14 @@ void irq6502()
     // only do if not busy with NMI
     if(nmi_busy) {
     	irq_pending = TRUE;
-	}
+#ifdef _DEBUG
+			DebugPrint("IRQ deferred (NMI busy) vcount = %d\n", vcount);
+#endif
+		}
     else {
+#ifdef _DEBUG
+		DebugPrint("IRQ triggered. IRQST = %2X, vcount = %d\n", irqst, vcount);
+#endif
 		put6502memory(0x0100+S--,(uint8)(PC>>8));
 		put6502memory(0x0100+S--,(uint8)(PC & 0xff));
 		put6502memory(0x0100+S--,P);

@@ -12,6 +12,7 @@
 #include <stdlib.h>
 #include <stdio.h>
 #include <string.h>
+#include <stdarg.h>
 
 #include "global.h"
 #include "osdepend.h"
@@ -20,6 +21,28 @@
 #include "5200.h"
 #include "pokey.h"
 #include "rom.h"
+
+#ifdef WIN32
+#include <Windows.h>
+#endif
+
+extern uint16 pc_reg;
+
+// Write debug output strings
+void _cdecl DebugPrint(const char *format, ...)
+{
+    char str[1024];
+    va_list argptr;
+    va_start(argptr, format);
+    vsnprintf(str, sizeof(str), format, argptr);
+    va_end(argptr);
+
+#ifdef WIN32
+    OutputDebugStringA(str);
+#else
+		printf(str);
+#endif
+}
 
 // TODO: PM fix in narrow mode
 // TODO: fix collision detection
@@ -66,7 +89,7 @@ static int isEmulating = 0;
 static char logmsg[256];
 static int8 *voiceBuffer = NULL;
 static uint8 currVoiceVal[4] = { 0, 0, 0, 0 };			// value carried over from previous frame
-//uint8 keypad[10];
+uint8 keypad[10];
 //uint8 kbcode, kbcode2;						// joy 1 and 2 keyboard
 static uint8 *mapper = NULL;				// address to peripheral mapping
 static uint8 trig[4];
@@ -102,10 +125,14 @@ void initGTIA(void) {
 }
 
 // check keyboard and set kbcode on VBI
-// Not allegro dependant at all :)
 void do_keys(void)
 {
+	// NB: 5200 will do a keyboard IRQ every 32 scanlines if a key is held down
 	CONTROLLER *which = NULL;
+
+    // "loose bit" (bit 5 of KBCODE) - fluctuates 0 or 1 randomly
+    uint8 loose_bit = (framesdrawn & 0x1) << 5;
+
 	switch (memory5200[CONSOL] & 0x03) {
 		case 0: which = &cont1; break;
 		case 1: which = &cont2; break;
@@ -113,22 +140,28 @@ void do_keys(void)
 		default: return;
 	}
 
-	// "loose bit" (bit 5 of KBCODE) - fluctuates 0 or 1 randomly
-	uint8 loose_bit = (framesdrawn & 0x1) << 5;
+	// Default to "key not pressed"
+	memory5200[KBCODE] = loose_bit | 0x1F;
+	which->last_key_still_pressed = 0;
 
 	for (int8 i = 0; i < 16; i++)
 	{
 		if (which->key[i])
 		{
+/* 2016-06-18 - commented out (reset in HostDoEvents())
 			which->key[i] = 0;
-			which->last_key_still_pressed = 0;
+            which->last_key_still_pressed = 0;
 
 			// Don't respond to the same thing twice in a row...
 			if (i == which->lastRead)
 			{
-				which->last_key_still_pressed = 1;      // flag key still held
+                which->last_key_still_pressed = 1;      // flag key still held
 				return;
 			}
+*/
+			if (i == which->lastRead)
+				which->last_key_still_pressed = 1;      // flag key still held
+
 			which->lastRead = i;
 
 			// Write in the change
@@ -138,10 +171,22 @@ void do_keys(void)
 			irqst &= 0xbf;
 
 			// check irqen and do interrupt if bit 6 set
-			if (irqen & 0x40) irq6502();
+			if(irqen & 0x40)
+				{
+#ifdef _DEBUG
+				DebugPrint("Key interrupt (key %d) IH = %04X, IHC = %04X\n", i, memory5200[0x208] + 256 * memory5200[0x209],  memory5200[0x20A] + 256 * memory5200[0x20B]);
+#endif
+				// Technically the IRQ is only triggered after the next instruction
+				irq6502();
+				}
+
 			return;
 		}
 	}
+
+	// 2016-06-18 - Reset kbd irq if no key pressed
+	// NO - "irqst is latched, only reset by write to IRQEN"
+	//irqst |= 0x40;
 
 	// If no keys are down at all, we can write anything again
 	which->lastRead = 0xFF;
@@ -433,50 +478,55 @@ uint8 POKEYread(uint16 addr)
 			return 0xFF;		// HACK - "always valid"
 			break;
 		case 0x09:	//	KBCODE
-#ifdef DEBUG
-			fprintf(stderr, "KBCODE read!\n");
+#ifdef _DEBUG
+				DebugPrint("KBCODE read! (value = %X) PC = %4X\n", memory5200[KBCODE], PC);
 #endif
-			// key codes are fed to KBCODE by main loop,
-			// and the KB int bit is set.
-			return memory5200[KBCODE];
-			break;
-		case 0x0A:	//	RANDOM
-			//fprintf(stderr, "RANDOM read!\n");
-			// Note: return 8-bit random number
-			return (rand() % 256);
-			break;
-		case 0x0B:	// UNUSED
-		case 0x0C:	// UNUSED
-		case 0x0D:	// UNUSED
-			return 0xFF;
-			break;
-		case 0x0E:	//	IRQST
-			return irqst;
-			break;
-		case 0x0F:	//	SKSTAT
-			// Bit 3 of SKSTAT (read) is "shift key (top side button)"
-			//      pressed (for selected controller) (0 = True).
-			// Bit 2 of SKSTAT (read) is "last key still pressed" (0 = True).
-			// (JH - implement!!!)
-			/* was:
-											skstatreg = 0;
-											if(!cont1.side_button) skstatreg |= 0x08;
-											if(!cont1.last_key_still_pressed) skstatreg |= 0x04;
-											return skstatreg;
-											*/
-			skstatreg = 0x0C;
-			switch (memory5200[CONSOL] & 0x03) {
-				case 0: // controller 1
-					if (cont1.side_button) skstatreg &= 0x07;
-					if (cont1.last_key_still_pressed) skstatreg &= 0x0B;
-					break;
-				case 1: // controller 2
-					if (cont2.side_button) skstatreg &= 0x07;
-					if (cont2.last_key_still_pressed) skstatreg &= 0x0B;
-					break;
-			}
-			return skstatreg;
-			break;
+				// key codes are fed to KBCODE by main loop,
+				// and the KB int bit is set.
+				return memory5200[KBCODE];
+				break;
+			case 0x0A :	//	RANDOM
+				//fprintf(stderr, "RANDOM read!\n");
+            // Note: return 8-bit random number
+				return (rand() % 256);
+				break;
+			case 0x0B :	// UNUSED
+			case 0x0C :	// UNUSED
+			case 0x0D :	// UNUSED
+                return 0xFF;
+				break;
+			case 0x0E :	//	IRQST
+#ifdef _DEBUG
+				DebugPrint("IRQST read! (value = %X) \n", irqst);
+#endif
+				return irqst;
+				break;
+			case 0x0F :	//	SKSTAT
+				// Bit 3 of SKSTAT (read) is "shift key (top side button)"
+				//      pressed (for selected controller) (0 = True).
+				// Bit 2 of SKSTAT (read) is "last key still pressed" (0 = True).
+				//  (or is it "any key pressed"?)
+				// If kbd scanning disabled, then SKSTAT bit 2 reads 1.
+				// (JH - implement!!!)
+				/* was:
+				skstatreg = 0;
+				if(!cont1.side_button) skstatreg |= 0x08;
+				if(!cont1.last_key_still_pressed) skstatreg |= 0x04;
+				return skstatreg;
+				*/
+				skstatreg = 0x0C;
+				switch(memory5200[CONSOL] & 0x03) {
+						case 0 : // controller 1
+								if(cont1.side_button) skstatreg &= 0x07;
+								if(cont1.last_key_still_pressed) skstatreg &= 0x0B;
+								break;
+						case 1 : // controller 2
+								if(cont2.side_button) skstatreg &= 0x07;
+								if(cont2.last_key_still_pressed) skstatreg &= 0x0B;
+								break;
+				}
+				return skstatreg;
+				break;
 	} // end switch
 
 	// Oops!
@@ -736,7 +786,9 @@ void POKEYwrite(uint16 addr, uint8 byte)
 			//printf("POKEY write to reg A with byte %X\n", byte);
 			break;
 		case 0x0B:	//	POTGO
-			//fprintf(stderr, "POTGO written at vcount=%d\n", vcount);
+#ifdef _DEBUG
+			//DebugPrint("POTGO written at vcount=%d\n", vcount);
+#endif
 			// This restarts the POT "counters"
 			// do nothing
 			break;
@@ -747,24 +799,43 @@ void POKEYwrite(uint16 addr, uint8 byte)
 			//printf("POKEY write to reg D with byte %X\n", byte);
 			break;
 		case 0x0E:	//	IRQEN/IRQST
-			// writing a 0 into any IRQEN bit resets corresp. IRQST bit to 1
+			// IRQEN (and NMIEN) enable interrupts when bits are logic 1
+			// IRQST (unlike NMIST) bits are normally 1, pulled to 0 to indicate an interrupt.
+			// IRQST bits are returned to 1 by writing 0 into the corresp. IRQEN bit.
+			// This will disable the relevant interrupt.
+			// Bit 3 of IRQST is not a latch, does not get set to 1. (Serial empty bit)
 			irqen = byte;
 			// check for IRQST resets (just bit 7 & 6 for now)
-			if (!(byte & 0x80)) irqst |= 0x80;
-			if (!(byte & 0x40)) irqst |= 0x40;
+			if(!(byte & 0x80)) irqst |= 0x80;
+			if(!(byte & 0x40)) irqst |= 0x40;
 			// for completeness (JH 28/1/2002)
-			if (!(byte & 0x20)) irqst |= 0x20;
-			if (!(byte & 0x10)) irqst |= 0x10;
-			// check for keyboard or button int
-			if (irqen & 0xc0) do_keys();
-#ifdef DEBUG
-			fprintf(stderr, "Write to IRQEN: %X\n", byte);
+			if(!(byte & 0x20)) irqst |= 0x20;
+			if(!(byte & 0x10)) irqst |= 0x10;
+			// For more completeness (JH 2016-06-11)
+			if(!(byte & 0x04)) irqst |= 0x04;
+			if(!(byte & 0x02)) irqst |= 0x02;
+			if(!(byte & 0x01)) irqst |= 0x01;
+	
+			//// check for keyboard or button int
+			// 2016-06-18 - Not immediately - interrupt now triggered in updateANTIC() (every 32 scan lines)
+			//if(irqen & 0xc0)
+			//	do_keys();
+#ifdef _DEBUG
+		DebugPrint("Write to IRQEN: %X (vcount %d frame %d)\n", byte, vcount, framesdrawn);
 #endif
 			break;
 		case 0x0F:	//	SKCTL
+			// Bit 0 of SKCTL (debounce enable) need not be set in the 5200.
+			// Not only is the debounce enable not needed, if you do enable it you won’t be
+			// able to read any keycodes back from the POKEY.
+			// SKCTL bit 2 (last key still pressed) does not behave as expected on the 5200.
+			// I have not yet determined it’s actual behavior.
+			// SKCTL bit 1 enables the keyboard scanning. Note that this also 
+			// enables/disables the POT scanning. 
+	// TODO - Only update KBCODE if scanning enabled
 			memory5200[SKCTL] = byte;
-#ifdef DEBUG
-			fprintf(stderr, "Write to SKCTL: %X\n", byte);
+#ifdef _DEBUG
+		DebugPrint("Write to SKCTL: %X\n", byte);
 #endif
 			break;
 	} // end switch
@@ -920,7 +991,7 @@ void put6502memory(uint16 addr, uint8 byte)
 }
 
 // load CARTRIDGE into memory image
-// ***NEW 01/2002*** use crc32 to identify carts! - JH
+// Use crc32 to identify carts! - JH
 int loadCART(char *cartname)
 {
 #ifdef _EE
@@ -1042,8 +1113,23 @@ int loadCART(char *cartname)
 
 			// default to 16k+8k mapping
 			fseek(pfile, 0, SEEK_SET);
-			for (i = 0; i < 16384; i++) memory5200[0x6000 + i] = fgetc(pfile);
-			for (i = 0; i < 8192; i++) memory5200[0xA000 + i] = memory5200[0x8000 + i];
+			for(i=0; i<16384; i++) memory5200[0x6000 + i] = fgetc(pfile);
+			for(i=0; i<8192; i++) memory5200[0xA000 + i] = memory5200[0x8000 + i];
+			break;
+		case 8192 :	// 8k cart
+			// Load mirrored 4 times
+			for(i = 0; i < 8192; i++)
+				{
+				uint8 c = fgetc(pfile);
+				memory5200[0x4000 + i] = c;
+				memory5200[0x6000 + i] = c;
+				memory5200[0x8000 + i] = c;
+				memory5200[0xA000 + i] = c;
+				}
+      // get crc32 from 8k data
+      crc32 = calc_crc32(memory5200 + 0x4000, 8192);
+			sprintf(errormsg, "8k cart load '%s', crc32=0x%08X\n", cartname, crc32);
+			HostLog(errormsg);
 			break;
 		default:		// oops!
 			// these rom dumps are strange, because some carts are 8K, yet
@@ -1415,9 +1501,9 @@ int Jum52_LoadROM(char *path)
 
 	reset_gfx();
 
-	//for (i = 0; i < 10; i++)
-	//	keypad[i] = 0;
-
+	for (i = 0; i < 10; i++)
+		keypad[i] = 0;
+	
 	memset(snd, 0x80, snd_buf_size);
 
 	memory5200[KBCODE] = 0x1F;			// req. for JUMPONG :)
