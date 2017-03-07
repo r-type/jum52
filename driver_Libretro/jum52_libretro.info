@@ -1,6 +1,6 @@
 display_name = "Jum52 Atari 5200 emulator"
-authors = James Higgs"
-supported_extensions = "a52|bin|roms"
+authors = "James Higgs"
+supported_extensions = "a52|bin|rom"
 corename = "jum52"
 manufacturer = "Atari"
 categories = "Emulator"

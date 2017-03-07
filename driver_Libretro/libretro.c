@@ -239,7 +239,7 @@ void update_input()
      Key_Sate[RETROK_2] = input_state_cb(0, RETRO_DEVICE_KEYBOARD, 0, RETROK_2) ? 0x80 : 0;
      if(Key_Sate[RETROK_2] && Key_Sate2[RETROK_2] == 0){
 		cont1.key[14] = 1;
-		Key_Sate2[RETROK_2=1;
+		Key_Sate2[RETROK_2]=1;
      }
      else if(!Key_Sate[RETROK_2] && Key_Sate2[RETROK_2] == 1)Key_Sate2[RETROK_2]=0;
 
