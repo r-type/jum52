@@ -22,8 +22,12 @@
 #include "pokey.h"
 #include "rom.h"
 
+#ifndef __LIBRETRO__
 #ifdef WIN32
 #include <Windows.h>
+#endif
+#else
+extern char retro_system_conf[512];
 #endif
 
 extern uint16 pc_reg;
@@ -1243,8 +1247,11 @@ int LoadConfigFile(void)
 	char *p;
 
 	HostLog("Reading config file 'jum52.cfg'...\n");
-
+#ifndef __LIBRETRO__
 	pfile = fopen("jum52.cfg", "r");
+#else
+	pfile = fopen(retro_system_conf, "r");
+#endif
 	if (pfile == NULL)
 	{
 		sprintf(errormsg, "Unable to open config file 'Jum52.cfg' - check if it's there!");

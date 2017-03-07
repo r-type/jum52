@@ -8,6 +8,10 @@
 //#include <stdlib.h>
 #include <string.h>
 
+#ifdef __LIBRETRO__
+extern int RLOOP;
+#endif
+
 // Sizes
 typedef unsigned char uint8;
 typedef unsigned short uint16;

@@ -1539,7 +1539,9 @@ void exec6502fast(int n)
          	if (!running)
          		break;
 		}
-
+#ifdef __LIBRETRO__
+		if(RLOOP==0)break;
+#endif
       //totalticks += clockticks6502;
    }
 }

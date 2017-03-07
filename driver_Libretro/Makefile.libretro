@@ -1,0 +1,92 @@
+
+DEBUG = 0
+
+ifeq ($(platform),)
+platform = unix
+ifeq ($(shell uname -a),)
+   platform = win
+else ifneq ($(findstring Darwin,$(shell uname -a)),)
+   platform = osx
+else ifneq ($(findstring MINGW,$(shell uname -a)),)
+   platform = win
+endif
+endif
+
+TARGET_NAME := jum52
+
+ifeq ($(platform), unix)
+   CC = gcc
+   CXX = g++
+   CFLAGS = -g -O2 -D_cdecl="__attribute__((__cdecl__))"
+   CXXFLAGS = -g -O2  -fno-merge-constants -fno-gcse-sm
+   TARGET := $(TARGET_NAME)_libretro.so
+   fpic := -fPIC
+   SHARED := -shared -Wl,--no-undefined -Wl,--version-script=link.T
+   ENDIANNESS_DEFINES := -DLSB_FIRST
+   FLAGS +=
+# android arm
+else ifneq (,$(findstring android,$(platform)))
+   	TARGET := $(TARGET_NAME)_libretro_android.so
+   	fpic = -fPIC
+   	SHARED := -lstdc++ -llog -lz -shared -Wl,--version-script=link.T -Wl,--no-undefined
+	CFLAGS +=  -g -O2 -D_cdecl="__attribute__((__cdecl__))"
+   	CC = arm-linux-androideabi-gcc
+   	CXX = arm-linux-androideabi-g++
+
+else ifeq ($(platform), osx)
+   TARGET := libretro.dylib
+   fpic := -fPIC
+   SHARED := -dynamiclib
+   ENDIANNESS_DEFINES := -DLSB_FIRST
+   FLAGS +=
+else ifeq ($(platform), wincross64)
+	TARGET := $(TARGET_NAME)_libretro.dll
+	AR = x86_64-w64-mingw32-ar
+	CC = x86_64-w64-mingw32-gcc
+	CXX = x86_64-w64-mingw32-g++ 
+        CFLAGS = -g -O2 
+	SHARED := -shared -static-libgcc -static-libstdc++ -Wl,-no-undefined -Wl,-version-script=link.T
+else
+   TARGET :=  $(TARGET_NAME)_retro.dll
+   CC = gcc
+   CXX = g++
+   SHARED := -shared -Wl,--no-undefined -Wl,--version-script=link.T
+   LDFLAGS += -static-libgcc -static-libstdc++ -lwinmm
+   ENDIANNESS_DEFINES := -DLSB_FIRST
+   FLAGS +=
+endif
+
+OBJECTS :=   ../5200gfx.o ../52emu.o ../6502.o ../font5200.o ../pokey.o ../crc32.o ../gamesave.o libretro.o
+
+all: $(TARGET)
+
+ifeq ($(DEBUG), 0)
+   FLAGS += -O3 -ffast-math -fomit-frame-pointer
+else
+   FLAGS += -O0 -g
+endif
+
+LDFLAGS += $(fpic) $(SHARED)
+FLAGS += $(fpic) 
+FLAGS += -I. -I..
+
+WARNINGS :=  
+	
+FLAGS += -D__LIBRETRO__ $(ENDIANNESS_DEFINES) $(WARNINGS) -DRETRO -DCD_BUILD $(DEFS)
+
+CXXFLAGS += $(FLAGS) -fpermissive
+CFLAGS += $(FLAGS) -std=gnu99
+
+$(TARGET): $(OBJECTS)
+	$(CXX) -o $@ $^ $(LDFLAGS)
+
+%.o: %.cpp
+	$(CXX) -c -o $@ $< $(CXXFLAGS)
+
+%.o: %.c
+	$(CC) -c -o $@ $< $(CFLAGS)
+
+clean:
+	rm -f $(TARGET) $(OBJECTS)
+
+.PHONY: clean
